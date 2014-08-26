@@ -4,6 +4,6 @@
   sudo: True
   tasks:
     - include: debian.yml
-      when: ansible_pkg_mgr == "apt"
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
     - include: rpm.yml
-      when: ansible_pkg_mgr == "rpm"
+      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

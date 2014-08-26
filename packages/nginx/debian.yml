@@ -1,5 +1,5 @@
-- name: Add Mongo repository key.
-  command: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+- name: Add Nginx Key.
+  command: apt-key add $(curl http://nginx.org/keys/nginx_signing.key) 
 
 - name: Add repository - Debian.
   template: src=debian.repo dest=/etc/apt/sources.list.d/falcon.mongodb.list
@@ -10,13 +10,11 @@
   when: ansible_distribution == 'Ubuntu'
 
 - name: Update.
-  sudo: true 
   command: apt-get update
 
-- name: Install MongoDB.
-  sudo: true 
-  command: apt-get install mongodb-org
+- name: Install Nginx.
+  command: apt-get install nginx
 
-- name: Start MongoDB.
+- name: Start Nginx.
   sudo: true 
   command: service mongodb start

@@ -1,5 +1,5 @@
 - name: Add repository.
-  template: src=rpm_repo.j2 dest=/etc/yum.repos.d/falcon.mongodb.repo
+  template: src=rpm.repo dest=/etc/yum.repos.d/falcon.mongodb.repo
 
 - name: Install MongoDB.
   command: yum install mongodb-org
