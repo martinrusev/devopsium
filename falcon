@@ -2,8 +2,10 @@
 ### BEGIN INIT INFO
 # Provides:          falcon
 # Description:       Falcon package manager.
+# FALCON_BASE="/home/martin/falcon"
+FALCON_BASE="/etc/falcon"
 
-PLUGIN_PATH="/etc/falcon"
+FALCON_PACKAGES="$FALCON_BASE/packages"
 
 function file_exists() {
     [ -f "$1" ]
@@ -16,8 +18,6 @@ else
     sudo_cmd='sudo'
 fi
 
-[ -f $AGENTPATH ] || echo "$AGENTPATH not found"
-
 action=$1
 
 case $action in
@@ -25,10 +25,10 @@ case $action in
 
     install)
         $0 update
-        PLAYBOOK="$PLUGIN_PATH/$2/main.yml"
+        PLAYBOOK="$FALCON_PACKAGES/$2/main.yml"
         
         if file_exists $PLAYBOOK ; then
-             $sudo_cmd sh -c "ansible-playbook $PLAYBOOK -i $PLUGIN_PATH/hosts"
+             $sudo_cmd sh -c "ansible-playbook $PLAYBOOK -i $FALCON_BASE/hosts"
         else
              printf "\033[31m \n Cant find a package named $2\n\033[0m\n"
 
@@ -38,7 +38,7 @@ case $action in
 
 
     update)
-        $sudo_cmd sh -c "(cd $PLUGIN_PATH && git pull origin master)"
+        $sudo_cmd sh -c "(cd $FALCON_BASE && git pull origin master)"
         exit $?
         ;;
 

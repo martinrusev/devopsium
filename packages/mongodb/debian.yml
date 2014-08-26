@@ -2,7 +2,7 @@
   command: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 
 - name: Add repository.
-  template: src=debian_repo.j2.repo dest=/etc/apt/sources.list.d/falcon.mongodb.list
+  template: src=debian_repo.j2 dest=/etc/apt/sources.list.d/falcon.mongodb.list
 
 - name: Update.
   sudo: true 
