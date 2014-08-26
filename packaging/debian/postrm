@@ -1,0 +1,4 @@
+PLUGINS_REPO=/etc/falcon
+rm -rf $PLUGINS_REPO
+rm -rf /usr/bin/falcon
+exit 0

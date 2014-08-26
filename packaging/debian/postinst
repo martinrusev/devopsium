@@ -1,0 +1,26 @@
+#! /bin/bash
+PLUGINS_REPO=/etc/falcon
+REMOTE_REPO=https://github.com/martinrusev/falcon.git
+
+set -e
+
+case "$1" in
+    configure)
+
+        rm -rf $PLUGINS_REPO
+        git clone $REMOTE_REPO $PLUGINS_REPO
+        
+
+        set +e
+
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

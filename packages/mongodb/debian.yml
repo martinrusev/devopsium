@@ -1,0 +1,17 @@
+- name: Add Mongo repository key.
+  command: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+
+- name: Add repository.
+  template: src=debian_repo.j2.repo dest=/etc/apt/sources.list.d/falcon.mongodb.list
+
+- name: Update.
+  sudo: true 
+  command: apt-get update
+
+- name: Install MongoDB.
+  sudo: true 
+  command: apt-get install mongodb-org
+
+- name: Start MongoDB.
+  sudo: true 
+  command: service mongodb start

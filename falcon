@@ -1,0 +1,49 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          falcon
+# Description:       Falcon package manager.
+
+PLUGIN_PATH="/etc/falcon"
+
+function file_exists() {
+    [ -f "$1" ]
+}
+
+# Root user detection
+if [ $(echo "$UID") = "0" ]; then
+    sudo_cmd=''
+else
+    sudo_cmd='sudo'
+fi
+
+[ -f $AGENTPATH ] || echo "$AGENTPATH not found"
+
+action=$1
+
+case $action in
+        
+
+    install)
+        $0 update
+        PLAYBOOK="$PLUGIN_PATH/$2/main.yml"
+        
+        if file_exists $PLAYBOOK ; then
+             $sudo_cmd sh -c "ansible-playbook $PLAYBOOK -i $PLUGIN_PATH/hosts"
+        else
+             printf "\033[31m \n Cant find a package named $2\n\033[0m\n"
+
+        fi
+        exit $?
+        ;;
+
+
+    update)
+        $sudo_cmd sh -c "(cd $PLUGIN_PATH && git pull origin master)"
+        exit $?
+        ;;
+
+    *)
+        echo "Usage: $0 {install|update}"
+        exit 2
+        ;;
+esac

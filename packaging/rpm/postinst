@@ -1,0 +1,9 @@
+# start
+PLUGINS_REPO=/etc/falcon
+REMOTE_REPO=https://github.com/martinrusev/falcon.git
+
+
+rm -rf $PLUGINS_REPO
+git clone $REMOTE_REPO $PLUGINS_REPO
+
+exit 0

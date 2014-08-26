@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  connection: local
+  sudo: True
+  tasks:
+    - include: debian.yml
+      when: ${ansible_pkg_mgr} == 'apt'
