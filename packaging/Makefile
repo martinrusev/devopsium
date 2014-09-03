@@ -36,7 +36,7 @@ install_base:
 
 
 # =====================
-# Ubuntu/Debian
+# Build
 # =====================
 falcon_deb: clean install_base
 	FPM_EDITOR="echo 'Replaces: falcon (<= $(VERSION))' >>" \
@@ -49,9 +49,6 @@ $(FPM_BUILD) -t deb \
 .
 	
 
-# =====================
-# CentOS/Fedora
-# =====================
 falcon_rpm: clean install_base
 	FPM_EDITOR="echo ''>>"  \
 $(FPM_BUILD) -t rpm \
@@ -64,3 +61,38 @@ $(FPM_BUILD) -t rpm \
 
 
 all: clean falcon_deb falcon_rpm
+
+
+
+# =====================
+# Test
+# =====================
+test_debian:
+	cp debian/Dockerfile Dockerfile
+	docker build --rm=true --no-cache . 
+	rm Dockerfile
+
+
+test_rpm:
+	cp rpm/Dockerfile Dockerfile
+	docker build --rm=true --no-cache . 
+	rm Dockerfile
+
+
+
+test_all: test_debian test_rpm
+
+
+# =====================
+# Deploy
+# =====================
+update_debian_repo:
+	cp "falcon_$(VERSION)_all.deb" $(DEBIAN_REPO_PATH)
+	find $(DEBIAN_REPO_PATH)  -name \*.deb -exec reprepro --ask-passphrase -Vb $(DEBIAN_REPO_PATH)repo includedeb amon {} \;
+
+update_rpm_repo:
+	cp "falcon-$(VERSION)-1.noarch.rpm" $(RPM_REPO_PATH)
+	createrepo --update $(RPM_REPO_PATH)
+
+deploy: update_debian_repo update_rpm_repo
+	python s3uploader.py
