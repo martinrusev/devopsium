@@ -4,20 +4,21 @@ SRC=../
 PACKAGES_PATH=/home/martin/falcon-packages
 DEBIAN_REPO_PATH=$(PACKAGES_PATH)/debian/
 RPM_REPO_PATH=$(PACKAGES_PATH)/centos/
+VERSION=`cat $(SRC)/VERSION`
 
 FPM_BUILD=fpm --epoch 1 -s dir -e -C $(BUILD) \
 -a all -m "Amon Packages <packages@amon.cx>" \
---url "http://amon.cx/" \
+--url "http://falcon.amon.cx/" \
 --description "`cat desc`"\
 -v $(VERSION) \
---vendor Amon 
+--vendor "Martin Rusev"
 
 clean:
 	rm -rf build
 	rm -f *.deb *.rpm
 
 
-# Layout all of the files common to both versions of the Agent in
+# Layout all of the files common All flags should be before the first argument to both versions of the Agent in
 # the build directory.
 install_base: 
 	mkdir -p $(BUILD)

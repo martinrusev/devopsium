@@ -10,7 +10,6 @@ case "$1" in
         rm -rf $PLUGINS_REPO
         git clone $REMOTE_REPO $PLUGINS_REPO
         
-
         set +e
 
     ;;
