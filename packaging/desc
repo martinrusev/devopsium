@@ -1,6 +1,6 @@
-Falcon Package Manager
- The Falcon Package Manager is a lightweight wrapper around the default Linux package managers.
+Colonizer Package Manager
+ The Colonizer Package Manager is a lightweight wrapper around the default Linux package managers.
  It syncs the official package repositories, so you can install only the latest and greatest 
  version of your apps.
  .
- See http://falcon.amon.cx/ for more information
+ See http://colonizer.amon.cx/ for more information

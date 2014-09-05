@@ -1,14 +1,14 @@
 BUILD=build/package
 SRC=../
 
-PACKAGES_PATH=/home/martin/falcon-packages
+PACKAGES_PATH=/home/martin/colonizer-packages
 DEBIAN_REPO_PATH=$(PACKAGES_PATH)/debian/
 RPM_REPO_PATH=$(PACKAGES_PATH)/centos/
 VERSION=`cat $(SRC)/VERSION`
 
 FPM_BUILD=fpm --epoch 1 -s dir -e -C $(BUILD) \
 -a all -m "Amon Packages <packages@amon.cx>" \
---url "http://falcon.amon.cx/" \
+--url "http://colonizer.amon.cx/" \
 --description "`cat desc`"\
 -v $(VERSION) \
 --vendor "Martin Rusev"
@@ -18,18 +18,16 @@ clean:
 	rm -f *.deb *.rpm
 
 
-# Layout all of the files common All flags should be before the first argument to both versions of the Agent in
-# the build directory.
 install_base: 
 	mkdir -p $(BUILD)
-	mkdir -p $(BUILD)/etc/falcon
+	mkdir -p $(BUILD)/usr/local/colonizer
 
 	
-	mkdir -p $(BUILD)/var/log/falcon
+	mkdir -p $(BUILD)/var/log/colonizer
 	mkdir -p $(BUILD)/usr/bin
 
 
-	cp -r $(SRC)/falcon $(BUILD)/usr/bin/falcon
+	cp -r $(SRC)/colonizer $(BUILD)/usr/bin/colonizer
 
 	@echo $(VERSION)
 
@@ -38,10 +36,10 @@ install_base:
 # =====================
 # Build
 # =====================
-falcon_deb: clean install_base
-	FPM_EDITOR="echo 'Replaces: falcon (<= $(VERSION))' >>" \
+build_deb: clean install_base
+	FPM_EDITOR="echo 'Replaces: colonizer (<= $(VERSION))' >>" \
 $(FPM_BUILD) -t deb \
--n falcon \
+-n colonizer \
 -d "adduser" \
 -d "git" \
 --post-install debian/postinst \
@@ -49,18 +47,18 @@ $(FPM_BUILD) -t deb \
 .
 	
 
-falcon_rpm: clean install_base
+build_rpm: clean install_base
 	FPM_EDITOR="echo ''>>"  \
 $(FPM_BUILD) -t rpm \
--n "falcon" \
+-n "colonizer" \
 -d "git" \
---conflicts "falcon < $(VERSION)" \
+--conflicts "colonizer < $(VERSION)" \
 --post-install	   rpm/postinst \
 --post-uninstall   rpm/postrm \
 .
 
 
-all: clean falcon_deb falcon_rpm
+all: clean build_deb build_rpm
 
 
 
@@ -87,11 +85,11 @@ test_all: test_debian test_rpm
 # Deploy
 # =====================
 update_debian_repo:
-	cp "falcon_$(VERSION)_all.deb" $(DEBIAN_REPO_PATH)
+	cp "colonizer_$(VERSION)_all.deb" $(DEBIAN_REPO_PATH)
 	find $(DEBIAN_REPO_PATH)  -name \*.deb -exec reprepro --ask-passphrase -Vb $(DEBIAN_REPO_PATH)repo includedeb amon {} \;
 
 update_rpm_repo:
-	cp "falcon-$(VERSION)-1.noarch.rpm" $(RPM_REPO_PATH)
+	cp "colonizer-$(VERSION)-1.noarch.rpm" $(RPM_REPO_PATH)
 	createrepo --update $(RPM_REPO_PATH)
 
 deploy: update_debian_repo update_rpm_repo

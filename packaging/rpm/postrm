@@ -1,4 +1,4 @@
-PLUGINS_REPO=/etc/falcon
+PLUGINS_REPO=/usr/local/colonizer
 rm -rf $PLUGINS_REPO
-rm -rf /usr/bin/falcon
+rm -rf /usr/bin/colonizer
 exit 0

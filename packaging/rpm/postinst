@@ -1,6 +1,6 @@
 # start
-PLUGINS_REPO=/etc/falcon
-REMOTE_REPO=https://github.com/martinrusev/falcon.git
+PLUGINS_REPO=/usr/local/colonizer
+REMOTE_REPO=https://github.com/martinrusev/colonizer.git
 
 
 rm -rf $PLUGINS_REPO
