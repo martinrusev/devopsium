@@ -1,4 +1,5 @@
 _build/
+vendor/
 node_modules/
 build/
 .sass-cache
@@ -6,4 +7,3 @@ static/cached
 .bundle
 Gemfile.lock
 .coverage
-vendor/
