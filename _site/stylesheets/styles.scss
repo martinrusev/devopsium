@@ -1,0 +1,230 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "compass/typography/vertical_rhythm";
+
+$odd: #f5f2f9;
+
+$orange: #f94a39;
+
+$dark_red: #b9285a;
+$red: #d1216f;
+$purple: #9b2c53;
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	@include box-sizing(border-box); 
+ }
+
+/* VARIABLES */ 
+
+$body_width: 1280px;
+/* VARIABLES END */
+$text_color: #2c3e50;
+
+
+@mixin selection($color) {
+	&::selection {
+		background: $color;
+		color: white;
+	}
+	&::-moz-selection {
+		background: $color; 
+		color: white;
+	}
+} 
+
+@mixin default-text {
+	font-size: 1.6em;
+	line-height: 1.7em;
+}
+
+@mixin default-link {
+	color: $orange;
+	text-decoration: underline;
+	font-size: 1.6em;
+	line-height: 1.7em;
+}
+
+ span.code {
+	background: $odd;
+	padding: 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 1em;
+	@include border-radius(4px);
+	&::selection {
+		background: $orange; /* Safari */
+		color: white;
+	}
+	&::-moz-selection {
+		background: $orange; /* Firefox */
+		color: white;
+	}
+}
+
+ 
+
+/* MIXINS */
+@mixin placeholder($color){
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $color;
+		opacity: 1;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin master-transition {
+	@include transition(0.3s);
+}
+
+@mixin pricing-transition {
+	@include transition(0.5s);
+}
+/* MIXINS END */
+
+
+/* RESETS */
+* {
+	text-decoration: none;
+	outline: none;
+}
+
+.clearfix {
+	zoom:1;
+	&:before, &:after {
+		content: "\0020"; 
+		display: block; 
+		height: 0; 
+		overflow: hidden; 
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+body {
+	font-family: "Lato", Helvetica, sans-serif;
+	font-size: 62.5%;
+	background: white;
+}
+
+input, input::-moz-focus-inner {
+	border: none;
+}
+
+input {
+	-webkit-appearance: none;
+	@include border-radius(0);
+	border: none;
+}
+
+input:focus, textarea:focus, input:focus::-moz-focus-inner {
+	outline: none;
+	border: none;
+}
+.wrapper {
+	width: 1280px;
+	margin: 0 auto;
+}
+/* RESETS END */
+
+section#topnav {
+	float: left;
+	width: 100%;
+	height: 80px; 
+	background: white;
+	ul {
+		float: right;
+		margin-top: 22px;
+		li {
+			float: left;
+			margin-left: 40px;
+			a {
+				@include default-link;
+				font-size: 2em;
+			}
+		}
+	}
+}
+
+header {
+	float: left;
+	clear: left;
+	width: 100%;
+	min-height: 350px;
+	
+	z-index: 10;
+	text-align: center;
+	
+	$svg-gradient-shim-threshold: 1 !global;
+	 @include background-image( linear-gradient(to right, 
+ 		$dark_red 0%,
+ 		$dark_red 50%,
+ 		$purple 50%,
+ 		$purple 100%));
+
+	a.logo {
+		$image: "../images/logo.png";
+		background: url(../images/logo.png) no-repeat;
+		width: image-width($image);
+		height: image-height($image);
+		display: block;
+		text-align: center;
+		margin-left: auto;
+   		margin-right: auto;
+   		margin-top: -35px;
+	}
+
+	h1{
+		font-size: 6em;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		color: white;
+	}
+	p{
+		font-size: 4em;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		color: white;
+
+	}
+}
+section#content {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: white;
+}
+section#distros {
+	float: left;
+	width: 100%;
+	height: 150px;
+	background: $odd;
+	h2 {
+		float: left;
+		width: auto;
+		@extend h1;
+	}
+	img {
+		width: 64px;
+	}
+	ul {
+		float: left;
+		li {
+			float: left;
+			clear: none;
+			margin-left: 40px;
+		}
+	}
+}

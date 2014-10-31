@@ -1,0 +1,5 @@
+name: Edgium 
+highlighter: pygments
+permalink: pretty
+url: http://martinrusev.github.io/edgium
+exclude: ["vendor"]

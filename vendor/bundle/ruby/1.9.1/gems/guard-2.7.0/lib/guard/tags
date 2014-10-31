@@ -1,0 +1,367 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Base	notifiers/base.rb	/^    class Base$/;"	c	class:Guard.Notifier
+Base	plugin/base.rb	/^    module Base$/;"	m	class:Guard.Plugin
+CLI	cli.rb	/^  class CLI < Thor$/;"	c	class:Guard
+ClassMethods	plugin/base.rb	/^      module ClassMethods$/;"	m	class:Guard.Plugin.Base
+Colors	ui/colors.rb	/^    module Colors$/;"	m	class:Guard.UI
+Commander	commander.rb	/^  module Commander$/;"	m	class:Guard
+DeprecatedMethods	deprecated_methods.rb	/^  module DeprecatedMethods$/;"	m	class:Guard
+Deprecator	deprecator.rb	/^  class Deprecator$/;"	c	class:Guard
+Dsl	dsl.rb	/^  class Dsl$/;"	c	class:Guard
+DslDescriber	dsl_describer.rb	/^  class DslDescriber$/;"	c	class:Guard
+Emacs	notifiers/emacs.rb	/^    class Emacs < Base$/;"	c	class:Guard.Notifier
+Evaluator	guardfile/evaluator.rb	/^    class Evaluator$/;"	c	class:Guard.Guardfile
+FileNotifier	notifiers/file_notifier.rb	/^    class FileNotifier < Base$/;"	c	class:Guard.Notifier
+FileSource	guardfile/evaluator.rb	/^    class FileSource < Source$/;"	c	class:Guard.Guardfile
+GNTP	notifiers/gntp.rb	/^    class GNTP < Base$/;"	c	class:Guard.Notifier
+Generator	guardfile/generator.rb	/^    class Generator$/;"	c	class:Guard.Guardfile
+Group	group.rb	/^  class Group$/;"	c	class:Guard
+Growl	notifiers/growl.rb	/^    class Growl < Base$/;"	c	class:Guard.Notifier
+GrowlNotify	notifiers/growl_notify.rb	/^    class GrowlNotify < Base$/;"	c	class:Guard.Notifier
+Guard	cli.rb	/^module Guard$/;"	m
+Guard	commander.rb	/^module Guard$/;"	m
+Guard	commands/all.rb	/^module Guard$/;"	m
+Guard	commands/change.rb	/^module Guard$/;"	m
+Guard	commands/notification.rb	/^module Guard$/;"	m
+Guard	commands/pause.rb	/^module Guard$/;"	m
+Guard	commands/reload.rb	/^module Guard$/;"	m
+Guard	commands/scope.rb	/^module Guard$/;"	m
+Guard	commands/show.rb	/^module Guard$/;"	m
+Guard	deprecated_methods.rb	/^module Guard$/;"	m
+Guard	deprecator.rb	/^module Guard$/;"	m
+Guard	dsl.rb	/^module Guard$/;"	m
+Guard	dsl_describer.rb	/^module Guard$/;"	m
+Guard	group.rb	/^module Guard$/;"	m
+Guard	guard.rb	/^  class Guard$/;"	c	class:Guard
+Guard	guard.rb	/^module Guard$/;"	m
+Guard	guardfile.rb	/^module Guard$/;"	m
+Guard	guardfile/evaluator.rb	/^module Guard$/;"	m
+Guard	guardfile/generator.rb	/^module Guard$/;"	m
+Guard	interactor.rb	/^module Guard$/;"	m
+Guard	notifier.rb	/^module Guard$/;"	m
+Guard	notifiers/base.rb	/^module Guard$/;"	m
+Guard	notifiers/emacs.rb	/^module Guard$/;"	m
+Guard	notifiers/file_notifier.rb	/^module Guard$/;"	m
+Guard	notifiers/gntp.rb	/^module Guard$/;"	m
+Guard	notifiers/growl.rb	/^module Guard$/;"	m
+Guard	notifiers/growl_notify.rb	/^module Guard$/;"	m
+Guard	notifiers/libnotify.rb	/^module Guard$/;"	m
+Guard	notifiers/notifysend.rb	/^module Guard$/;"	m
+Guard	notifiers/rb_notifu.rb	/^module Guard$/;"	m
+Guard	notifiers/terminal_notifier.rb	/^module Guard$/;"	m
+Guard	notifiers/terminal_title.rb	/^module Guard$/;"	m
+Guard	notifiers/tmux.rb	/^module Guard$/;"	m
+Guard	plugin.rb	/^module Guard$/;"	m
+Guard	plugin/base.rb	/^module Guard$/;"	m
+Guard	plugin/hooker.rb	/^module Guard$/;"	m
+Guard	plugin_util.rb	/^module Guard$/;"	m
+Guard	rake_task.rb	/^module Guard$/;"	m
+Guard	runner.rb	/^module Guard$/;"	m
+Guard	setuper.rb	/^module Guard$/;"	m
+Guard	ui.rb	/^module Guard$/;"	m
+Guard	ui/colors.rb	/^module Guard$/;"	m
+Guard	version.rb	/^module Guard$/;"	m
+Guard	watcher.rb	/^module Guard$/;"	m
+Guardfile	guardfile.rb	/^  module Guardfile$/;"	m	class:Guard
+Guardfile	guardfile/evaluator.rb	/^  module Guardfile$/;"	m	class:Guard
+Guardfile	guardfile/generator.rb	/^  module Guardfile$/;"	m	class:Guard
+Hooker	plugin/hooker.rb	/^    module Hooker$/;"	m	class:Guard.Plugin
+InlineSource	guardfile/evaluator.rb	/^    class InlineSource < Source$/;"	c	class:Guard.Guardfile
+Interactor	commands/all.rb	/^  class Interactor$/;"	c	class:Guard
+Interactor	commands/change.rb	/^  class Interactor$/;"	c	class:Guard
+Interactor	commands/notification.rb	/^  class Interactor$/;"	c	class:Guard
+Interactor	commands/pause.rb	/^  class Interactor$/;"	c	class:Guard
+Interactor	commands/reload.rb	/^  class Interactor$/;"	c	class:Guard
+Interactor	commands/scope.rb	/^  class Interactor$/;"	c	class:Guard
+Interactor	commands/show.rb	/^  class Interactor$/;"	c	class:Guard
+Interactor	interactor.rb	/^  class Interactor$/;"	c	class:Guard
+Libnotify	notifiers/libnotify.rb	/^    class Libnotify < Base$/;"	c	class:Guard.Notifier
+Notifier	notifier.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/base.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/emacs.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/file_notifier.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/gntp.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/growl.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/growl_notify.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/libnotify.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/notifysend.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/rb_notifu.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/terminal_notifier.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/terminal_title.rb	/^  module Notifier$/;"	m	class:Guard
+Notifier	notifiers/tmux.rb	/^  module Notifier$/;"	m	class:Guard
+Notifu	notifiers/rb_notifu.rb	/^    class Notifu < Base$/;"	c	class:Guard.Notifier
+NotifySend	notifiers/notifysend.rb	/^    class NotifySend < Base$/;"	c	class:Guard.Notifier
+Plugin	plugin.rb	/^  class Plugin$/;"	c	class:Guard
+Plugin	plugin/base.rb	/^  class Plugin$/;"	c	class:Guard
+Plugin	plugin/hooker.rb	/^  class Plugin$/;"	c	class:Guard
+PluginUtil	plugin_util.rb	/^  class PluginUtil$/;"	c	class:Guard
+RakeTask	rake_task.rb	/^  class RakeTask < ::Rake::TaskLib$/;"	c	class:Guard
+Runner	runner.rb	/^  class Runner$/;"	c	class:Guard
+Setuper	setuper.rb	/^  module Setuper$/;"	m	class:Guard
+Source	guardfile/evaluator.rb	/^    class Source$/;"	c	class:Guard.Guardfile
+TerminalNotifier	notifiers/terminal_notifier.rb	/^    class TerminalNotifier < Base$/;"	c	class:Guard.Notifier
+TerminalTitle	notifiers/terminal_title.rb	/^    class TerminalTitle < Base$/;"	c	class:Guard.Notifier
+Tmux	notifiers/tmux.rb	/^    class Tmux < Base$/;"	c	class:Guard.Notifier
+UI	ui.rb	/^  module UI$/;"	m	class:Guard
+UI	ui/colors.rb	/^  module UI$/;"	m	class:Guard
+Watcher	watcher.rb	/^  class Watcher$/;"	c	class:Guard
+_add_hooks	interactor.rb	/^    def _add_hooks$/;"	f	class:Guard.Interactor
+_add_load_guard_rc_hook	interactor.rb	/^    def _add_load_guard_rc_hook$/;"	f	class:Guard.Interactor
+_add_load_project_guard_rc_hook	interactor.rb	/^    def _add_load_project_guard_rc_hook$/;"	f	class:Guard.Interactor
+_add_restore_visibility_hook	interactor.rb	/^    def _add_restore_visibility_hook$/;"	f	class:Guard.Interactor
+_after_reevaluate	guardfile/evaluator.rb	/^      def _after_reevaluate$/;"	f	class:Guard.Guardfile.Evaluator
+_auto_detect_notification	notifier.rb	/^    def _auto_detect_notification$/;"	f	class:Guard.Notifier
+_before_reevaluate	guardfile/evaluator.rb	/^      def _before_reevaluate$/;"	f	class:Guard.Guardfile.Evaluator
+_clearable?	runner.rb	/^    def _clearable?(guard, modified_paths, added_paths, removed_paths)$/;"	f	class:Guard.Runner
+_client	notifiers/gntp.rb	/^      def _client(opts = {})$/;"	f	class:Guard.Notifier.GNTP
+_client_cmd_flag	notifiers/tmux.rb	/^      def _client_cmd_flag(cmd)$/;"	f	class:Guard.Notifier
+_clients	notifiers/tmux.rb	/^      def _clients$/;"	f	class:Guard.Notifier
+_clients	notifiers/tmux.rb	/^      def self._clients$/;"	F	class:Guard.Notifier
+_clip_name	interactor.rb	/^    def _clip_name(target)$/;"	f
+_configure_prompt	interactor.rb	/^    def _configure_prompt$/;"	f
+_constant_name	plugin_util.rb	/^    def _constant_name$/;"	f	class:Guard.PluginUtil.plugin_names
+_create_command_aliases	interactor.rb	/^    def _create_command_aliases$/;"	f	class:Guard
+_create_group_commands	interactor.rb	/^    def _create_group_commands$/;"	f
+_create_guard_commands	interactor.rb	/^    def _create_guard_commands$/;"	f	class:Guard
+_create_run_all_command	interactor.rb	/^    def _create_run_all_command$/;"	f	class:Guard
+_current_groups_scope	runner.rb	/^    def _current_groups_scope(scope)$/;"	f	class:Guard.Runner
+_current_plugins_scope	runner.rb	/^    def _current_plugins_scope(scope)$/;"	f	class:Guard.Runner
+_debug_command_execution	setuper.rb	/^    def _debug_command_execution$/;"	f	class:Guard.Setuper
+_emacs_client_available	notifiers/emacs.rb	/^      def self._emacs_client_available?(opts)$/;"	F	class:Guard.Notifier.Emacs
+_evaluate_guardfile	dsl_describer.rb	/^    def _evaluate_guardfile$/;"	f	class:Guard.DslDescriber
+_filter	ui.rb	/^      def _filter(plugin)$/;"	f	class:Guard.UI
+_filtered_logger_message	ui.rb	/^      def _filtered_logger_message(message, method, color_name, options = {})$/;"	f	class:Guard.UI
+_find_non_empty_groups_scope	runner.rb	/^    def _find_non_empty_groups_scope(scope)$/;"	f	class:Guard.Runner
+_find_non_empty_plugins_scope	runner.rb	/^    def _find_non_empty_plugins_scope(scope)$/;"	f	class:Guard.Runner
+_find_non_empty_scope	runner.rb	/^    def _find_non_empty_scope(type, local_scope, *additional_possibilities)$/;"	f	class:Guard.Runner
+_first_non_blank_scope	ui.rb	/^      def _first_non_blank_scope(scope)$/;"	f	class:Guard.UI
+_get_notifier_module	notifier.rb	/^    def _get_notifier_module(name)$/;"	f	class:Guard.Notifier
+_image_path	notifiers/base.rb	/^      def _image_path(image)$/;"	f	class:Guard.Notifier.Base
+_join_scope_for_prompt	interactor.rb	/^    def _join_scope_for_prompt(scope_name)$/;"	f
+_libnotify_urgency	notifiers/libnotify.rb	/^      def _libnotify_urgency(type)$/;"	f	class:Guard.Notifier.Libnotify
+_listener_callback	setuper.rb	/^    def _listener_callback$/;"	f	class:Guard.Setuper
+_notification_type	notifiers/base.rb	/^      def _notification_type(image)$/;"	f	class:Guard.Notifier.Base
+_notifu_type	notifiers/rb_notifu.rb	/^      def _notifu_type(type)$/;"	f	class:Guard.Notifier.Notifu
+_notifysend_binary_available	notifiers/notifysend.rb	/^      def self._notifysend_binary_available?$/;"	F	class:Guard.Notifier.NotifySend
+_notifysend_urgency	notifiers/notifysend.rb	/^      def _notifysend_urgency(type)$/;"	f	class:Guard.Notifier.NotifySend
+_plugin_constant	plugin_util.rb	/^    def _plugin_constant$/;"	f	class:Guard.PluginUtil.plugin_names
+_prompt	interactor.rb	/^    def _prompt(ending_char)$/;"	f
+_quiet_option	notifiers/tmux.rb	/^      def _quiet_option$/;"	f	class:Guard.Notifier
+_read	guardfile/evaluator.rb	/^      def _read(rel_path)$/;"	f	class:Guard.Guardfile.FileSource
+_register	notifiers/growl.rb	/^      def self._register!(opts)$/;"	F	class:Guard.Notifier.Growl
+_register	notifiers/growl_notify.rb	/^      def self._register!(options)$/;"	F	class:Guard.Notifier.GrowlNotify
+_register	notifiers/notifysend.rb	/^      def self._register!(opts)$/;"	F	class:Guard.Notifier.NotifySend
+_register	notifiers/terminal_notifier.rb	/^      def self._register!(opts)$/;"	F	class:Guard.Notifier.TerminalNotifier
+_register	notifiers/tmux.rb	/^      def self._register!(opts)$/;"	F	class:Guard.Notifier.Tmux
+_register!	notifiers/gntp.rb	/^      def _register!(gntp_client)$/;"	f	class:Guard.Notifier.GNTP
+_register_callbacks	plugin/hooker.rb	/^      def _register_callbacks$/;"	f	class:Guard.Plugin
+_relative_from	setuper.rb	/^    def _relative_from(path, base)$/;"	f	class:Guard.Setuper
+_relative_paths	setuper.rb	/^    def _relative_paths(files)$/;"	f	class:Guard.Setuper
+_relevant_changes?	setuper.rb	/^    def _relevant_changes?(changes)$/;"	f	class:Guard.Setuper
+_replace_reset_command	interactor.rb	/^    def _replace_reset_command$/;"	f	class:Guard.Interactor
+_reset_options_store	notifiers/tmux.rb	/^      def self._reset_options_store$/;"	F	class:Guard.Notifier
+_restore_terminal_settings	interactor.rb	/^    def _restore_terminal_settings$/;"	f
+_run_client	notifiers/tmux.rb	/^      def _run_client(cmd, args)$/;"	f	class:Guard.Notifier
+_run_cmd	notifiers/emacs.rb	/^      def _run_cmd(*args)$/;"	f	class:Guard.Notifier.Emacs
+_run_first_task_found	runner.rb	/^    def _run_first_task_found(guard, tasks, task_param)$/;"	f	class:Guard.Runner
+_scope_for_prompt	interactor.rb	/^    def _scope_for_prompt$/;"	f
+_scoped_plugins	runner.rb	/^    def _scoped_plugins(scopes = {})$/;"	f	class:Guard.Runner
+_set_instance_variables_from_options	plugin/base.rb	/^      def _set_instance_variables_from_options(options)$/;"	f	class:Guard.Plugin.Base
+_setup_debug	setuper.rb	/^    def _setup_debug$/;"	f	class:Guard.Setuper
+_setup_listener	setuper.rb	/^    def _setup_listener$/;"	f	class:Guard.Setuper
+_setup_notifier	setuper.rb	/^    def _setup_notifier$/;"	f	class:Guard.Setuper
+_setup_signal_traps	setuper.rb	/^    def _setup_signal_traps$/;"	f	class:Guard.Setuper
+_store_terminal_settings	interactor.rb	/^    def _store_terminal_settings$/;"	f
+_stty_exists?	interactor.rb	/^    def _stty_exists?$/;"	f
+_supported_host	notifiers/base.rb	/^      def self._supported_host?$/;"	F	class:Guard.Notifier.Base
+_tmux_environment_available	notifiers/tmux.rb	/^      def self._tmux_environment_available?(opts)$/;"	F	class:Guard.Notifier.Tmux
+_tmux_version	notifiers/tmux.rb	/^      def _tmux_version$/;"	f	class:Guard.Notifier
+_to_arguments	notifiers/notifysend.rb	/^      def _to_arguments(command, supported, opts = {})$/;"	f	class:Guard.Notifier.NotifySend
+_verify_bundler_presence	cli.rb	/^    def _verify_bundler_presence$/;"	f	class:Guard.CLI.start
+_watchdirs	setuper.rb	/^    def _watchdirs$/;"	f	class:Guard.Setuper
+_write	notifiers/file_notifier.rb	/^      def _write(path, contents)$/;"	f	class:Guard.Notifier.FileNotifier
+action_with_scopes	ui.rb	/^      def action_with_scopes(action, scope)$/;"	f	class:Guard.UI
+add_callback	plugin/hooker.rb	/^      def self.add_callback(listener, guard_plugin, events)$/;"	F	class:Guard.Plugin.Hooker
+add_guard	deprecated_methods.rb	/^    def add_guard(*args)$/;"	f	class:Guard.DeprecatedMethods
+add_notifier	notifier.rb	/^    def add_notifier(name, opts = {})$/;"	f	class:Guard.Notifier
+add_to_guardfile	plugin_util.rb	/^    def add_to_guardfile$/;"	f	class:Guard.PluginUtil.plugin_names
+available	notifiers/base.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.Base
+available	notifiers/emacs.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.Emacs
+available	notifiers/file_notifier.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.FileNotifier
+available	notifiers/gntp.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.GNTP
+available	notifiers/growl.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.Growl
+available	notifiers/growl_notify.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.GrowlNotify
+available	notifiers/libnotify.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.Libnotify
+available	notifiers/notifysend.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.NotifySend
+available	notifiers/rb_notifu.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.Notifu
+available	notifiers/terminal_notifier.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.TerminalNotifier
+available	notifiers/tmux.rb	/^      def self.available?(opts = {})$/;"	F	class:Guard.Notifier.Tmux
+call_action	watcher.rb	/^    def call_action(matches)$/;"	f	class:Guard.Watcher
+callback	dsl.rb	/^    def callback(*args, &block)$/;"	f	class:Guard.Dsl
+callbacks	plugin/hooker.rb	/^      def self.callbacks$/;"	F	class:Guard.Plugin.Hooker
+calling_plugin_name	ui.rb	/^      def calling_plugin_name(depth = 2)$/;"	f	class:Guard.UI
+clear	ui.rb	/^      def clear(options = {})$/;"	f	class:Guard.UI
+clear_notifiers	notifier.rb	/^    def clear_notifiers$/;"	f	class:Guard.Notifier
+clear_options	setuper.rb	/^    def clear_options$/;"	f	class:Guard.Setuper
+clearable	ui.rb	/^      def clearable$/;"	f	class:Guard.UI
+color	ui.rb	/^      def color(text, *color_options)$/;"	f	class:Guard.UI
+color_enabled?	ui.rb	/^      def color_enabled?$/;"	f	class:Guard.UI
+content	guardfile/evaluator.rb	/^      def content$/;"	f	class:Guard.Guardfile.FileSource
+content	guardfile/evaluator.rb	/^      def content$/;"	f	class:Guard.Guardfile.InlineSource
+convert_scope	interactor.rb	/^    def self.convert_scope(entries)$/;"	F	class:Guard.Interactor
+create_guardfile	guardfile.rb	/^    def self.create_guardfile(options = {})$/;"	F	class:Guard.Guardfile
+create_guardfile	guardfile/generator.rb	/^      def create_guardfile$/;"	f	class:Guard.Guardfile.Generator
+debug	ui.rb	/^      def debug(message, options = {})$/;"	f	class:Guard.UI
+deprecation	ui.rb	/^      def deprecation(message, options = {})$/;"	f	class:Guard.UI
+display_message	notifiers/tmux.rb	/^      def display_message(type, title, message, opts = {})$/;"	f	class:Guard.Notifier.Tmux
+display_title	notifiers/tmux.rb	/^      def display_title(type, title, message, opts = {})$/;"	f	class:Guard.Notifier.Tmux
+emacs_color	notifiers/emacs.rb	/^      def emacs_color(type, options = {})$/;"	f	class:Guard.Notifier.Emacs
+enabled	interactor.rb	/^    def self.enabled$/;"	F	class:Guard.Interactor
+enabled	interactor.rb	/^    def self.enabled=(status)$/;"	F	class:Guard.Interactor
+enabled?	notifier.rb	/^    def enabled?$/;"	f	class:Guard.Notifier
+error	ui.rb	/^      def error(message, options = {})$/;"	f	class:Guard.UI
+evaluate	guardfile/evaluator.rb	/^      def evaluate$/;"	f	class:Guard.Guardfile.Evaluator
+evaluate_guardfile	dsl.rb	/^    def self.evaluate_guardfile(options = {})$/;"	F	class:Guard.Dsl
+gem_name	notifiers/base.rb	/^      def self.gem_name$/;"	F	class:Guard.Notifier.Base
+gem_name	notifiers/gntp.rb	/^      def self.gem_name$/;"	F	class:Guard.Notifier.GNTP
+gem_name	notifiers/rb_notifu.rb	/^      def self.gem_name$/;"	F	class:Guard.Notifier.Notifu
+gem_name	notifiers/terminal_notifier.rb	/^      def self.gem_name$/;"	F	class:Guard.Notifier.TerminalNotifier
+get_guard_class	deprecated_methods.rb	/^    def get_guard_class(name, fail_gracefully = false)$/;"	f	class:Guard.DeprecatedMethods
+group	dsl.rb	/^    def group(*args)$/;"	f	class:Guard.Dsl
+guard	dsl.rb	/^    def guard(name, options = {})$/;"	f	class:Guard.Dsl
+guard_gem_names	deprecated_methods.rb	/^    def guard_gem_names$/;"	f	class:Guard.DeprecatedMethods
+guards	deprecated_methods.rb	/^    def guards(filter = nil)$/;"	f	class:Guard.DeprecatedMethods
+hook	plugin/hooker.rb	/^      def hook(event, *args)$/;"	f	class:Guard.Plugin.Hooker
+ignore	dsl.rb	/^    def ignore(*regexps)$/;"	f	class:Guard
+ignore!	dsl.rb	/^    def ignore!(*regexps)$/;"	f	class:Guard
+images_path	notifiers/base.rb	/^      def images_path$/;"	f	class:Guard.Notifier.Base
+included	plugin/base.rb	/^      def self.included(base)$/;"	F	class:Guard.Plugin.Base
+info	ui.rb	/^      def info(message, options = {})$/;"	f	class:Guard.UI
+init	cli.rb	/^    def init(*plugin_names)$/;"	f	class:Guard.CLI.start
+initialize	dsl_describer.rb	/^    def initialize(options = {})$/;"	f	class:Guard.DslDescriber
+initialize	group.rb	/^    def initialize(name, options = {})$/;"	f	class:Guard.Group
+initialize	guard.rb	/^    def initialize(watchers = [], options = {})$/;"	f	class:Guard.Guard
+initialize	guardfile/evaluator.rb	/^      def initialize(content)$/;"	f	class:Guard.Guardfile.InlineSource
+initialize	guardfile/evaluator.rb	/^      def initialize(options = {})$/;"	f	class:Guard.Guardfile.Evaluator
+initialize	guardfile/evaluator.rb	/^      def initialize(path)$/;"	f	class:Guard.Guardfile.Source
+initialize	guardfile/evaluator.rb	/^      def initialize(path, options = {})$/;"	f	class:Guard.Guardfile.FileSource
+initialize	guardfile/generator.rb	/^      def initialize(options = {})$/;"	f	class:Guard.Guardfile.Generator
+initialize	interactor.rb	/^    def initialize$/;"	f	class:Guard.Interactor
+initialize	notifiers/base.rb	/^      def initialize(opts = {})$/;"	f	class:Guard.Notifier.Base
+initialize	plugin.rb	/^    def initialize(options = {})$/;"	f	class:Guard.Plugin
+initialize	plugin_util.rb	/^    def initialize(name)$/;"	f	class:Guard.PluginUtil.plugin_names
+initialize	rake_task.rb	/^    def initialize(name = :guard, options = '')$/;"	f	class:Guard.RakeTask
+initialize	watcher.rb	/^    def initialize(pattern, action = nil)$/;"	f	class:Guard.Watcher
+initialize_all_templates	guardfile.rb	/^    def self.initialize_all_templates$/;"	F	class:Guard.Guardfile
+initialize_all_templates	guardfile/generator.rb	/^      def initialize_all_templates$/;"	f	class:Guard.Guardfile.Generator
+initialize_plugin	plugin_util.rb	/^    def initialize_plugin(options)$/;"	f	class:Guard.PluginUtil.plugin_names
+initialize_template	guardfile.rb	/^    def self.initialize_template(plugin_name)$/;"	F	class:Guard.Guardfile
+initialize_template	guardfile/generator.rb	/^      def initialize_template(plugin_name)$/;"	f	class:Guard.Guardfile.Generator
+interactor	dsl.rb	/^    def interactor(options)$/;"	f	class:Guard.Dsl
+interactor	setuper.rb	/^    def interactor$/;"	f	class:Guard.Setuper
+list	cli.rb	/^    def list$/;"	f	class:Guard.CLI.start
+list	dsl_describer.rb	/^    def list$/;"	f	class:Guard.DslDescriber
+locate_guard	deprecated_methods.rb	/^    def locate_guard(name)$/;"	f	class:Guard.DeprecatedMethods
+logger	dsl.rb	/^    def logger(options)$/;"	f	class:Guard
+logger	ui.rb	/^      def logger$/;"	f	class:Guard.UI
+match	watcher.rb	/^    def match(file)$/;"	f	class:Guard.Watcher
+match_files	watcher.rb	/^    def self.match_files(guard, files)$/;"	F	class:Guard.Watcher
+match_files	watcher.rb	/^    def self.match_files?(plugins, files)$/;"	F	class:Guard.Watcher
+match_guardfile	watcher.rb	/^    def self.match_guardfile?(files)$/;"	F	class:Guard.Watcher
+name	notifiers/base.rb	/^      def name$/;"	f	class:Guard.Notifier.Base
+name	notifiers/base.rb	/^      def self.name$/;"	F	class:Guard.Notifier.Base
+name	plugin/base.rb	/^      def name$/;"	f	class:Guard.Plugin.Base
+non_namespaced_classname	plugin/base.rb	/^        def non_namespaced_classname$/;"	f	class:Guard.Plugin.Base.ClassMethods
+non_namespaced_name	plugin/base.rb	/^        def non_namespaced_name$/;"	f	class:Guard.Plugin.Base.ClassMethods
+normalize_standard_options!	notifiers/base.rb	/^      def normalize_standard_options!(opts)$/;"	f	class:Guard.Notifier.Base
+notification	dsl.rb	/^    def notification(notifier, options = {})$/;"	f	class:Guard.Dsl
+notifiers	cli.rb	/^    def notifiers$/;"	f	class:Guard.CLI.start
+notifiers	dsl_describer.rb	/^    def notifiers$/;"	f	class:Guard.DslDescriber
+notifiers	notifier.rb	/^    def notifiers$/;"	f	class:Guard.Notifier
+notifiers=	notifier.rb	/^    def notifiers=(notifiers)$/;"	f	class:Guard.Notifier
+notify	notifier.rb	/^    def notify(message, opts = {})$/;"	f	class:Guard.Notifier
+notify	notifiers/base.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.Base
+notify	notifiers/emacs.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.Emacs
+notify	notifiers/file_notifier.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.FileNotifier
+notify	notifiers/gntp.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.GNTP
+notify	notifiers/growl.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.Growl
+notify	notifiers/growl_notify.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.GrowlNotify
+notify	notifiers/libnotify.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.Libnotify
+notify	notifiers/notifysend.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.NotifySend
+notify	notifiers/rb_notifu.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.Notifu
+notify	notifiers/terminal_notifier.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.TerminalNotifier
+notify	notifiers/terminal_title.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.TerminalTitle
+notify	notifiers/tmux.rb	/^      def notify(message, opts = {})$/;"	f	class:Guard.Notifier.Tmux
+notify	plugin/hooker.rb	/^      def self.notify(guard_plugin, event, *args)$/;"	F	class:Guard.Plugin.Hooker
+options	interactor.rb	/^    def self.options$/;"	F	class:Guard.Interactor
+options	interactor.rb	/^    def self.options=(options)$/;"	F	class:Guard.Interactor
+options	ui.rb	/^      def options$/;"	f	class:Guard.UI
+options_store	notifiers/tmux.rb	/^      def self.options_store$/;"	F	class:Guard.Notifier
+pause	commander.rb	/^    def pause$/;"	f	class:Guard.Commander
+plugin_class	plugin_util.rb	/^    def plugin_class(options = {})$/;"	f	class:Guard.PluginUtil.plugin_names
+plugin_location	plugin_util.rb	/^    def plugin_location$/;"	f	class:Guard.PluginUtil.plugin_names
+plugin_names	plugin_util.rb	/^    def self.plugin_names$/;"	F	class:Guard.PluginUtil
+process	commands/all.rb	/^        def process(*entries)$/;"	f	class:Guard.Interactor
+process	commands/change.rb	/^        def process(*entries)$/;"	f	class:Guard.Interactor
+process	commands/notification.rb	/^        def process$/;"	f	class:Guard.Interactor
+process	commands/pause.rb	/^        def process$/;"	f	class:Guard.Interactor
+process	commands/reload.rb	/^        def process(*entries)$/;"	f	class:Guard.Interactor
+process	commands/scope.rb	/^        def process(*entries)$/;"	f	class:Guard.Interactor
+process	commands/show.rb	/^        def process$/;"	f	class:Guard.Interactor
+process	interactor.rb	/^          def process$/;"	f	class:Guard._create_guard_commands
+process	interactor.rb	/^          def process$/;"	f	class:_create_group_commands
+reevaluate	guardfile/evaluator.rb	/^      def reevaluate$/;"	f	class:Guard.Guardfile.Evaluator
+reload	commander.rb	/^    def reload(scopes = {})$/;"	f	class:Guard.Commander
+require_gem_safely	notifiers/base.rb	/^      def self.require_gem_safely(opts = {})$/;"	F	class:Guard.Notifier.Base
+reset_callbacks	plugin/hooker.rb	/^      def self.reset_callbacks!$/;"	F	class:Guard.Plugin.Hooker
+reset_groups	setuper.rb	/^    def reset_groups$/;"	f	class:Guard.Setuper
+reset_line	ui.rb	/^      def reset_line$/;"	f	class:Guard.UI
+reset_plugins	setuper.rb	/^    def reset_plugins$/;"	f	class:Guard.Setuper
+reset_scope	setuper.rb	/^    def reset_scope$/;"	f	class:Guard.Setuper
+run	runner.rb	/^    def run(task, scope = {})$/;"	f	class:Guard.Runner
+run_all	commander.rb	/^    def run_all(scopes = {})$/;"	f	class:Guard.Commander
+run_on_changes	runner.rb	/^    def run_on_changes(modified, added, removed)$/;"	f	class:Guard.Runner
+run_supervised_task	runner.rb	/^    def run_supervised_task(guard, task, *args)$/;"	f	class:Guard.Runner
+scope	dsl.rb	/^    def scope(scope = {})$/;"	f	class:Guard
+setup	setuper.rb	/^    def setup(opts = {})$/;"	f	class:Guard.Setuper
+setup_scope	setuper.rb	/^    def setup_scope(new_scope)$/;"	f	class:Guard.Setuper
+show	cli.rb	/^    def show$/;"	f	class:Guard.CLI.start
+show	dsl_describer.rb	/^    def show$/;"	f	class:Guard.DslDescriber
+start	cli.rb	/^    def start$/;"	f	class:Guard.CLI
+start	commander.rb	/^    def start(options = {})$/;"	f	class:Guard.Commander
+start	interactor.rb	/^    def start$/;"	f	class:Guard.Interactor
+stop	commander.rb	/^    def stop$/;"	f	class:Guard.Commander
+stop	interactor.rb	/^    def stop$/;"	f	class:Guard.Interactor
+stopping_symbol_for	runner.rb	/^    def self.stopping_symbol_for(guard)$/;"	F	class:Guard.Runner
+supported_hosts	notifiers/base.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.Base
+supported_hosts	notifiers/gntp.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.GNTP
+supported_hosts	notifiers/growl.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.Growl
+supported_hosts	notifiers/growl_notify.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.GrowlNotify
+supported_hosts	notifiers/libnotify.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.Libnotify
+supported_hosts	notifiers/notifysend.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.NotifySend
+supported_hosts	notifiers/rb_notifu.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.Notifu
+supported_hosts	notifiers/terminal_notifier.rb	/^      def self.supported_hosts$/;"	F	class:Guard.Notifier.TerminalNotifier
+system	notifiers/tmux.rb	/^      def system(args)$/;"	f	class:Guard.Notifier
+template	plugin/base.rb	/^        def template(plugin_location)$/;"	f	class:Guard.Plugin.Base.ClassMethods
+title	group.rb	/^    def title$/;"	f	class:Guard.Group
+title	notifiers/base.rb	/^      def self.title$/;"	F	class:Guard.Notifier.Base
+title	notifiers/base.rb	/^      def title$/;"	f	class:Guard.Notifier.Base
+title	plugin/base.rb	/^      def title$/;"	f	class:Guard.Plugin.Base
+tmux_color	notifiers/tmux.rb	/^      def tmux_color(type, opts = {})$/;"	f	class:Guard.Notifier.Tmux
+to_s	group.rb	/^    def to_s$/;"	f	class:Guard.Group
+to_s	plugin/base.rb	/^      def to_s$/;"	f	class:Guard.Plugin.Base
+toggle	notifier.rb	/^    def toggle$/;"	f	class:Guard.Notifier
+turn_off	notifier.rb	/^    def turn_off$/;"	f	class:Guard.Notifier
+turn_off	notifiers/terminal_title.rb	/^      def self.turn_off$/;"	F	class:Guard.Notifier.TerminalTitle
+turn_off	notifiers/tmux.rb	/^      def self.turn_off$/;"	F	class:Guard.Notifier
+turn_on	notifier.rb	/^    def turn_on(opts = {})$/;"	f	class:Guard.Notifier
+turn_on	notifiers/tmux.rb	/^      def self.turn_on$/;"	F	class:Guard.Notifier.Tmux
+version	cli.rb	/^    def version$/;"	f	class:Guard.CLI.start
+warning	ui.rb	/^      def warning(message, options = {})$/;"	f	class:Guard.UI
+watch	dsl.rb	/^    def watch(pattern, &action)$/;"	f	class:Guard.Dsl
+within_preserved_state	commander.rb	/^    def within_preserved_state$/;"	f	class:Guard.Commander

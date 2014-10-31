@@ -1,0 +1,56 @@
+## Automatic installation
+
+The prefered method for installling AmonOne is by using the provided one line installer. 
+
+<pre><code>curl https://raw.github.com/martinrusev/amonone/master/install.sh -k | bash</code></pre>
+
+
+## Manual installation
+<ol>
+	<li>
+		Clone the latest stable version of AmonOne  <code>git clone git@github.com:martinrusev/amonone.git</code>
+	</li>
+	<li>
+		Install the prequisite packages - <code>gcc, sysstat, python-dev</code>, on RPM based distributions, the package is called <code>python-devel</code>
+	</li>
+	<li>
+		Install the package with <code>sudo python setup.py install</code>
+	</li>
+	<li>
+		Copy the configuration file from <a href="https://raw.github.com/martinrusev/amonone/master/amonone.conf">https://raw.github.com/martinrusev/amonone/master/amonone.conf</a>
+	to <code>/etc/amonlite.conf</code>
+	</li>
+	<li>
+		Copy the system collector daemon from <a href="https://raw.github.com/martinrusev/amonone/master/contrib/amonone-collector">https://raw.github.com/martinrusev/amonone/master/contrib/amonone-collector</a> 
+	to <code>/etc/init.d/amonone-collector</code> 
+	</li>
+	<li>
+		Copy the web application daemon from <a href="https://raw.github.com/martinrusev/amonone/master/contrib/amonone">https://raw.github.com/martinrusev/amonone/master/contrib/amonone</a> 
+	to <code>/etc/init.d/amonone</code> 
+	</li>
+	<li>
+		Make the daemons executable with <code>sudo chmod +x /etc/init.d/amonone /etc/init.d/amonone </code>
+	</li>
+	<li>
+		Create a directory for AmonOne specific log files <code>sudo mkdir /var/log/amonone</code>
+	</li>
+	<li>
+		AmonOne stores all the information in a Mongo database. If you already have MongoDB installed, skip this step.
+You can install Mongo, following this guide: <a href="http://docs.mongodb.org/manual/installation/">http://docs.mongodb.org/manual/installation</a>
+	</li>
+	<li>
+	 Finally start the AmonOne collector daemon with <code>sudo /etc/init.d/amonone-collector start</code>	
+	</li>
+	<li>
+		Add <strong>amonone-collector</strong> to the list of processes that boot with the operating system:
+	</li>
+</ol>
+
+
+ {% highlight bash %}
+# For Debian based distributions	
+sudo update-rc.d amonone-collector defaults
+
+# For RPM based distributions
+sudo chkconfig --add amonone-collector
+{% endhighlight %}

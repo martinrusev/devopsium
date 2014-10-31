@@ -1,0 +1,230 @@
+package configuration for libffi is not found
+have_header: checking for ffi.h... -------------------- no
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+conftest.c:3:17: fatal error: ffi.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+find_header: checking for ffi.h in /usr/local/include,/usr/include/ffi... -------------------- no
+
+"gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+conftest.c:3:17: fatal error: ffi.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC -I/usr/local/include conftest.c -o conftest.i"
+conftest.c:3:17: fatal error: ffi.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+"gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC -I/usr/include/ffi conftest.c -o conftest.i"
+conftest.c:3:17: fatal error: ffi.h: No such file or directory
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_blocking_region()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:28: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_with_gvl()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:53: error: ‘rb_thread_call_with_gvl’ undeclared (first use in this function)
+conftest.c:4:53: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:4:28: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl; return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:1: warning: implicit declaration of function ‘rb_thread_call_with_gvl’ [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { rb_thread_call_with_gvl(); return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_without_gvl()... -------------------- yes
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:53: error: ‘rb_thread_call_without_gvl’ undeclared (first use in this function)
+conftest.c:4:53: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:4:28: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:1: warning: implicit declaration of function ‘rb_thread_call_without_gvl’ [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { rb_thread_call_without_gvl(); return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_prep_cif_var()... -------------------- no
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:53: error: ‘ffi_prep_cif_var’ undeclared (first use in this function)
+conftest.c:4:53: note: each undeclared identifier is reported only once for each function it appears in
+conftest.c:4:28: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -D_FORTIFY_SOURCE=2  -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib -L. -Wl,-Bsymbolic-functions -Wl,-z,relro -rdynamic -Wl,-export-dynamic     -lruby-1.9.1  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:4:1: warning: implicit declaration of function ‘ffi_prep_cif_var’ [-Wimplicit-function-declaration]
+/tmp/user/1000/ccJmxduE.o: In function `t':
+/home/martin/edgium/vendor/bundle/ruby/1.9.1/gems/ffi-1.9.6/ext/ffi_c/conftest.c:4: undefined reference to `ffi_prep_cif_var'
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: int t() { ffi_prep_cif_var(); return 0; }
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_RB_THREAD_BLOCKING_REGION 1
+4: #define HAVE_RB_THREAD_CALL_WITH_GVL 1
+5: #define HAVE_RB_THREAD_CALL_WITHOUT_GVL 1
+6: #define USE_INTERNAL_LIBFFI 1
+7: #define RUBY_1_9 1
+8: #endif
+/* end */
+

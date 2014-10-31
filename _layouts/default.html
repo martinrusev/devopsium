@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<title>Edgium</title>
+	
+		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{{ site.url }}/stylesheets/styles.css">
+
+		<link rel="icon" type="image/png" href="{{ site.url }}images/favicon.png" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body> 
+		<section id="topnav">
+			<div class="wrapper">
+				<ul>
+					<li><a href="">Intro</a></li>
+					<li><a href="">Install</a></li>
+					<li><a href="">Docs</a></li>
+				</ul>
+			</div>
+		</section>
+		<header>
+			<div class="wrapper">
+				<a class='logo' href="/"></a>
+				<h1>Introducing Edgium</h1>
+				<p>
+					The easiest way to install the latest packages on your Linux Box.
+				</p>
+			</div>
+		
+		</header>
+		<section id="distros">
+			<div class="wrapper">
+			<h2>Supported Distros</h2>
+			<ul>
+				<li><img src="{{ site.url }}/images/aws.png" alt=""></li>
+				<li><img src="{{ site.url }}/images/centos.png" alt=""></li>
+				<li><img src="{{ site.url }}/images/ubuntu.png" alt=""></li>
+				<li><img src="{{ site.url }}/images/debian.png" alt=""></li>
+
+			</ul>
+			</div>
+		</section>
+		<section id="content">
+			<div class="wrapper">
+				{{ content| markdownify }}
+			</div>
+		</section>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42268071-1', 'martinrusev.github.io');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
