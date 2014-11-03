@@ -315,14 +315,21 @@ div.console__content span.command {
 div.console__content span.output {
   color: #abafb4; }
 
+.ribbon-wrapper {
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 300px;
+  height: 200px;
+  top: 0;
+  right: 0; }
+
 .ribbon {
+  position: absolute;
   display: block;
   background: #2ec6c8;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute;
-  right: -55px;
   top: 55px;
+  right: -55px;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -331,6 +338,7 @@ div.console__content span.output {
 .ribbon a {
   display: inline-block;
   margin: 1px 0;
+  width: 100%;
   padding: 10px 50px;
   text-align: center;
   text-decoration: none;

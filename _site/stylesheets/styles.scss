@@ -399,19 +399,27 @@ div.console {
 
 }
 
+.ribbon-wrapper {
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 300px;
+	height: 200px;
+	top: 0;
+	right: 0;
+}
 .ribbon {
+	position: absolute;	
 	display: block;
-	 background: $neon_green;
-	 overflow: hidden;
-	 white-space: nowrap;
-	 position: absolute;
-	 right: -55px;
-	 top: 55px;
+	background: $neon_green;
+	top: 55px;
+	right: -55px;
 	 @include transform(rotate(45deg));
 }
 .ribbon a {
   display: inline-block;
   margin: 1px 0;
+  width: 100%;
   padding: 10px 50px;
   text-align: center;
   text-decoration: none;
