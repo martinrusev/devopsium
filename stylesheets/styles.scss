@@ -11,6 +11,11 @@ $dark_red: #b9285a;
 $red: #d1216f;
 $purple: #9b2c53;
 
+$silver: #dfe4e9;
+$neon_green: #2ec6c8;
+$neon_dark: #00a1a4;
+$dark_silver: #abafb4;
+
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
 	@include box-sizing(border-box); 
@@ -20,7 +25,7 @@ $purple: #9b2c53;
 
 $body_width: 1280px;
 /* VARIABLES END */
-$text_color: #2c3e50;
+$text_color: #313539;
 
 
 @mixin selection($color) {
@@ -34,16 +39,28 @@ $text_color: #2c3e50;
 	}
 } 
 
+@mixin default-border-radius {
+	@include border-radius(6px);
+}
+
 @mixin default-text {
-	font-size: 1.6em;
+	font-size: 1.7em;
 	line-height: 1.7em;
+	color: $text_color;
 }
 
 @mixin default-link {
-	color: $orange;
+	color: $neon_green;
 	text-decoration: underline;
 	font-size: 1.6em;
 	line-height: 1.7em;
+	&:hover {
+		background: $neon_green;
+		color: white;
+		text-decoration: none;
+		@include default-border-radius;
+
+	}
 }
 
  span.code {
@@ -137,7 +154,46 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	margin: 0 auto;
 }
 /* RESETS END */
+hr {
+	float: left;
+	width: 100%;
+	height: 5px; 
+	border: 0;
+	background: $odd;
+	color: $odd;
+}
+section.content--block {
+	float: left;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	h2{
+		font-size: 3em;
+		font-weight: bold;
+		color: $text_color;
+		margin-bottom: 30px;
+		&:first-letter {
+			background: $neon_green;
+			color: white;
+			padding: 4px;
+			margin-right: 5px;
+			font-size: 1.4em;
+		}
+	}
+	p{
+		@include default-text;
 
+	}
+	&#quickstart {
+		background: $neon_green;
+		padding-top: 0px;
+		div.console {
+			float: right;
+			margin-top: -45px;
+		}
+
+	}
+}
 section#topnav {
 	float: left;
 	width: 100%;
@@ -161,17 +217,11 @@ header {
 	float: left;
 	clear: left;
 	width: 100%;
-	min-height: 350px;
+	//min-height: 350px;
 	
 	z-index: 10;
 	text-align: center;
-	
-	$svg-gradient-shim-threshold: 1 !global;
-	 @include background-image( linear-gradient(to right, 
- 		$dark_red 0%,
- 		$dark_red 50%,
- 		$purple 50%,
- 		$purple 100%));
+	background: $silver;
 
 	a.logo {
 		$image: "../images/logo.png";
@@ -181,22 +231,24 @@ header {
 		display: block;
 		text-align: center;
 		margin-left: auto;
-   		margin-right: auto;
-   		margin-top: -35px;
+   		margin-right: auto; 
+   		margin-top: -37px;
 	}
 
 	h1{
 		font-size: 6em;
-		padding-top: 20px;
+		padding-top: 30px;
 		padding-bottom: 20px;
-
-		color: white;
+		font-weight: bold;
+		color: $text_color;
+		margin-bottom: 30px;
 	}
 	p{
 		font-size: 4em;
-		padding-top: 30px;
+		padding-top: 20px;
 		padding-bottom: 20px;
 		color: white;
+		background: $dark_silver;
 
 	}
 }
@@ -227,4 +279,63 @@ section#distros {
 			margin-left: 40px;
 		}
 	}
+}
+
+$green: #8abd56;
+$yellow: #fdcb34;
+$red: #e25352;
+div.console {
+	float: left;
+	//border: 2px solid $odd;
+	@include border-radius(6px);
+	&__heading {
+		min-width: 500px;
+		background: $odd;
+		width: 100%;
+		margin: 0px;
+		float: left;
+		height: 35px;
+		@include border-top-radius(6px);
+		span.title {
+			@include default-text;
+			text-align: center;
+			width: 335px;
+			font-weight: bold;
+			padding-top: 3px;
+			display: inline-block;
+		}
+		ul {
+			float: left;
+			margin: 12px;
+			li {
+				float: left;
+				margin-right: 5px;
+				span {
+					background: $orange;
+					width: 12px;
+					display: block;
+					height: 12px; 
+					@include border-radius(50%);
+					&.green {
+						background: $green;
+					}
+					&.yellow {
+						background: $yellow;
+					}
+					&.red {
+						background: $red;
+					}
+				}
+			}
+		}
+	} // heading end 
+	&__content {
+		background: $text_color;
+		min-height: 300px;
+		float: left;
+		width: 100%;
+		@include border-bottom-radius(6px);
+	}
+	
+
 }
