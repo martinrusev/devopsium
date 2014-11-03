@@ -399,31 +399,14 @@ div.console {
 
 }
 
-.ribbon-wrapper {
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 300px;
-	height: 200px;
-	top: 0;
-	right: 0;
-}
-.ribbon {
-	position: absolute;	
-	display: block;
-	background: $neon_green;
-	top: 55px;
-	right: -55px;
-	 @include transform(rotate(45deg));
-}
-.ribbon a {
-  display: inline-block;
-  margin: 1px 0;
-  width: 100%;
-  padding: 10px 50px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 2em;
-  color: white;
-  position: relative;
-}
+.fork-me {
+background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnElEQVR4XqVSgQmEMAyszw/gCI7wK7iBblBHcISfxG6gG/gjuIGO0A3ygaYQCCG2HhweF+6aShsAcDcBJBpuvlwFagqGJwUf5EL6kgV2eEe2yIgc9QI73CMPs8AOywI7nHDSzCxYxcnJ6+hrFnQkJrb2nGclP3Fj+vf0IUV1AgCZHiS86lOObxD4qqSD5mtXmAq1e2fB3vqXact3f/JmXumJlVq1AAAAAElFTkSuQmCC") no-repeat scroll 50% center $neon_green;
+height: 40px;
+overflow: hidden;
+position: fixed;
+right: 0;
+text-indent: 100%;
+top: 0;
+white-space: nowrap;
+width: 40px;
+ }
