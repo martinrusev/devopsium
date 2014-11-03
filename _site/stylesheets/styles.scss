@@ -218,15 +218,18 @@ section.content--block {
 
 		 img {
 			width: 64px;
+			&:hover {
+				cursor: pointer;
+			}
 		}
 		ul {
 			float: left;
-
+			margin-top: 40px;
 			width: 100%;
 			li {
 				float: left;
 				clear: none;
-				margin-left: 60px;
+				margin-left: 80px;
 			}
 		}
 	}
@@ -394,4 +397,25 @@ div.console {
 	}
 	
 
+}
+
+.ribbon {
+	display: block;
+	 background: $neon_green;
+	 overflow: hidden;
+	 white-space: nowrap;
+	 position: absolute;
+	 right: -55px;
+	 top: 55px;
+	 @include transform(rotate(45deg));
+}
+.ribbon a {
+  display: inline-block;
+  margin: 1px 0;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2em;
+  color: white;
+  position: relative;
 }

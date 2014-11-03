@@ -6,8 +6,9 @@ $(function ()
 		content: {
         		attr: 'data-tooltip' // Tell qTip2 to look inside this attr for its content
     	},
-		style: { classes: 'qtip-bootstrap' , "width": 400 },
+		style: { classes: 'qtip-bootstrap'},
 		 position: {
+		 	my: 'bottom center',
 			at: 'top center'
 		}
 	}
