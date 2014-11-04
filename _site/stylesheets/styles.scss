@@ -44,6 +44,11 @@ $text_color: #313539;
 	}
 } 
 
+@mixin grayscale() {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+	filter: gray; /* IE6-9 */
+	-webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+} 
 @mixin default-border-radius {
 	@include border-radius(6px);
 }
@@ -64,7 +69,6 @@ $text_color: #313539;
 		color: white;
 		text-decoration: none;
 		@include default-border-radius;
-
 	}
 }
 
@@ -159,14 +163,6 @@ input:focus, textarea:focus, input:focus::-moz-focus-inner {
 	margin: 0 auto;
 }
 /* RESETS END */
-hr {
-	float: left;
-	width: 100%;
-	height: 5px; 
-	border: 0;
-	background: $odd;
-	color: $odd;
-}
 section.content--block {
 	float: left;
 	width: 100%;
@@ -183,8 +179,8 @@ section.content--block {
 		&:first-letter {
 			background: $neon_green;
 			color: white;
-							padding: 4px;
-							margin-right: 5px;
+			padding: 4px;
+			margin-right: 5px;
 			font-size: 1.4em;
 		}
 	}
@@ -199,6 +195,7 @@ section.content--block {
 		width: $body_width/2;
 		float: left;
 	}
+	
 	
 	h3 {
 		font-size: 4em;
@@ -220,17 +217,36 @@ section.content--block {
 			float: left;
 			
 			width: 100%;
-			li {
+			ul.distros {
+				float: right;
+				margin-right: 50px;
+				li {
+					float: left;
+					padding-top: 15px;
+					margin-left: 20px;
+					img {
+						height: 32px;
+						&.grey {
+							@include grayscale;
+						}
+						
+					}
+				}
+				}
+			>li {
 				float: left;
-				width: calc(50% - 20px);
-				margin: 10px;
+				width: 100%;
+				margin-bottom: 10px;
 				padding: 20px;
 				background: $odd;
 				@include default-border-radius;
+
 				border-bottom: 2px solid $odd;
+
 				img {
 					float: left;
 				}
+
 				span {
 					padding: 5px;
 					display: block;
@@ -240,24 +256,28 @@ section.content--block {
 					font-size: 3em;
 					line-height: 1.6em;
 					padding-left: 20px;
+
 				}
 				
 				span.install {
+					width: 300px;
 					@include default-text;
 					@include default-border-radius;
 					@include border-bottom-left-radius(0);
 					@include border-top-right-radius(0);
-					display: none;
-					padding: 10px;
+					font-size: 2em;
+					padding: 15px;
 					padding-left: 15px;
 					padding-right: 15px;
 					float: right;
-					background: $text_color;
-					color: $yellow; 
+					background: white;
+					color: $dark_silver; 
 				}
 				&:hover {
 					span.install {
 						display: block;
+						background: $text_color;
+						color: $yellow; 
 					}
 				}
 				
@@ -327,6 +347,7 @@ section#topnav {
 			a {
 				@include default-link;
 				font-size: 2em;
+				padding: 10px;
 			}
 		}
 	}
@@ -383,7 +404,6 @@ div.console {
 	width: $console_width;
 	@include border-radius(6px);
 	&__heading {
-	
 		background: $silver;
 		width: 100%;
 		margin: 0px;
@@ -458,13 +478,45 @@ div.console {
 }
 
 .fork-me {
-background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnElEQVR4XqVSgQmEMAyszw/gCI7wK7iBblBHcISfxG6gG/gjuIGO0A3ygaYQCCG2HhweF+6aShsAcDcBJBpuvlwFagqGJwUf5EL6kgV2eEe2yIgc9QI73CMPs8AOywI7nHDSzCxYxcnJ6+hrFnQkJrb2nGclP3Fj+vf0IUV1AgCZHiS86lOObxD4qqSD5mtXmAq1e2fB3vqXact3f/JmXumJlVq1AAAAAElFTkSuQmCC") no-repeat scroll 50% center $neon_green;
-height: 40px;
-overflow: hidden;
-position: fixed;
-right: 0;
-text-indent: 100%;
-top: 0;
-white-space: nowrap;
-width: 40px;
+	background: $neon_green;
+	color: white;
+	text-align: center;
+	height: 40px;
+	overflow: hidden;
+	position: fixed;
+	font-size: 2em;
+	vertical-align: middle;
+	padding-top: 10px;
+	right: 0;
+	// text-indent: 100%;
+	top: 0;
+	white-space: nowrap;
+	width: 40px;
  }
+footer {
+	background: $neon_green;
+	float: left;
+	clear: left;
+	width: 100%;
+	padding: 20px;
+	p {
+		text-align: center;
+		@include default-text;
+		color: white;
+	}
+
+	a.amon {
+		$image: "../images/amon.png";
+		background: url(../images/amon.png) no-repeat;
+		width: image-width($image);
+		height: image-height($image);
+		display: block;
+		text-align: center;
+		margin-left: auto;
+   		margin-right: auto; 
+   		margin-top: 20px;
+
+   		text-indent: 100%;
+   		overflow: hidden;
+	}
+}

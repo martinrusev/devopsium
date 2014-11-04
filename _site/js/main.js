@@ -20,20 +20,20 @@ $(function ()
 	
 	$(".with-tooltip").qtip(qtip_options);
 
-	$.get("https://api.github.com/repos/martinrusev/edgium/contents/packages", function(data) {
-		var packages_list = $('.packages-list');
+	// $.get("https://api.github.com/repos/martinrusev/edgium/contents/packages", function(data) {
+	// 	var packages_list = $('.packages-list');
 
-		_.each(data, function(element){
+	// 	_.each(data, function(element){
 
-			var template = _.template("<li> {{ name }}</li>");
-			var compiled = template({name: element.name});	
+	// 		var template = _.template("<li> {{ name }}</li>");
+	// 		var compiled = template({name: element.name});	
 			
-			//packages_list.append(compiled)
-		});	
+	// 		//packages_list.append(compiled)
+	// 	});	
 
 
     	
-	});
+	// });
 
 
 });

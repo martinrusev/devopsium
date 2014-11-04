@@ -4,8 +4,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<title>Edgium</title>
-	
-		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css">
 		<link rel="stylesheet" href="http://localhost:4000/stylesheets/styles.css">
 		
@@ -17,9 +18,7 @@
 		<![endif]-->
 	</head>
 	<body> 
-		<a href="https://github.com/martinrusev/edgium" class="fork-me">Fork me on Github</a>
-		
-		
+		<a href="https://github.com/martinrusev/edgium" class="fork-me fa fa-github"></a>
 		<section id="topnav">
 			<div class="wrapper">
 				<ul>
@@ -83,7 +82,7 @@
 						<p class="line">
 							<span class="path">~</span> 
 							<span class="prompt">$</span>
-							<span class="command">curl install.amon.cx | bash</span>
+							<span class="command">curl https://raw.githubusercontent.com/martinrusev/edgium/master/install.sh | bash</span>
 						</p>
 						<p class="line">
 							<span class="path">~</span> 
@@ -101,11 +100,11 @@
 						<p class="line">
 							<span class="path">~</span> 
 							<span class="prompt">$</span>
-							<span class="command">apt-get install nginx</span>
+							<span class="command">apt-get/yum install nginx</span>
 						</p>
 
 						<p class="line">
-							<span class="output"># => The next time your run apt-get you will get the latest version</span>
+							<span class="output"># => The next time you run apt-get you will get the latest version</span>
 						</p>
 
 					</div>
@@ -147,7 +146,23 @@
 					<li>
 						<img src="http://localhost:4000/images/mongodb.png" alt="">
 						<span class='title'>MongoDB</span>   
+
 						<span class="install">edgium install mongodb</span>
+						<ul class='distros'>
+							<li>
+								<img class='with-tooltip' src="http://localhost:4000/images/aws.png" alt="" data-tooltip="Amazon Linux">
+							</li>
+							<li>
+								<img class='with-tooltip' src="http://localhost:4000/images/centos.png" alt="" data-tooltip="CentOS">
+							</li>
+							<li>
+								<img class='with-tooltip' src="http://localhost:4000/images/ubuntu.png" alt="" data-tooltip="Ubuntu">
+							</li>
+							<li> 
+								<img class='with-tooltip' src="http://localhost:4000/images/debian.png" alt="" data-tooltip="Debian">
+							</li>
+						</ul>
+						
 					</li>
 					<li class='odd'>
 						<img src="http://localhost:4000/images/nginx.png" alt="">
@@ -187,6 +202,18 @@
 
 			</div>
 		</section>
+
+
+		<footer>
+			<div class="wrapper">
+				<p>An open-source tool part of 
+
+					<a class='amon' href="https://amon.cx">Amon</a>
+				</p>
+			</div>
+			
+
+		</footer>
 
 
 <script src="http://localhost:4000/js/libs.min.js"></script>
