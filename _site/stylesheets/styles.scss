@@ -12,6 +12,10 @@ $dark_red: #b9285a;
 $red: #d1216f;
 $purple: #9b2c53;
 
+$green: #8abd56;
+$yellow: #fdcb34;
+$red: #e25352;
+
 $silver: #dfe4e9;
 $neon_green: #2ec6c8;
 $neon_dark: #00a1a4;
@@ -204,6 +208,62 @@ section.content--block {
 		font-weight: bold;
 		
 	}
+	&#packages {
+
+		h3{
+			text-align: center;
+			padding-top: 40px;
+			padding-bottom: 40px;
+
+		}
+		ul.packages-list {
+			float: left;
+			
+			width: 100%;
+			li {
+				float: left;
+				width: calc(50% - 20px);
+				margin: 10px;
+				padding: 20px;
+				background: $odd;
+				@include default-border-radius;
+				border-bottom: 2px solid $odd;
+				img {
+					float: left;
+				}
+				span {
+					padding: 5px;
+					display: block;
+					float: left;
+				}
+				span.title {
+					font-size: 3em;
+					line-height: 1.6em;
+					padding-left: 20px;
+				}
+				
+				span.install {
+					@include default-text;
+					@include default-border-radius;
+					@include border-bottom-left-radius(0);
+					@include border-top-right-radius(0);
+					display: none;
+					padding: 10px;
+					padding-left: 15px;
+					padding-right: 15px;
+					float: right;
+					background: $text_color;
+					color: $yellow; 
+				}
+				&:hover {
+					span.install {
+						display: block;
+					}
+				}
+				
+			}
+		}
+	}
 	&#distros {
 		h3 {
 			line-height: 150px;
@@ -316,9 +376,7 @@ section#content {
 	background: white;
 
 }
-$green: #8abd56;
-$yellow: #fdcb34;
-$red: #e25352;
+
 $console_width: 600px;
 div.console {
 	float: left;

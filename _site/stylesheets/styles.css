@@ -141,6 +141,55 @@ section.content--block h3 {
   padding-right: 40px;
   color: #313539;
   font-weight: bold; }
+section.content--block#packages h3 {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+section.content--block#packages ul.packages-list {
+  float: left;
+  width: 100%; }
+section.content--block#packages ul.packages-list li {
+  float: left;
+  width: calc(50% - 20px);
+  margin: 10px;
+  padding: 20px;
+  background: #f1f6fb;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border-bottom: 2px solid #f1f6fb; }
+section.content--block#packages ul.packages-list li img {
+  float: left; }
+section.content--block#packages ul.packages-list li span {
+  padding: 5px;
+  display: block;
+  float: left; }
+section.content--block#packages ul.packages-list li span.title {
+  font-size: 3em;
+  line-height: 1.6em;
+  padding-left: 20px; }
+section.content--block#packages ul.packages-list li span.install {
+  font-size: 1.7em;
+  line-height: 1.7em;
+  color: #313539;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  display: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: right;
+  background: #313539;
+  color: #fdcb34; }
+section.content--block#packages ul.packages-list li:hover span.install {
+  display: block; }
 section.content--block#distros {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RmZTRlOSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZGZlNGU5Ii8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background-size: 100%;

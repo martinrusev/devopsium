@@ -23,9 +23,9 @@
 		<section id="topnav">
 			<div class="wrapper">
 				<ul>
-					<li><a href="">Intro</a></li>
-					<li><a href="">Install</a></li>
-					<li><a href="">Docs</a></li>
+					<li><a href="#intro">Intro</a></li>
+					<li><a href="#quickstart">Install</a></li>
+					<li><a href="#packages">Packages</a></li>
 				</ul>
 			</div>
 		</section>
@@ -88,18 +88,26 @@
 						<p class="line">
 							<span class="path">~</span> 
 							<span class="prompt">$</span>
-							<span class="command">edgium sync nginx</span>
+							<span class="command">edgium install nginx</span>
 						</p>
+
+						
+						<p class="line">
+							<span class="output"># => Will install nginx 1.6.2</span>
+						</p>
+						
+						<p class="line">&</p>
 
 						<p class="line">
 							<span class="path">~</span> 
 							<span class="prompt">$</span>
 							<span class="command">apt-get install nginx</span>
 						</p>
+
 						<p class="line">
-							<span class="output"># => Will install nginx 1.6.2</span>
+							<span class="output"># => The next time your run apt-get you will get the latest version</span>
 						</p>
-						
+
 					</div>
 						
 				</div><!-- console end -->
@@ -131,10 +139,51 @@
 			
 			</div><!-- wrapper -->
 		</section>
+
+		<section id="packages" class='content--block'>
+			<div class="wrapper">
+				<h3>Edgium Packages</h3>
+				<ul class="packages-list">
+					<li>
+						<img src="http://localhost:4000/images/mongodb.png" alt="">
+						<span class='title'>MongoDB</span>   
+						<span class="install">edgium install mongodb</span>
+					</li>
+					<li class='odd'>
+						<img src="http://localhost:4000/images/nginx.png" alt="">
+						<span class='title'>nginx</span>   
+						<span class="install">edgium install nginx</span>
+					</li>
+					<li>
+						<img src="http://localhost:4000/images/postgresql.png" alt="">
+						<span class='title'>PostgreSQL</span>   
+						<span class="install">edgium install postgresql</span>
+					</li>
+
+					<li>
+						<img src="http://localhost:4000/images/redis.png" alt="">
+						<span class='title'>Redis</span>   
+						<span class="install">edgium install redis</span>
+					</li>
+					<li>
+						<img src="http://localhost:4000/images/mysql.png" alt="">
+						<span class='title'>MySQL</span>   
+						<span class="install">edgium install mysql</span>
+					</li>
+					<li>
+						<img src="http://localhost:4000/images/apache.png" alt="">
+						<span class='title'>Apache</span>   
+						<span class="install">edgium install apache</span>
+					</li>
+				</ul>
+
+			</div>
+			
+
+		</section>
 		<section id="content">
 			<div class="wrapper">
-				<h1 id="introduction">Introduction</h1>
-
+				
 
 			</div>
 		</section>
@@ -144,7 +193,7 @@
 <script src="http://localhost:4000/js/main.js"></script>
 <!-- 
 <script src="https://cdn.jsdelivr.net/g/jquery@1.11.1,
-	qtip2(jquery.qtip.min.js)">
+	qtip2(jquery.qtip.min.js),underscorejs">
 </script>
 -->
 <script>
