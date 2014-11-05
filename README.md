@@ -4,22 +4,18 @@
 Edgium
 ======
 
-Edgium is a lightweight devops tool that syncs your sources.list/yum repos
-with the official or most popular community repository for your favorite apps.
+Install up-to-date Linux packages with 1 line.
 
 
-## Why
 
-Most of the time the packages available in our Distros are 
-hopelesly outdated. The only way we can install the latest 
-version is to dig deep into Wikis, sometimes outdated Docs, Stack Overflow 
-and find the most popular and supported repository. 
-It gets really painful when you have to repeat 
-the process on multiple servers. If you have the time
-and knowledge - you can automate that process with Bash scripts, Chef, Puppet,
-Ansible, etc. These are all great tools in their own right, but sometimes 
-you just want to install the latest PostgreSQL or Nginx and you want to
-do it as fast as possible. This is where Edgium comes in.
+## What is Edgium?
+
+The packages available in our Distros are hopelesly outdated. To install the latest 
+version we have to dig deep into Wikis, Docs, Stack Overflow
+or some random article/tutorial named "How to install X on [Distro of Choice]".
+It gets really time consuming and painful when you have to repeat the process.
+<br><br>
+Edgium combines all this knowledge in one package. 
 
 Visit [edgium.amon.cx](edgium.amon.cx) to learn more.
 
@@ -28,3 +24,11 @@ Visit [edgium.amon.cx](edgium.amon.cx) to learn more.
 
 
 	curl http://edgium.amon.cx/install.sh | bash
+
+
+## Available packages
+
+You can see the whole list of available packages here:
+
+
+[http://edgium.amon.cx/#packages](http://edgium.amon.cx/#packages)
