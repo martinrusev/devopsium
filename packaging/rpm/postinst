@@ -4,6 +4,6 @@ REMOTE_REPO=https://github.com/martinrusev/edgium.git
 
 
 rm -rf $PLUGINS_REPO
-git clone $REMOTE_REPO $PLUGINS_REPO
+git clone -b master $REMOTE_REPO $PLUGINS_REPO
 
 exit 0

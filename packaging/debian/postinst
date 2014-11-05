@@ -8,7 +8,7 @@ case "$1" in
     configure)
 
         rm -rf $PLUGINS_REPO
-        git clone $REMOTE_REPO $PLUGINS_REPO
+        git clone -b master $REMOTE_REPO $PLUGINS_REPO
         
         set +e
 

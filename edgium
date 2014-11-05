@@ -6,6 +6,7 @@
 
 EDGIUM_BASE="/usr/local/edgium"
 EDGIUM_PACKAGES="$EDGIUM_BASE/apps"
+AVAILABLE_PACKAGES=($(ls $EDGIUM_PACKAGES))
 
 function file_exists() {
     [ -f "$1" ]
@@ -20,6 +21,14 @@ fi
 
 action=$1
 
+function list_packages() {
+   for value in "${AVAILABLE_PACKAGES[@]}"
+   do
+     printf "\033[33m  $value\n\033[0m"
+   done 
+}
+
+
 case $action in
         
 
@@ -30,7 +39,9 @@ case $action in
         if file_exists $PLAYBOOK ; then
              $sudo_cmd sh -c "ansible-playbook $PLAYBOOK -i $EDGIUM_BASE/hosts"
         else
-             printf "\033[31m \n Cant find a package named $2\n\033[0m\n"
+             printf "\033[31m \n Can't find a package named $2\n\033[0m\n"
+             printf "\033[42m  Available packages: \033[0m\n"
+             list_packages
 
         fi
         exit $?

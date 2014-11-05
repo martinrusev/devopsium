@@ -1,3 +1,14 @@
+0.2.3 - 05.11.2014
+=================
+
+* Pretty print available packages
+* Clone only the master branch
+
+0.2.2 - 05.11.2014
+=================
+
+* List available packages
+
 0.2.1 - 05.11.2014
 =================
 
