@@ -4,6 +4,5 @@
 - name: Update.
   command: apt-get update
 
-- name: Install MongoDB.
-  sudo: true 
+- name: Install Git.
   command: apt-get install git
