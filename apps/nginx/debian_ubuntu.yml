@@ -2,11 +2,11 @@
   command: apt-key add $(curl http://nginx.org/keys/nginx_signing.key) 
 
 - name: Add repository - Debian.
-  template: src=debian.repo dest=/etc/apt/sources.list.d/falcon.mongodb.list
+  template: src=templates/debian.repo dest=/etc/apt/sources.list.d/edgium.mongodb.list
   when: ansible_distribution == 'Debian'
 
 - name: Add repository- Ubuntu.
-  template: src=ubuntu.repo dest=/etc/apt/sources.list.d/falcon.mongodb.list
+  template: src=templates/ubuntu.repo dest=/etc/apt/sources.list.d/edgium.mongodb.list
   when: ansible_distribution == 'Ubuntu'
 
 - name: Update.
@@ -17,4 +17,4 @@
 
 - name: Start Nginx.
   sudo: true 
-  command: service mongodb start
+  command: service nginx start

@@ -1,0 +1,9 @@
+- name: Add repository - CentOS.
+  template: src=templates/centos.repo dest=/etc/apt/sources.list.d/edgium.mongodb.list
+  when: ansible_distribution == 'CentOS'
+
+- name: Install Nginx.
+  command: yum install nginx
+
+- name: Start Nginx.
+  command: /etc/init.d/nginx start

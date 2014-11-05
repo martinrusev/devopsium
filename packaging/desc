@@ -1,6 +1,5 @@
-Colonizer Package Manager
- The Colonizer Package Manager is a lightweight wrapper around the default Linux package managers.
- It syncs the official package repositories, so you can install only the latest and greatest 
- version of your apps.
+Edgium
+	Edgium is a lightweight devops tool that syncs your sources.list/yum repos
+	with the official or most popular community repository for your favorite apps.
  .
- See http://colonizer.amon.cx/ for more information
+ See http://edgium.amon.cx/ for more information

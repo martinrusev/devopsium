@@ -1,14 +1,14 @@
 BUILD=build/package
 SRC=../
 
-PACKAGES_PATH=/home/martin/colonizer-packages
+PACKAGES_PATH=/home/martin/amon-packages
 DEBIAN_REPO_PATH=$(PACKAGES_PATH)/debian/
 RPM_REPO_PATH=$(PACKAGES_PATH)/centos/
 VERSION=`cat $(SRC)/VERSION`
 
 FPM_BUILD=fpm --epoch 1 -s dir -e -C $(BUILD) \
 -a all -m "Amon Packages <packages@amon.cx>" \
---url "http://colonizer.amon.cx/" \
+--url "http://edgium.amon.cx/" \
 --description "`cat desc`"\
 -v $(VERSION) \
 --vendor "Martin Rusev"
@@ -20,14 +20,14 @@ clean:
 
 install_base: 
 	mkdir -p $(BUILD)
-	mkdir -p $(BUILD)/usr/local/colonizer
+	mkdir -p $(BUILD)/usr/local/edgium
 
 	
-	mkdir -p $(BUILD)/var/log/colonizer
+	mkdir -p $(BUILD)/var/log/edgium
 	mkdir -p $(BUILD)/usr/bin
 
 
-	cp -r $(SRC)/colonizer $(BUILD)/usr/bin/colonizer
+	cp -r $(SRC)/edgium $(BUILD)/usr/bin/edgium
 
 	@echo $(VERSION)
 
@@ -37,9 +37,9 @@ install_base:
 # Build
 # =====================
 build_deb: clean install_base
-	FPM_EDITOR="echo 'Replaces: colonizer (<= $(VERSION))' >>" \
+	FPM_EDITOR="echo 'Replaces: edgium (<= $(VERSION))' >>" \
 $(FPM_BUILD) -t deb \
--n colonizer \
+-n edgium \
 -d "adduser" \
 -d "git" \
 --post-install debian/postinst \
@@ -50,9 +50,9 @@ $(FPM_BUILD) -t deb \
 build_rpm: clean install_base
 	FPM_EDITOR="echo ''>>"  \
 $(FPM_BUILD) -t rpm \
--n "colonizer" \
+-n "edgium" \
 -d "git" \
---conflicts "colonizer < $(VERSION)" \
+--conflicts "edgium < $(VERSION)" \
 --post-install	   rpm/postinst \
 --post-uninstall   rpm/postrm \
 .
@@ -85,11 +85,11 @@ test_all: test_debian test_rpm
 # Deploy
 # =====================
 update_debian_repo:
-	cp "colonizer_$(VERSION)_all.deb" $(DEBIAN_REPO_PATH)
+	cp "edgium_$(VERSION)_all.deb" $(DEBIAN_REPO_PATH)
 	find $(DEBIAN_REPO_PATH)  -name \*.deb -exec reprepro --ask-passphrase -Vb $(DEBIAN_REPO_PATH)repo includedeb amon {} \;
 
 update_rpm_repo:
-	cp "colonizer-$(VERSION)-1.noarch.rpm" $(RPM_REPO_PATH)
+	cp "edgium-$(VERSION)-1.noarch.rpm" $(RPM_REPO_PATH)
 	createrepo --update $(RPM_REPO_PATH)
 
 deploy: update_debian_repo update_rpm_repo
