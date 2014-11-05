@@ -105,6 +105,19 @@ section.content--block {
   width: 100%;
   padding-top: 30px;
   padding-bottom: 50px; }
+section.content--block ul.features-list {
+  float: left;
+  list-style-type: disc;
+  list-style-position: inside;
+  width: 100%; }
+section.content--block ul.features-list li {
+  float: left;
+  clear: left;
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: 1.7em;
+  line-height: 1.7em;
+  color: #313539; }
 section.content--block.odd {
   background: #f1f6fb; }
 section.content--block h2 {

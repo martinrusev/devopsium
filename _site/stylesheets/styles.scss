@@ -168,6 +168,19 @@ section.content--block {
 	width: 100%;
 	padding-top: 30px;
 	padding-bottom: 50px;
+	ul.features-list {
+		float: left; 
+		list-style-type: disc;
+		list-style-position: inside;
+		width: 100%;
+		li {
+			float: left;
+			clear: left;
+			padding-bottom: 10px;
+			width: 100%;
+			@include default-text;
+		}
+	} 
 	&.odd {
 		background: $odd;
 	}
