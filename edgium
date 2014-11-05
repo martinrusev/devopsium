@@ -5,7 +5,7 @@
 # FALCON_BASE="/home/martin/falcon"
 
 EDGIUM_BASE="/usr/local/edgium"
-EDGIUM_PACKAGES="$EDGIUM_BASE/packages"
+EDGIUM_PACKAGES="$EDGIUM_BASE/apps"
 
 function file_exists() {
     [ -f "$1" ]

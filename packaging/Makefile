@@ -67,12 +67,14 @@ all: clean build_deb build_rpm
 # =====================
 test_debian:
 	cp debian/Dockerfile Dockerfile
+	sed -i s/EDGIUM_DEB_FILE/"edgium_$(VERSION)_all.deb"/g Dockerfile
 	docker build --rm=true --no-cache . 
 	rm Dockerfile
 
 
 test_rpm:
 	cp rpm/Dockerfile Dockerfile
+	sed -i s/EDGIUM_RPM_FILE/"edgium-$(VERSION)-1.noarch.rpm"/g Dockerfile
 	docker build --rm=true --no-cache . 
 	rm Dockerfile
 

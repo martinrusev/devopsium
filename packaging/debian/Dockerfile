@@ -1,10 +1,13 @@
 FROM martinrusev/amonbase:latest
 
+RUN apt-get update
 RUN apt-get install -y gdebi-core
-ADD falcon_0.1_all.deb var/falcon.deb
+ADD EDGIUM_DEB_FILE var/edgium.deb
 
-RUN gdebi -n /var/falcon.deb
+RUN gdebi -n /var/edgium.deb
 
-RUN falcon install boo
+
+RUN ls -lh /usr/local/edgium/
+RUN edgium install boo
 
 CMD ["/bin/bash"]
