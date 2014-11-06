@@ -34,11 +34,11 @@ $text_color: #313539;
 
 img {
 	image-rendering: optimizeSpeed;             /* FUCK SMOOTHING, GIVE ME SPEED  */
- 	image-rendering: -moz-crisp-edges;          /* Firefox                        */
- 	image-rendering: -o-crisp-edges;            /* Opera                          */
- 	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
- 	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
- 	-ms-interpolation-mode: nearest-neighbor;   /* IE8+                         */
+	image-rendering: -moz-crisp-edges;          /* Firefox                        */
+	image-rendering: -o-crisp-edges;            /* Opera                          */
+	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+                         */
 }
 
 
@@ -313,11 +313,11 @@ section.content--block {
 			line-height: 150px;
 		}
 		$svg-gradient-shim-threshold: 1 !global;
-	 	@include background-image( linear-gradient(to right, 
-	 		$silver 0%,
-	 		$silver 50%,
-	 		white 50%,
-	 		white 100%));
+		@include background-image( linear-gradient(to right, 
+			$silver 0%,
+			$silver 50%,
+			white 50%,
+			white 100%));
 
 
 		 img {
@@ -344,11 +344,11 @@ section.content--block {
 			line-height: 350px;
 		}
 		$svg-gradient-shim-threshold: 1 !global;
-	 	@include background-image( linear-gradient(to right, 
-	 		$neon_dark 0%,
-	 		$neon_dark 50%,
-	 		$neon_green 50%,
-	 		$neon_green 100%));
+		@include background-image( linear-gradient(to right, 
+			$neon_dark 0%,
+			$neon_dark 50%,
+			$neon_green 50%,
+			$neon_green 100%));
 		
 		div.console {
 			float: right;
@@ -393,8 +393,8 @@ header {
 		display: block;
 		text-align: center;
 		margin-left: auto;
-   		margin-right: auto; 
-   		margin-top: -37px;
+		margin-right: auto; 
+		margin-top: -37px;
 	}
 
 	h1{
@@ -537,10 +537,50 @@ footer {
 		display: block;
 		text-align: center;
 		margin-left: auto;
-   		margin-right: auto; 
-   		margin-top: 20px;
+		margin-right: auto; 
+		margin-top: 20px;
 
-   		text-indent: 100%;
-   		overflow: hidden;
+		text-indent: 100%;
+		overflow: hidden;
 	}
+}
+blockquote{
+  display:block;
+  background: #fff;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  @include default-text;
+  color: #666;
+  text-align: justify;
+  
+  /*Borders - (Optional)*/
+  // border-left: 15px solid #c76c0c;
+  // border-right: 2px solid #c76c0c;
+  
+  // /*Box Shadow - (Optional)*/
+  // -moz-box-shadow: 2px 2px 15px #ccc;
+  // -webkit-box-shadow: 2px 2px 15px #ccc;
+  // box-shadow: 2px 2px 15px #ccc;
+}
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
 }
