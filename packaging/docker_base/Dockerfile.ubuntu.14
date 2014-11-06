@@ -1,0 +1,12 @@
+FROM ubuntu:trusty
+
+RUN apt-get update
+
+RUN apt-get install -y software-properties-common
+RUN apt-add-repository ppa:ansible/ansible
+RUN apt-get update
+RUN apt-get install -y git curl ansible
+
+RUN cat /etc/debian_version
+
+CMD ["/bin/bash"]
