@@ -15,7 +15,7 @@
 
 - name: Install MongoDB.
   sudo: true 
-  command: apt-get install mongodb-org
+  command: apt-get install -y mongodb-org
 
 - name: Start MongoDB.
   sudo: true 
