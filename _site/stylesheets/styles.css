@@ -453,8 +453,7 @@ blockquote {
   line-height: 1.7em;
   color: #313539;
   color: #666;
-  text-align: justify;
-  /*Borders - (Optional)*/ }
+  text-align: justify; }
 
 blockquote::before {
   content: "\201C";
