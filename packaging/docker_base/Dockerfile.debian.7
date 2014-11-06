@@ -1,0 +1,10 @@
+FROM debian:wheezy
+
+RUN sh -c "echo 'deb http://http.debian.net/debian wheezy-backports main' > /etc/apt/sources.list.d/backports.list"
+RUN apt-get update
+RUN apt-get install -y git curl
+RUN apt-get -t wheezy-backports install -y "ansible"
+
+RUN cat /etc/debian_version
+
+CMD ["/bin/bash"]
