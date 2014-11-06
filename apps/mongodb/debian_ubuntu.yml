@@ -10,13 +10,10 @@
   when: ansible_distribution == 'Ubuntu'
 
 - name: Update.
-  sudo: true 
   command: apt-get update
 
 - name: Install MongoDB.
-  sudo: true 
   command: apt-get install -y mongodb-org
 
 - name: Start MongoDB.
-  sudo: true 
-  command: service mongodb start
+  command: service mongod start
