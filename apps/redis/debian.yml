@@ -1,3 +1,6 @@
+- name: Add Dotdeb Key.
+  command: apt-key add $(curl http://www.dotdeb.org/dotdeb.gpg) 
+
 - name: Add Repository
   lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://packages.dotdeb.org {{ ansible_distribution_release }} all'"
 
