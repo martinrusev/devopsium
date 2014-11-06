@@ -2,11 +2,13 @@
   command: apt-key add $(curl http://nginx.org/keys/nginx_signing.key) 
 
 - name: Add repository - Debian.
-  template: src=templates/debian.repo dest=/etc/apt/sources.list.d/edgium.mongodb.list
+  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb-src http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
   when: ansible_distribution == 'Debian'
 
-- name: Add repository- Ubuntu.
-  template: src=templates/ubuntu.repo dest=/etc/apt/sources.list.d/edgium.mongodb.list
+- name: Add repository - Ubuntu.
+  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb-src http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
   when: ansible_distribution == 'Ubuntu'
 
 - name: Update.

@@ -1,0 +1,8 @@
+- name: Add Repository
+  command: add-apt-repository ppa:chris-lea/redis-server
+
+- name: Update.
+  command: apt-get update
+
+- name: Install Redis.
+  command: apt-get install redis-server

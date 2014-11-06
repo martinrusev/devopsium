@@ -1,2 +1,0 @@
-deb http://nginx.org/packages/debian/ squeeze nginx
-deb-src http://nginx.org/packages/debian/ squeeze nginx

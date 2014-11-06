@@ -2,6 +2,8 @@
 - hosts: localhost
   connection: local
   sudo: True
+  vars:
+    app: mongodb
   tasks:
     - include: debian_ubuntu.yml
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

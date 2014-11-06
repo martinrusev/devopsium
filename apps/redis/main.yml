@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+  sudo: True
+  vars:
+    app: redis
+  tasks:
+    - include: debian.yml
+      when: ansible_distribution == 'Debian'
+    - include: ubuntu.yml
+      when: ansible_distribution == 'Ubuntu'
+    - include: centos.yml
+      when: ansible_distribution == 'CentOS'
