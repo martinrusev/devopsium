@@ -1,0 +1,8 @@
+- name: Add Signing Key.
+  command: apt-key add $(curl https://www.postgresql.org/media/keys/ACCC4CF8.asc) 
+
+- name: Add Repository.
+  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main'"
+
+- name: Update.
+  command: apt-get update

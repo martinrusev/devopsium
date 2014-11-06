@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  sudo: True
+  vars:
+    app: postgresql
+  tasks:
+    - include: ubuntu_debian.yml
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
