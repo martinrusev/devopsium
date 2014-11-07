@@ -2,7 +2,7 @@
   apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
 
 - name: Create list file
-  file: path={{debian_list_file}}
+  file: path={{debian_list_file}} state=touch
 
 - name: Add repository - Debian.
   lineinfile: "dest={{debian_list_file}} line='deb http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
