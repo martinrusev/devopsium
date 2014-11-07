@@ -1,5 +1,3 @@
-- vars:
-  list_path: /etc/apt/sources.list.d/edgium.{{app}}.list
 - name: Add Nginx Key.
   apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
 
