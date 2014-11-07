@@ -1,8 +1,5 @@
-- name: Install Curl.
-  command: apt-get install -y curl --force-yes
-
 - name: Add Nginx Key.
-  command: apt-key add $(curl http://nginx.org/keys/nginx_signing.key) 
+  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
 
 - name: Add repository - Debian.
   lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
