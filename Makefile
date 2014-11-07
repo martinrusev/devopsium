@@ -3,7 +3,7 @@
 # =====================
 
 cleanup:
-	rm Dockerfile
+	-rm Dockerfile
 
 build_debian: cleanup
 	# docker pull debian
@@ -24,17 +24,20 @@ build_centos_six: cleanup
 
 
 # =====================
-# Tests
+#  Tests
 # =====================
 test_mongodb_debian: cleanup
+	python build_dockerfile.py --target=debian --release=7 --app=mongodb
 	cp apps/mongodb/tests/Dockerfile.debian Dockerfile
 	docker build --rm=true --force-rm=true --no-cache . 
 
 test_mongodb_ubuntu: cleanup
+	python build_dockerfile.py --target=ubuntu --release=14 --app=mongodb
 	cp apps/mongodb/tests/Dockerfile.ubuntu Dockerfile
 	docker build --rm=true --force-rm=true --no-cache . 
 
 
 test_mongodb_centos: cleanup
+	python build_dockerfile.py --target=centos --release=6 --app=mongodb
 	cp apps/mongodb/tests/Dockerfile.centos Dockerfile
 	docker build --rm=true --force-rm=true --no-cache . 
