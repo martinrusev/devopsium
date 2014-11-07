@@ -1,5 +1,5 @@
 - name: Add repository.
-  template: src=rpm.repo dest=/etc/yum.repos.d/edgium.mongodb.repo
+  template: src=templates/centos.repo dest=/etc/yum.repos.d/edgium.mongodb.repo
 
 - name: Install MongoDB.
   command: yum install mongodb-org
