@@ -1,5 +1,5 @@
 - name: Install Curl.
-  command: apt-get install curl
+  command: apt-get install -y curl --force-yes
 
 - name: Add Nginx Key.
   command: apt-key add $(curl http://nginx.org/keys/nginx_signing.key) 
@@ -18,8 +18,13 @@
   command: apt-get update
 
 - name: Install Nginx.
-  command: apt-get install nginx
+  command: apt-get install -y nginx --force-yes
 
 - name: Start Nginx.
   sudo: true 
   command: service nginx start
+
+- shell: nginx -v
+  register: version
+
+- debug: msg="{{version.stdout}}"
