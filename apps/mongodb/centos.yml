@@ -4,5 +4,9 @@
 - name: Install MongoDB.
   command: yum install -y mongodb-org
 
+- name: Configure SELinux.
+  command: semanage port -a -t mongodb_port_t -p tcp 27017
+  ignore_errors: yes
+
 - name: Start MongoDB.
-  command: /etc/init.d/ mongodb start
+  command: service mongod start
