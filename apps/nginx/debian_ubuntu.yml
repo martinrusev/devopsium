@@ -2,16 +2,16 @@
   apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
 
 - name: Create list file
-  file: path={{list_path}}
+  file: path={{debian_list_file}}
 
 - name: Add repository - Debian.
-  lineinfile: "dest={{list_path}} line='deb http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
-  lineinfile: "dest={{list_path}} line='deb-src http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{debian_list_file}} line='deb http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{debian_list_file}} line='deb-src http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
   when: ansible_distribution == 'Debian'
 
 - name: Add repository - Ubuntu.
-  lineinfile: "dest={{list_path}} line='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
-  lineinfile: "dest={{list_path}} line='deb-src http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{debian_list_file}} line='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{debian_list_file}} line='deb-src http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
   when: ansible_distribution == 'Ubuntu'
 
 - name: Update.
