@@ -5,4 +5,12 @@
   command: apt-get update
 
 - name: Install Ruby.
-  command: apt-get install ruby
+  command: apt-get install -y ruby2.1 --force-yes
+
+
+- shell: ruby -v
+  register: version
+
+- debug: msg="{{version.stdout}}"
+
+ 

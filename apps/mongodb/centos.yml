@@ -1,5 +1,11 @@
-- name: Add repository.
-  template: src=templates/centos.repo dest=/etc/yum.repos.d/edgium.mongodb.repo
+- name: Add repository - CentOS
+  ini_file: dest={{yum_repo_file}}
+    "section=mongodb
+    name=MongoDB Repository
+    baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/{{ansible_architecture}}/
+    gpgcheck=0
+    enabled=1"
+
 
 - name: Install MongoDB.
   command: yum install -y mongodb-org

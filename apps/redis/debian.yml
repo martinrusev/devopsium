@@ -1,14 +1,22 @@
 - name: Add Dotdeb Key.
-  command: apt-key add $(curl http://www.dotdeb.org/dotdeb.gpg) 
+  apt_key: url=http://www.dotdeb.org/dotdeb.gpg state=present
+
+- name: Create list file
+  lineinfile: dest={{debian_list_file}} regexp='^' line='' state=present create=True
 
 - name: Add Repository
-  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://packages.dotdeb.org {{ ansible_distribution_release }} all'"
+  lineinfile: "dest={{debian_list_file}} line='deb http://packages.dotdeb.org {{ ansible_distribution_release }} all'"
+  lineinfile: "dest={{debian_list_file}} line='deb-src http://packages.dotdeb.org {{ ansible_distribution_release }} all'"
 
-- name: Add Repository
-  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb-src http://packages.dotdeb.org {{ ansible_distribution_release }} all'"
 
 - name: Update.
   command: apt-get update
 
 - name: Install Redis.
-  command: apt-get install redis-server
+  command: apt-get install -y redis-server --force-yes
+
+
+- shell: redis-server -v
+  register: version
+
+- debug: msg="{{version.stdout}}"

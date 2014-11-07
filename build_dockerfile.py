@@ -18,7 +18,8 @@ def main(argv):
 
 	with open('Dockerfile','w+') as f:
 		f.write("FROM edgium.{0}.{1}\n".format(options.target, options.release))
-		f.write('RUN git -C /edgium pull\n')
+		f.write('ADD apps /edgium/apps\n')
+		f.write('ADD hosts /edgium/hosts\n')
 		f.write("RUN ansible-playbook edgium/apps/{0}/main.yml -i edgium/hosts\n".format(options.app))
 		f.write('CMD ["/bin/bash"]')
 

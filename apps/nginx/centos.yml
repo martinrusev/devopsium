@@ -1,9 +1,19 @@
-- name: Add repository - CentOS.
-  template: src=templates/centos.repo dest=/etc/apt/sources.list.d/edgium.mongodb.list
-  when: ansible_distribution == 'CentOS'
+- name: Add repository - CentOS
+  ini_file: dest={{yum_repo_file}}
+    "section=nginx
+    name=nginx repo
+    baseurl=http://nginx.org/packages/centos/{{ ansible_distribution_version|int }}/{{ansible_architecture}}/
+    gpgcheck=0
+    enabled=1"
+
 
 - name: Install Nginx.
-  command: yum install nginx
+  command: yum install -y nginx
 
 - name: Start Nginx.
   command: /etc/init.d/nginx start
+
+- shell: /etc/init.d/nginx status
+  register: status
+
+- debug: msg="{{status.stdout}}"

@@ -5,9 +5,6 @@ RUN apt-get update
 RUN apt-get install -y git curl
 RUN apt-get -t wheezy-backports install -y "ansible"
 
-
-RUN git clone -b master https://github.com/martinrusev/edgium.git
-
 RUN cat /etc/debian_version
 
 CMD ["/bin/bash"]

@@ -37,14 +37,14 @@ build_centos_six: cleanup
 #  Mongo
 # ==============
 
-mongodb_generate_debian:
+_mongodb_generate_debian:
 	python build_dockerfile.py --target=debian --release=7 --app=mongodb
 
-mongodb_generate_ubuntu: cleanup
+_mongodb_generate_ubuntu: cleanup
 	python build_dockerfile.py --target=ubuntu --release=14 --app=mongodb
 
 
-mongodb_generate_centos: cleanup
+_mongodb_generate_centos: cleanup
 	python build_dockerfile.py --target=centos --release=6 --app=mongodb
 
 
@@ -52,30 +52,76 @@ test_mongodb_debian: cleanup mongodb_generate_debian docker_build
 test_mongodb_ubuntu: cleanup mongodb_generate_ubuntu docker_build
 test_mongodb_centos: cleanup mongodb_generate_centos docker_build
 
+
+# ==============
+#  Redis
+# ==============
+_redis_generate_ubuntu: 
+	python build_dockerfile.py --target=ubuntu --release=14 --app=redis
+
+_redis_generate_debian: 
+	python build_dockerfile.py --target=debian --release=7 --app=redis
+
+test_redis_ubuntu: cleanup _redis_generate_ubuntu docker_build
+test_redis_debian: cleanup _redis_generate_debian docker_build
+
+# ==============
+#  Ruby
+# ==============
+_ruby_generate_ubuntu: 
+	python build_dockerfile.py --target=ubuntu --release=14 --app=ruby
+
+test_ruby_ubuntu: cleanup _ruby_generate_ubuntu docker_build
+
+
+
 # ==============
 #  Git
 # ==============
-git_generate_ubuntu: 
+_git_generate_ubuntu: 
 	python build_dockerfile.py --target=ubuntu --release=14 --app=git
 
-test_git_ubuntu: cleanup git_generate_ubuntu docker_build
+test_git_ubuntu: cleanup _git_generate_ubuntu docker_build
 
 
 
 # ==============
 #  Apache
 # ==============
-apache_generate_ubuntu: 
+_apache_generate_ubuntu: 
 	python build_dockerfile.py --target=ubuntu --release=14 --app=apache
 
-test_apache_ubuntu: cleanup apache_generate_ubuntu docker_build
+test_apache_ubuntu: cleanup _apache_generate_ubuntu docker_build
 
 
 
 # ==============
 #  Nginx
 # ==============
-nginx_generate_ubuntu: 
+_nginx_generate_ubuntu: 
 	python build_dockerfile.py --target=ubuntu --release=14 --app=nginx
 
-test_nginx_ubuntu: cleanup nginx_generate_ubuntu docker_build
+
+_nginx_generate_centos: 
+	python build_dockerfile.py --target=centos --release=6 --app=nginx
+
+test_nginx_ubuntu: cleanup _nginx_generate_ubuntu docker_build
+test_nginx_centos: cleanup _nginx_generate_centos docker_build
+
+
+# ==============
+#  PostgreSQL
+# ==============
+_postgresql_generate_ubuntu: 
+	python build_dockerfile.py --target=ubuntu --release=14 --app=postgresql
+
+_postgresql_generate_debian: 
+	python build_dockerfile.py --target=debian --release=7 --app=postgresql
+
+test_postgresql_ubuntu: cleanup _postgresql_generate_ubuntu docker_build
+test_postgresql_debian: cleanup _postgresql_generate_debian docker_build
+
+
+
+empty:
+	@echo ""

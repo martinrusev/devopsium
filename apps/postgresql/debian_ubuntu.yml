@@ -1,0 +1,20 @@
+- name: Add Signing Key.
+  apt_key: url=https://www.postgresql.org/media/keys/ACCC4CF8.asc state=present
+
+- name: Create list file
+  lineinfile: dest={{debian_list_file}} regexp='^' line='' state=present create=True
+
+- name: Add Repository.
+  lineinfile: "dest={{debian_list_file}} line='deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main'"
+
+
+- name: Update.
+  command: apt-get update
+
+- name: Install.
+  command: apt-get install -y --force-yes postgresql-9.3 
+
+- shell: psql --version
+  register: version
+
+- debug: msg="{{version.stdout}}"

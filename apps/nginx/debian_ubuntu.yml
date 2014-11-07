@@ -21,7 +21,6 @@
   command: apt-get install -y nginx --force-yes
 
 - name: Start Nginx.
-  sudo: true 
   command: service nginx start
 
 - shell: nginx -v
