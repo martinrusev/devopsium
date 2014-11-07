@@ -69,3 +69,13 @@ apache_generate_ubuntu:
 	python build_dockerfile.py --target=ubuntu --release=14 --app=apache
 
 test_apache_ubuntu: cleanup apache_generate_ubuntu docker_build
+
+
+
+# ==============
+#  Nginx
+# ==============
+nginx_generate_ubuntu: 
+	python build_dockerfile.py --target=ubuntu --release=14 --app=nginx
+
+test_nginx_ubuntu: cleanup nginx_generate_ubuntu docker_build

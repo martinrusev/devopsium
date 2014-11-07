@@ -6,5 +6,6 @@ RUN wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.no
 RUN rpm -ivh epel-release-6-8.noarch.rpm
 RUN yum install -y git curl ansible
 
+RUN git clone -b master https://github.com/martinrusev/edgium.git
 
 CMD ["/bin/bash"]
