@@ -1,14 +1,19 @@
+- vars:
+  list_path: /etc/apt/sources.list.d/edgium.{{app}}.list
 - name: Add Nginx Key.
   apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
 
+- name: Create list file
+  file: path={{list_path}}
+
 - name: Add repository - Debian.
-  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
-  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb-src http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{list_path}} line='deb http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{list_path}} line='deb-src http://nginx.org/packages/debian/ {{ ansible_distribution_release }} nginx'"
   when: ansible_distribution == 'Debian'
 
 - name: Add repository - Ubuntu.
-  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
-  lineinfile: "dest=/etc/apt/sources.list.d/edgium.{{app}}.list line='deb-src http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{list_path}} line='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
+  lineinfile: "dest={{list_path}} line='deb-src http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx'"
   when: ansible_distribution == 'Ubuntu'
 
 - name: Update.
