@@ -6,3 +6,10 @@
 
 - name: Install Git.
   command: apt-get install -y git
+
+- shell: git --version
+  register: git_version
+
+- debug: msg="{{git_version.stdout}}"
+
+  
