@@ -1,3 +1,6 @@
+- name: Install Curl.
+  command: apt-get install curl
+
 - name: Add Nginx Key.
   command: apt-key add $(curl http://nginx.org/keys/nginx_signing.key) 
 
