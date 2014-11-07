@@ -5,7 +5,7 @@
   command: apt-get update
 
 - name: Install Git.
-  command: apt-get install -y apache2
+  command: apt-get install -y apache2 --force-yes
 
 - shell: apache2 -v
   register: version
