@@ -2,7 +2,7 @@
   template: src=templates/centos.repo dest=/etc/yum.repos.d/edgium.mongodb.repo
 
 - name: Install MongoDB.
-  command: yum install mongodb-org
+  command: yum install -y mongodb-org
 
 - name: Start MongoDB.
   command: /etc/init.d/ mongodb start
