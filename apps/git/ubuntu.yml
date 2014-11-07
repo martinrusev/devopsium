@@ -5,4 +5,4 @@
   command: apt-get update
 
 - name: Install Git.
-  command: apt-get install git
+  command: apt-get install -y git
