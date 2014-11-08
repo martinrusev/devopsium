@@ -1,10 +1,8 @@
-- name: Add repository - CentOS
-  ini_file: dest={{yum_repo_file}}
-    "section=nginx
-    name=nginx repo
-    baseurl=http://nginx.org/packages/centos/{{ ansible_distribution_version|int }}/{{ansible_architecture}}/
-    gpgcheck=0
-    enabled=1"
+- template: src={{playbook_dir}}/templates/centos.repo dest={{yum_repo_file}}
+
+- name: Add repository.
+  lineinfile: "dest={{yum_repo_file}} line='baseurl=http://nginx.org/packages/centos/{{ ansible_distribution_version|int }}/{{ansible_architecture}}/'"
+
 
 
 - name: Install Nginx.

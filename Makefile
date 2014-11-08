@@ -84,6 +84,15 @@ _git_generate_ubuntu:
 test_git_ubuntu: cleanup _git_generate_ubuntu docker_build
 
 
+# ==============
+#  Docker
+# ==============
+_docker_generate_ubuntu: 
+	python build_dockerfile.py --target=ubuntu --release=14 --app=docker
+
+test_docker_ubuntu: cleanup _docker_generate_ubuntu docker_build
+
+
 
 # ==============
 #  Apache

@@ -1,0 +1,4 @@
+ [nginx]
+ name=nginx
+ gpgcheck=0
+ enabled=1

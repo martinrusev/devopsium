@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  connection: local
+  sudo: True
+  vars:
+    app: docker
+    debian_list_file: /etc/apt/sources.list.d/edgium.{{app}}.list
+  tasks:
+    - include: ubuntu.yml
+      when: ansible_distribution == 'Ubuntu'
