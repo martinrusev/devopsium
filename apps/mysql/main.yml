@@ -6,7 +6,5 @@
     app: mysql
     debian_list_file: /etc/apt/sources.list.d/edgium.{{app}}.list
   tasks:
-    - include: debian.yml
-      when: ansible_distribution == 'Debian'
     - include: ubuntu.yml
       when: ansible_distribution == 'Ubuntu'

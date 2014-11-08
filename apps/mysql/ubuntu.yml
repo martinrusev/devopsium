@@ -1,0 +1,16 @@
+- name: Add Repository
+  command: add-apt-repository ppa:ondrej/mysql-5.6
+
+- name: Update.
+  command: apt-get update
+
+- name: Install.
+  command: apt-get install -y mysql-server --force-yes
+
+- name: Start.
+  command: /etc/init.d/mysql start
+
+- shell: mysql --version
+  register: version
+
+- debug: msg="{{version.stdout}}"

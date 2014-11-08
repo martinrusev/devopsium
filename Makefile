@@ -65,6 +65,15 @@ _redis_generate_debian:
 test_redis_ubuntu: cleanup _redis_generate_ubuntu docker_build
 test_redis_debian: cleanup _redis_generate_debian docker_build
 
+
+# ==============
+#  MySQL
+# ==============
+_mysql_generate_ubuntu: 
+	python build_dockerfile.py --target=ubuntu --release=14 --app=mysql
+
+test_mysql_ubuntu: cleanup _mysql_generate_ubuntu docker_build
+
 # ==============
 #  Ruby
 # ==============
