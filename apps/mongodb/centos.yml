@@ -1,11 +1,7 @@
-- name: Add repository - CentOS
-  ini_file: dest={{yum_repo_file}}
-    "section=mongodb
-    name=MongoDB Repository
-    baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/{{ansible_architecture}}/
-    gpgcheck=0
-    enabled=1"
+- template: src={{playbook_dir}}/templates/centos.repo dest={{yum_repo_file}}
 
+- name: Add repository.
+  lineinfile: "dest={{yum_repo_file}} line='baseurl=http://downloads-distro.mongodb.org/repo/redhat/os/{{ansible_architecture}}/'"
 
 - name: Install MongoDB.
   command: yum install -y mongodb-org
@@ -16,3 +12,8 @@
 
 - name: Start MongoDB.
   command: service mongod start
+
+- shell: mongod --version
+  register: version
+
+- debug: msg="{{version.stdout}}"

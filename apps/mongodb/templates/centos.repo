@@ -1,0 +1,4 @@
+[mongodb]
+name=MongoDB
+gpgcheck=0
+enabled=1

@@ -1,0 +1,16 @@
+- template: src={{playbook_dir}}/templates/centos.repo dest={{yum_repo_file}}
+
+- name: Add repository.
+  lineinfile: "dest={{yum_repo_file}} line='baseurl=http://yum.mariadb.org/10.0/{{ansible_distribution|lower}}{{ansible_distribution_version|int}}-amd64'"
+
+- name: Install.
+  command: yum install -y MariaDB-server MariaDB-client
+
+- name: Start.
+  command: service mysql start
+
+
+- shell: mysql --version
+  register: version
+
+- debug: msg="{{version.stdout}}"

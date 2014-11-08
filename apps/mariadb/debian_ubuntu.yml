@@ -1,0 +1,25 @@
+- name: Add Signing Key.
+  apt_key: keyserver=keyserver.ubuntu.com id=0xcbcb082a1bb943db state=present
+
+- name: Create list file
+  lineinfile: dest={{debian_list_file}} regexp='^' line='' state=present create=True
+
+- name: Add Repository.
+  lineinfile: "dest={{debian_list_file}} line='deb http://ams2.mirrors.digitalocean.com/mariadb/repo/10.0/{{ansible_distribution | lower }} {{ ansible_distribution_release }} main'"
+
+
+- name: Update.
+  command: apt-get update
+
+- name: Install.
+  command: apt-get install -y --force-yes mariadb-server 
+
+
+- name: Start.
+  command: /etc/init.d/mysql start
+
+
+- shell: mysql --version
+  register: version
+
+- debug: msg="{{version.stdout}}"
