@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  sudo: True
+  vars:
+    app: nodejs
+    debian_list_file: /etc/apt/sources.list.d/edgium.{{app}}.list
+    yum_repo_file: /etc/yum.repos.d/edgium.{{app}}.repo
+  tasks:
+    - include: debian_ubuntu.yml
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

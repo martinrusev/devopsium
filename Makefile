@@ -9,19 +9,19 @@ docker_build:
 	docker build --rm=true --force-rm=true --no-cache . 
 
 build_debian: cleanup
-	# docker pull debian
+	docker pull debian
 	cp packaging/docker_base/Dockerfile.debian.7 Dockerfile
 	docker build --tag='edgium.debian.7' --force-rm=true --rm=true --no-cache . 
 
 
 build_ubuntu: cleanup
-	# docker pull ubuntu
+	docker pull ubuntu
 	cp packaging/docker_base/Dockerfile.ubuntu.14 Dockerfile
 	docker build --tag='edgium.ubuntu.14' --force-rm=true --rm=true --no-cache . 
 
 
 build_centos_six: cleanup
-	# docker pull centos
+	docker pull centos
 	cp packaging/docker_base/Dockerfile.centos.6 Dockerfile
 	docker build --tag='edgium.centos.6' --force-rm=true --rm=true --no-cache . 
 
@@ -93,6 +93,18 @@ _docker_generate_ubuntu:
 test_docker_ubuntu: cleanup _docker_generate_ubuntu docker_build
 
 
+
+# ==============
+#  Nodejs
+# ==============
+_nodejs_generate_ubuntu: 
+	python build_dockerfile.py --target=ubuntu --release=14 --app=nodejs
+
+_nodejs_generate_debian: 
+	python build_dockerfile.py --target=debian --release=7 --app=nodejs
+
+test_nodejs_ubuntu: cleanup _nodejs_generate_ubuntu docker_build
+test_nodejs_debian: cleanup _nodejs_generate_debian docker_build
 
 # ==============
 #  Apache
