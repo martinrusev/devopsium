@@ -33,7 +33,7 @@ $body_width: 1280px;
 $text_color: #313539;
 
 img {
-	image-rendering: optimizeSpeed;             /* FUCK SMOOTHING, GIVE ME SPEED  */
+	image-rendering: optimizeSpeed;             
 	image-rendering: -moz-crisp-edges;          /* Firefox                        */
 	image-rendering: -o-crisp-edges;            /* Opera                          */
 	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
@@ -236,53 +236,92 @@ section.content--block {
 			padding-bottom: 40px;
 
 		}
-		ul.packages-list {
-			float: left;
-			
+		div.dataTables_filter {
+			input {
+				border: 2px solid $silver;
+				@include default-border-radius;
+				padding: 10px;
+				height: 40px;
+			}
+		}
+		table.packages-table {
+			border-bottom: 0px;
 			width: 100%;
-			ul.distros {
-				float: right;
-				margin-right: 50px;
-				li {
-					float: left;
-					padding-top: 15px;
-					margin-left: 20px;
-					img {
-						height: 32px;
-						
-						&.grey {
-							@include grayscale;
+			table-layout: fixed;
+			thead {
+				th {
+					color: $dark_silver;
+					font-size: 2em;
+					line-height: 1.6em;
+					padding-bottom: 20px;
+					font-weight: normal;
+					border-bottom: 0px;
+				}
+			}
+			tbody {
+				tr {
+					
+					@include default-border-radius;
+					border-bottom: 8px solid white;
+					&:hover {
+						span.install {
+							background: $text_color;
+							color: $yellow; 
 						}
-						
+						span.version {
+							background: $neon_green;
+						}
+					}
+					td {
+						border-bottom: 10px solid white;
+						&.dataTables_empty {
+							font-size: 2em;
+						}
+						&:first-child {
+							@include default-border-radius;
+							@include border-top-right-radius(0px);
+							@include border-bottom-right-radius(0px);
+						}
+						&:last-child {
+							@include default-border-radius;
+							@include border-top-left-radius(0px);
+							@include border-bottom-left-radius(0px);
+						}
+						padding: 20px;
+						background: $odd;
+					
+						vertical-align: middle;
+						&.distros {
+							padding-left: 0px;
+						}
+						&.install {
+							padding-left: 0px;
+							padding-right: 0px;
+							width: 340px;
+						}
 					}
 				}
-				}
-			>li {
-				float: left;
-				width: 100%;
-				margin-bottom: 10px;
-				padding: 20px;
-				background: $odd;
-				@include default-border-radius;
-
-				border-bottom: 2px solid $odd;
-
 				img {
 					float: left;
 				}
-
-				span {
-					padding: 5px;
-					display: block;
-					float: left;
-				}
 				span.title {
-					font-size: 3em;
-					line-height: 1.6em;
-					padding-left: 20px;
+					font-size: 2.8em;
+					line-height: 2.2em;
+					padding-left: 30px;
 
 				}
-				
+				span.version{
+					@include default-border-radius;
+					width: 100px;
+					display: block;
+					text-align: center;
+					font-size: 2em;
+					color: white;
+					background: $dark_silver;
+					padding: 15px;
+					line-height: 1.6em;
+
+				}
 				span.install {
 					width: 300px;
 					@include default-text;
@@ -290,23 +329,34 @@ section.content--block {
 					@include border-bottom-left-radius(0);
 					@include border-top-right-radius(0);
 					font-size: 2em;
+					display: block;
 					padding: 15px;
 					padding-left: 15px;
 					padding-right: 15px;
-					float: right;
 					background: white;
+					margin-right: 20px;
 					color: $dark_silver; 
-				}
-				&:hover {
-					span.install {
-						display: block;
+					&:hover {
+
 						background: $text_color;
 						color: $yellow; 
 					}
-				}
-				
+				} // span install
+				ul.distros {
+					float: left;
+					li {
+						float: left;
+						padding-top: 15px;
+						margin-right: 20px;
+						img {
+							height: 32px;
+						}
+					}
+				} // distros
+
 			}
 		}
+
 	}
 	&#distros {
 		h3 {

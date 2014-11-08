@@ -85,10 +85,7 @@ function install_edgium() {
         $sudo_cmd apt-get install -y --force-yes edgium
 
     else
-        printf "\033[31mYour OS or distribution are not supported by this install script.
-            Please follow the instructions on the Agent setup page:
-
-        https://edgium.amon.cx/#docs\033[0m\n"
+        printf "\033[31mYour OS or distribution are not supported by this install script.\033[0m\n"
         exit;
     fi
 
@@ -115,9 +112,8 @@ function install_ansible(){
                 $sudo_cmd apt-get update
                 $sudo_cmd apt-get -t wheezy-backports install "ansible"
             else
-                $sudo_cmd sh -c "echo 'deb http://http.debian.net/debian-backports squeeze-backports(-sloppy) main' > /etc/apt/sources.list.d/backports.list"
-                $sudo_cmd apt-get update
-                $sudo_cmd apt-get -t squeeze-backports install "ansible"
+                $ printf "\033[31mYour OS or distribution are not supported by this install script.\033[0m\n"
+                exit;
             fi 
         fi
 
