@@ -5,8 +5,9 @@
   vars:
     app: redis
     debian_list_file: /etc/apt/sources.list.d/edgium.{{app}}.list
+    yum_repo_file: /etc/yum.repos.d/edgium.{{app}}.repo
   tasks:
-    - include: debian.yml
-      when: ansible_distribution == 'Debian'
     - include: ubuntu.yml
       when: ansible_distribution == 'Ubuntu'
+    - include: centos.yml
+      when: ansible_distribution == 'CentOS'

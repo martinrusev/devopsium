@@ -1,0 +1,51 @@
+- name: Install Wget.
+  command: yum install -y wget
+
+# CentOS 7
+
+- name: Download EPEL 7.
+  command: wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+  when: ansible_distribution_version | int == 7
+  ignore_errors: yes
+
+- name: Install EPEL.
+  command: rpm -Uvh epel-release-7*.rpm
+  when: ansible_distribution_version | int == 7
+  ignore_errors: yes
+
+- name: Download REMI repo.
+  command: wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+  when: ansible_distribution_version | int == 7
+
+
+- name: Install REMI repos - CentOS 7.
+  command: rpm -Uvh remi-release-7*.rpm
+  when: ansible_distribution_version | int == 7
+
+# CentOS 6
+
+- name: Download EPEL 6.
+  command: wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+  when: ansible_distribution_version | int == 6
+
+- name: Install EPEL.
+  command: rpm -Uvh epel-release-6*.rpm
+  when: ansible_distribution_version | int == 6
+  ignore_errors: yes
+
+- name: Download REMI repo.
+  command: wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+  when: ansible_distribution_version | int == 6
+
+
+- name: Install REMI repos - CentOS - 6.
+  command: rpm -Uvh remi-release-6*.rpm
+  when: ansible_distribution_version | int == 6
+
+- name: Install.
+  command: yum --enablerepo=remi install -y redis
+
+- shell: redis-server -v
+  register: version
+
+- debug: msg="{{version.stdout}}"

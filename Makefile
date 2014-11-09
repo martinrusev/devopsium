@@ -62,9 +62,12 @@ _redis_generate_ubuntu:
 _redis_generate_debian: 
 	python build_dockerfile.py --target=debian --release=7 --app=redis
 
+_redis_generate_centos: 
+	python build_dockerfile.py --target=centos --release=6 --app=redis
+
 test_redis_ubuntu: cleanup _redis_generate_ubuntu docker_build
 test_redis_debian: cleanup _redis_generate_debian docker_build
-
+test_redis_centos: cleanup _redis_generate_centos docker_build
 
 # ==============
 #  MySQL
@@ -72,8 +75,12 @@ test_redis_debian: cleanup _redis_generate_debian docker_build
 _mysql_generate_ubuntu: 
 	python build_dockerfile.py --target=ubuntu --release=14 --app=mysql
 
-test_mysql_ubuntu: cleanup _mysql_generate_ubuntu docker_build
+_mysql_generate_centos: cleanup
+	python build_dockerfile.py --target=centos --release=6 --app=mysql
 
+test_mysql_ubuntu: cleanup _mysql_generate_ubuntu docker_build
+test_mysql_centos: cleanup _mysql_generate_centos docker_build
+	
 # ==============
 #  Ruby
 # ==============

@@ -22,8 +22,6 @@ install_base:
 	mkdir -p $(BUILD)
 	mkdir -p $(BUILD)/usr/local/edgium
 
-	
-	mkdir -p $(BUILD)/var/log/edgium
 	mkdir -p $(BUILD)/usr/bin
 
 
@@ -40,7 +38,6 @@ build_deb: clean install_base
 	FPM_EDITOR="echo 'Replaces: edgium (<= $(VERSION))' >>" \
 $(FPM_BUILD) -t deb \
 -n edgium \
--d "adduser" \
 -d "git" \
 --post-install debian/postinst \
 --post-uninstall debian/postrm \
