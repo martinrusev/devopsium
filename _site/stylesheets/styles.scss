@@ -256,6 +256,12 @@ section.content--block {
 					padding-bottom: 20px;
 					font-weight: normal;
 					border-bottom: 0px;
+					&.version {
+						width: 170px;
+					}
+					&.distros {
+						width: 220px;
+					}
 				}
 			}
 			tbody {
@@ -293,11 +299,12 @@ section.content--block {
 						vertical-align: middle;
 						&.distros {
 							padding-left: 0px;
+							
 						}
 						&.install {
 							padding-left: 0px;
 							padding-right: 0px;
-							width: 340px;
+							
 						}
 					}
 				}
@@ -309,6 +316,23 @@ section.content--block {
 					line-height: 2.2em;
 					padding-left: 30px;
 
+				}
+				button {
+					cursor: pointer;
+					background: $silver;
+					color: white;
+					@include default-border-radius;
+					border: 0px;
+					float: right;
+					font-size: 2em;
+					width: 40px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					margin-right: 20px;
+					margin-top: 15px;
+					&:hover {
+						background: $yellow;
+					}
 				}
 				span.version{
 					@include default-border-radius;
@@ -323,7 +347,7 @@ section.content--block {
 
 				}
 				span.install {
-					width: 300px;
+					width: 320px;
 					@include default-text;
 					@include default-border-radius;
 					@include border-bottom-left-radius(0);
@@ -331,16 +355,14 @@ section.content--block {
 					font-size: 2em;
 					display: block;
 					padding: 15px;
+					float: right;
 					padding-left: 15px;
 					padding-right: 15px;
 					background: white;
-					margin-right: 20px;
+					margin-right: 10px;
 					color: $dark_silver; 
-					&:hover {
 
-						background: $text_color;
-						color: $yellow; 
-					}
+					
 				} // span install
 				ul.distros {
 					float: left;
@@ -626,4 +648,7 @@ blockquote::before{
 blockquote::after{
   /*Reset to make sure*/
   content: "";
+}
+.alertify-log {
+	@include default-text;
 }

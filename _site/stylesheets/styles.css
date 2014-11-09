@@ -181,6 +181,10 @@ section.content--block#packages table.packages-table thead th {
   padding-bottom: 20px;
   font-weight: normal;
   border-bottom: 0px; }
+section.content--block#packages table.packages-table thead th.version {
+  width: 170px; }
+section.content--block#packages table.packages-table thead th.distros {
+  width: 220px; }
 section.content--block#packages table.packages-table tbody tr {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -222,14 +226,30 @@ section.content--block#packages table.packages-table tbody tr td.distros {
   padding-left: 0px; }
 section.content--block#packages table.packages-table tbody tr td.install {
   padding-left: 0px;
-  padding-right: 0px;
-  width: 340px; }
+  padding-right: 0px; }
 section.content--block#packages table.packages-table tbody img {
   float: left; }
 section.content--block#packages table.packages-table tbody span.title {
   font-size: 2.8em;
   line-height: 2.2em;
   padding-left: 30px; }
+section.content--block#packages table.packages-table tbody button {
+  cursor: pointer;
+  background: #dfe4e9;
+  color: white;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 0px;
+  float: right;
+  font-size: 2em;
+  width: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 20px;
+  margin-top: 15px; }
+section.content--block#packages table.packages-table tbody button:hover {
+  background: #fdcb34; }
 section.content--block#packages table.packages-table tbody span.version {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -243,7 +263,7 @@ section.content--block#packages table.packages-table tbody span.version {
   padding: 15px;
   line-height: 1.6em; }
 section.content--block#packages table.packages-table tbody span.install {
-  width: 300px;
+  width: 320px;
   font-size: 1.7em;
   line-height: 1.7em;
   color: #313539;
@@ -259,14 +279,12 @@ section.content--block#packages table.packages-table tbody span.install {
   font-size: 2em;
   display: block;
   padding: 15px;
+  float: right;
   padding-left: 15px;
   padding-right: 15px;
   background: white;
-  margin-right: 20px;
+  margin-right: 10px;
   color: #abafb4; }
-section.content--block#packages table.packages-table tbody span.install:hover {
-  background: #313539;
-  color: #fdcb34; }
 section.content--block#packages table.packages-table tbody ul.distros {
   float: left; }
 section.content--block#packages table.packages-table tbody ul.distros li {
@@ -517,3 +535,8 @@ blockquote::before {
 blockquote::after {
   /*Reset to make sure*/
   content: ""; }
+
+.alertify-log {
+  font-size: 1.7em;
+  line-height: 1.7em;
+  color: #313539; }

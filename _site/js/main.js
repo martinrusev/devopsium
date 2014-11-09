@@ -25,5 +25,15 @@ $(function ()
 	});
 	$('.dataTables_filter').find('input').attr("placeholder", "Search");
 
+	var client = new ZeroClipboard($(".copy-button"));
+
+	client.on("ready", function(readyEvent) {
+	  
+		 client.on( "aftercopy", function( event ) {
+			window.Alertify.log.success("Copied!");
+		});
+	
+	});
+
 
 });

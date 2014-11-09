@@ -9,6 +9,8 @@
 		<link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css">
 		<link rel="stylesheet" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/alertify.js/0.4.0rc1/themes/alertify.css">
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/alertify.js/0.4.0rc1/themes/alertify.bootstrap.css">
 		<link rel="stylesheet" href="http://localhost:4000/stylesheets/styles.css">
 		
 		<link rel="icon" type="image/png" href="http://localhost:4000/images/favicon.png" />
@@ -39,6 +41,7 @@
 		</header>
 
 		<section id="what" class='content--block'>
+
 			<div class="wrapper">
 			<h2>What is Edgium?</h2>
 			<p>
@@ -135,8 +138,8 @@
 				<table class='packages-table'>
 					<thead>
 						<th>Name</th>
-						<th>Current Version</th>
-						<th>Supported Distros</th>
+						<th class='version'>Current Version</th>
+						<th class='distros'>Supported Distros</th>
 						<th>Installation</th>
 					</thead>
 					<tbody>
@@ -165,6 +168,7 @@
 </ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install mongodb"></button>
 							<span class="install">edgium install mongodb</span></td>
 						</tr>
 						<tr>
@@ -186,7 +190,11 @@
 								</ul>
 							</td>
 							<td class='install'>
-							<span class="install">edgium install postgresql</span></td>
+								<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install postgresql"></button>
+								<span class="install">edgium install postgresql</span>
+								
+							</td>
+
 						</tr>
 
 						<tr>
@@ -199,12 +207,23 @@
 							</td>
 							<td class='distros'>
 								<ul class='distros'>
-									<li>
-										<img class='with-tooltip' src="http://localhost:4000/images/ubuntu.png" alt="" data-tooltip="Ubuntu">
-									</li>
-								</ul>
+	<li>
+		<img class='with-tooltip' src="http://localhost:4000/images/aws.png" alt="" data-tooltip="Amazon Linux">
+	</li>
+	<li>
+		<img class='with-tooltip' src="http://localhost:4000/images/centos.png" alt="" data-tooltip="CentOS">
+	</li>
+	<li>
+		<img class='with-tooltip' src="http://localhost:4000/images/ubuntu.png" alt="" data-tooltip="Ubuntu">
+	</li>
+	<li> 
+		<img class='with-tooltip' src="http://localhost:4000/images/debian.png" alt="" data-tooltip="Debian">
+	</li>
+</ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install redis"></button>
+								
 							<span class="install">edgium install redis</span></td>
 						</tr>
 
@@ -219,12 +238,22 @@
 							</td>
 							<td class='distros'>
 								<ul class='distros'>
-									<li>
-										<img class='with-tooltip' src="http://localhost:4000/images/ubuntu.png" alt="" data-tooltip="Ubuntu">
-									</li>
-								</ul>
+	<li>
+		<img class='with-tooltip' src="http://localhost:4000/images/aws.png" alt="" data-tooltip="Amazon Linux">
+	</li>
+	<li>
+		<img class='with-tooltip' src="http://localhost:4000/images/centos.png" alt="" data-tooltip="CentOS">
+	</li>
+	<li>
+		<img class='with-tooltip' src="http://localhost:4000/images/ubuntu.png" alt="" data-tooltip="Ubuntu">
+	</li>
+	<li> 
+		<img class='with-tooltip' src="http://localhost:4000/images/debian.png" alt="" data-tooltip="Debian">
+	</li>
+</ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install mysql"></button>
 							<span class="install">edgium install mysql</span></td>
 						</tr>
 
@@ -253,6 +282,7 @@
 </ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install mariadb"></button>
 							<span class="install">edgium install mariadb</span></td>
 						</tr>
 
@@ -282,6 +312,7 @@
 </ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install nginx"></button>
 							<span class="install">edgium install nginx</span></td>
 						</tr>
 
@@ -302,6 +333,7 @@
 								</ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install apache"></button>
 							<span class="install">edgium install apache</span></td>
 						</tr>
 						
@@ -324,6 +356,7 @@
 								</ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install nodejs"></button>
 							<span class="install">edgium install nodejs</span></td>
 						</tr>
 
@@ -343,6 +376,7 @@
 								</ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install docker"></button>
 							<span class="install">edgium install docker</span></td>
 						</tr>
 
@@ -363,6 +397,7 @@
 								</ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install git"></button>
 							<span class="install">edgium install git</span></td>
 						</tr>
 
@@ -383,6 +418,7 @@
 								</ul>
 							</td>
 							<td class='install'>
+							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install ruby"></button>
 							<span class="install">edgium install ruby</span></td>
 						</tr>
 
@@ -390,23 +426,7 @@
 
 					</tbody>
 				</table>
-				<!-- 
-				<ul class="packages-list">
-					
-					
-
-					
-					<li>
-						<img src="http://localhost:4000/images/mysql.png" alt="">
-						<span class='title'>MySQL</span>   
-						<span class="install">edgium install mysql</span>
-					</li>
-					
-					
-					
-					
-				</ul> -->
-
+				
 			</div>
 			
 
@@ -431,14 +451,16 @@
 		</footer>
 
 
+
 <script src="http://localhost:4000/js/libs.min.js"></script>
 <script src="http://localhost:4000/js/main.js"></script>
 <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 <!-- 
 <script src="https://cdn.jsdelivr.net/g/jquery@1.11.1,
-	qtip2(jquery.qtip.min.js),underscorejs">
+	qtip2(jquery.qtip.min.js),zeroclipboard(ZeroClipboard.min.js),alertify.js(alertify.min.js)">
 </script>
 -->
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
