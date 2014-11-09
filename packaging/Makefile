@@ -57,7 +57,8 @@ $(FPM_BUILD) -t rpm \
 
 all: clean build_deb build_rpm
 
-
+build_container:
+	docker build --force-rm=true --rm=true --no-cache . 
 
 # =====================
 # Test
@@ -65,19 +66,32 @@ all: clean build_deb build_rpm
 test_debian:
 	cp debian/Dockerfile Dockerfile
 	sed -i s/EDGIUM_DEB_FILE/"edgium_$(VERSION)_all.deb"/g Dockerfile
-	docker build --rm=true --no-cache . 
+	docker build --force-rm=true --rm=true --no-cache .  
 	rm Dockerfile
 
 
 test_rpm:
 	cp rpm/Dockerfile Dockerfile
 	sed -i s/EDGIUM_RPM_FILE/"edgium-$(VERSION)-1.noarch.rpm"/g Dockerfile
-	docker build --rm=true --no-cache . 
+	docker build --force-rm=true --rm=true --no-cache . 
 	rm Dockerfile
 
 
 
 test_all: test_debian test_rpm
+
+test_debian_repo:
+	cp debian/Dockerfile.repo Dockerfile
+	docker build --force-rm=true --rm=true --no-cache . 
+	rm Dockerfile
+
+
+test_rpm_repo:
+	cp rpm/Dockerfile.repo Dockerfile
+	cp rpm/edgium.repo edgium.repo
+	docker build --force-rm=true --rm=true --no-cache . 
+	rm Dockerfile
+	rm edgium.repo
 
 
 # =====================
