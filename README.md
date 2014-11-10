@@ -17,7 +17,7 @@ It gets really time consuming and painful when you have to repeat the process.
 <br><br>
 Edgium combines all this knowledge in one package. 
 
-Visit [edgium.amon.cx](edgium.amon.cx) to learn more.
+Visit [http://edgium.amon.cx](http://edgium.amon.cx) to learn more.
 
 
 ## Quickstart 
