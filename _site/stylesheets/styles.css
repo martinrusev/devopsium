@@ -54,8 +54,8 @@ img {
   -ms-interpolation-mode: nearest-neighbor;
   /* IE8+                         */ }
 
-span.code {
-  background: #f1f6fb;
+code {
+  background: #fff799;
   padding: 8px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -63,11 +63,11 @@ span.code {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px; }
-span.code::selection {
+code::selection {
   background: #f94a39;
   /* Safari */
   color: white; }
-span.code::-moz-selection {
+code::-moz-selection {
   background: #f94a39;
   /* Firefox */
   color: white; }
@@ -168,6 +168,33 @@ section.content--block h3 {
   padding-right: 40px;
   color: #313539;
   font-weight: bold; }
+section.content--block#what div.left, section.content--block#what div.right {
+  padding: 30px;
+  padding-top: 0px; }
+section.content--block#what div.left code, section.content--block#what div.right code {
+  background: white;
+  border: 1px solid #abafb4; }
+section.content--block#what div.left h3, section.content--block#what div.right h3 {
+  text-align: left;
+  padding-bottom: 20px;
+  padding-top: 20px; }
+section.content--block#what div.left ol, section.content--block#what div.right ol {
+  float: left;
+  list-style-type: decimal;
+  list-style-position: inside; }
+section.content--block#what div.left ol li, section.content--block#what div.right ol li {
+  float: left;
+  clear: left;
+  padding-bottom: 10px;
+  font-size: 1.7em;
+  line-height: 1.7em;
+  color: #313539; }
+section.content--block#what div.left {
+  width: 800px;
+  padding-left: 0px; }
+section.content--block#what div.right {
+  width: 480px;
+  padding-right: 0px; }
 section.content--block#packages h3 {
   text-align: center;
   padding-top: 40px;

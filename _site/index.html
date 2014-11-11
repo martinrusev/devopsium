@@ -85,6 +85,47 @@
 				OSX. The major difference is that <span class="red">EDGIUM IS NOT A PACKAGE MANAGER</span> -
 				it uses the underlying package managers(apt, yum).
 			</p>
+			
+			<p>
+			<br>The example below should help you understand Edgium better:</p>
+			<div class="left" id="example">
+				<h3>Before</h3>
+				<ol>
+					<li>
+						Want to install recent MongoDB version: 
+
+							<code>apt-get install mongodb</code>
+						
+						<br>
+						On Ubuntu 12.04 LTS you will get Mongo 2.0.4, released on 20.03.2012. 
+						 
+					</li>
+						
+					<li>
+						Google 'How to install MongoDB 2.6.5 on Ubuntu 12.04', you are lucky -
+						MongoDB is one of the few projects that actually have really good docs. 
+					</li>
+					<li>Go to <a href="http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/">http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/</a></li>
+					<li>Follow the steps: </li>
+					<li><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</code></li>
+					<li><code>echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list</code></li>
+					<li><code>sudo apt-get update</code></li>
+					<li><code>sudo apt-get install -y mongodb-org</code></li>
+					<li>Awesome. We did it, now let's install nginx and PostgreSQL and repeat the process on 2 more servers.</li>
+				</ol>
+
+			</div>
+
+			<div class="right">
+				<h3>After</h3>
+				<ol>
+					<li><code>edgium install mongodb</code></li>
+					<li><code>edgium install nginx</code></li>
+					<li><code>edgium install postgresql</code></li>
+				</ol>
+				
+				
+			</div>
 
 			</div>
 		</section>

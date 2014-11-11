@@ -81,12 +81,13 @@ img {
 	}
 }
 
- span.code {
-	background: $odd;
+ code {
+	background: $highlight;
 	padding: 8px;
 	padding-top: 4px;
 	padding-bottom: 4px;
 	font-size: 1em;
+
 	@include border-radius(4px);
 	&::selection {
 		background: $orange; /* Safari */
@@ -228,7 +229,9 @@ section.content--block {
 	div.left, div.right {
 		width: $body_width/2;
 		float: left;
+		
 	}
+
 	
 	
 	h3 {
@@ -239,6 +242,41 @@ section.content--block {
 		font-weight: bold;
 		
 	}
+	&#what {
+		div.left, div.right {
+			padding: 30px;
+			padding-top: 0px;
+			code {
+				background: white;
+				border: 1px solid $dark_silver;
+			}
+			h3 {
+				text-align: left;
+				padding-bottom: 20px;
+				padding-top: 20px;
+			}
+			ol {
+			float: left;
+			list-style-type: decimal;
+
+			list-style-position: inside;
+			li {
+				float: left;
+				clear: left;
+				padding-bottom: 10px;
+				@include default-text;
+			}
+		} 
+		}
+		div.left {
+				width: 800px;
+				padding-left: 0px;
+		}
+		div.right {
+			width: $body_width - 800;
+			padding-right: 0px;
+		}
+	} // what ends 
 	&#packages {
 
 		h3{
