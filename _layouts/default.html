@@ -43,7 +43,7 @@
 		<section id="what" class='content--block'>
 
 			<div class="wrapper">
-			<h2>What is Edgium?</h2>
+			<h2>Why Edgium?</h2>
 			<p>
 				The packages available in our Distros are hopelesly outdated. To install the latest 
 				version we have to dig deep into Wikis, Docs, Stack Overflow
@@ -69,13 +69,35 @@
 		</section>
 
 
-		<section id="features" class='content--block odd'>
+		<section id="what" class='content--block odd'>
+
+			<div class="wrapper">
+			<h2>What is Edgium?</h2>
+			
+			<p>
+				Edgium is a small DevOps tool built around Ansible and everything it does is sync
+				the most popular and regularly updated repository with your 
+				<span class="highlight">yum/repos.d</span> or <span class='highlight'>/etc/apt/sources.list.d</span>.
+			</p>
+
+			<p>
+				Edgium is heavily inspired by <a href="http://brew.sh">homebrew</a> for 
+				OSX. The major difference is that <span class="red">EDGIUM IS NOT A PACKAGE MANAGER</span> -
+				it uses the underlying package managers(apt, yum).
+			</p>
+
+			</div>
+		</section>
+
+
+		<section id="features" class='content--block'>
 			<div class="wrapper">
 			<h2>Features</h2>
 			<ul class='features-list'>
 				<li>Installs software not packaged by your distribution</li>
 				<li>Installs up-to-date versions</li>
 				<li>Does not reinvent the wheel - uses official repositories, the most popular community repositories and the tools already available in your distro</li>
+
 			</ul>
 		</section>
 
@@ -85,6 +107,7 @@
 					<h3>Up and running in seconds</h3>
 				</div>
 				
+				<div class="right">
 				<div class="console">
 					<div class="console__heading">
 						<ul>
@@ -126,8 +149,12 @@
 					</div>
 						
 				</div><!-- console end -->
-
-
+				
+				<p class='manual-install'>
+					If installing things with curl | bash makes you <a href="http://youtu.be/WINDtlPXmmE?t=1m16s">mad as hell</a>, you can 
+					<a href="https://github.com/martinrusev/edgium#manual-installation">install Edgium the manual way.</a>
+				</p>
+				</div><!-- right end -->
 			</div>
 		</section>
 			
@@ -155,8 +182,8 @@
 								{% include _all_distros.html %}
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install mongodb"></button>
-							<span class="install">edgium install mongodb</span></td>
+								{% include _install_snippet.html app='mongodb' %}
+							</td>
 						</tr>
 						<tr>
 							<td >
@@ -177,9 +204,7 @@
 								</ul>
 							</td>
 							<td class='install'>
-								<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install postgresql"></button>
-								<span class="install">edgium install postgresql</span>
-								
+								{% include _install_snippet.html app='postgresql' %}
 							</td>
 
 						</tr>
@@ -196,9 +221,8 @@
 								{% include _all_distros.html %}
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install redis"></button>
-								
-							<span class="install">edgium install redis</span></td>
+								{% include _install_snippet.html app='redis' %}
+							</td>
 						</tr>
 
 
@@ -214,8 +238,8 @@
 								{% include _all_distros.html %}
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install mysql"></button>
-							<span class="install">edgium install mysql</span></td>
+								{% include _install_snippet.html app='mysql' %}
+							</td>
 						</tr>
 
 						<tr>
@@ -230,8 +254,8 @@
 								{% include _all_distros.html %}
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install mariadb"></button>
-							<span class="install">edgium install mariadb</span></td>
+								{% include _install_snippet.html app='mariadb' %}
+							</td>
 						</tr>
 
 
@@ -247,8 +271,8 @@
 								{% include _all_distros.html %}
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install nginx"></button>
-							<span class="install">edgium install nginx</span></td>
+								{% include _install_snippet.html app='nginx' %}
+							</td>
 						</tr>
 
 
@@ -268,8 +292,8 @@
 								</ul>
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install apache"></button>
-							<span class="install">edgium install apache</span></td>
+								{% include _install_snippet.html app='apache' %}
+							</td>
 						</tr>
 						
 						<tr>
@@ -291,8 +315,8 @@
 								</ul>
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install nodejs"></button>
-							<span class="install">edgium install nodejs</span></td>
+								{% include _install_snippet.html app='nodejs' %}
+							</td>
 						</tr>
 
 						<tr>
@@ -311,8 +335,8 @@
 								</ul>
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install docker"></button>
-							<span class="install">edgium install docker</span></td>
+								{% include _install_snippet.html app='docker' %}
+							</td>
 						</tr>
 
 
@@ -332,8 +356,8 @@
 								</ul>
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install git"></button>
-							<span class="install">edgium install git</span></td>
+								{% include _install_snippet.html app='git' %}
+							</td>
 						</tr>
 
 
@@ -353,8 +377,8 @@
 								</ul>
 							</td>
 							<td class='install'>
-							<button title="Copy to Clipboard"  class="copy-button fa fa-clipboard" data-clipboard-text="edgium install ruby"></button>
-							<span class="install">edgium install ruby</span></td>
+								{% include _install_snippet.html app='ruby' %}
+							</td>
 						</tr>
 
 

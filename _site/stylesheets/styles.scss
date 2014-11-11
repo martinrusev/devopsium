@@ -209,8 +209,19 @@ section.content--block {
 	}
 	p{
 		@include default-text;
+		a {
+			text-decoration: underline;
+			color: $text_color;
+		}
 		span.highlight {
 			background: $highlight;
+		}
+		span.red {
+			background: $red;
+			color: white;
+			padding: 4px;
+			padding-left: 10px;
+			padding-right: 10px;
 		}
 
 	}
@@ -274,9 +285,13 @@ section.content--block {
 							background: $text_color;
 							color: $yellow; 
 						}
-						span.version {
-							background: $neon_green;
+						button {
+							background: $orange;
 						}
+						a.view-source {
+							background: $green;
+						}
+					
 					}
 					td {
 						border-bottom: 10px solid white;
@@ -317,7 +332,7 @@ section.content--block {
 					padding-left: 30px;
 
 				}
-				button {
+				button.copy-button {
 					cursor: pointer;
 					background: $silver;
 					color: white;
@@ -331,7 +346,24 @@ section.content--block {
 					margin-right: 20px;
 					margin-top: 15px;
 					&:hover {
-						background: $yellow;
+						background: $orange;
+					}
+				}
+				a.view-source{
+					background: $silver;
+					color: white;
+					@include default-border-radius;
+					border: 0px;
+					float: right;
+					font-size: 2em;
+					text-align: center;
+					width: 40px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					margin-right: 20px;
+					margin-top: 15px;
+					&:hover {
+						background: $green;
 					}
 				}
 				span.version{
@@ -340,14 +372,14 @@ section.content--block {
 					display: block;
 					text-align: center;
 					font-size: 2em;
-					color: white;
-					background: $dark_silver;
+					//color: white;
+					//background: $dark_silver;
 					padding: 15px;
 					line-height: 1.6em;
 
 				}
 				span.install {
-					width: 320px;
+					width: 250px;
 					@include default-text;
 					@include default-border-radius;
 					@include border-bottom-left-radius(0);
@@ -425,6 +457,23 @@ section.content--block {
 		div.console {
 			float: right;
 			margin-top: 10px;
+		}
+		p.manual-install {
+
+			float: left;
+			clear: left;
+			padding-left: 37px;
+			padding-top: 20px;
+			@include default-text;
+			color: white;
+			a {
+				text-decoration: underline;
+				
+				color: white;
+				&:hover {
+					background: $yellow;
+				}
+			}
 		}
 
 	}
