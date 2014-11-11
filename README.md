@@ -20,11 +20,13 @@ Edgium combines all this knowledge in one package.
 Visit [http://edgium.amon.cx](http://edgium.amon.cx) to learn more.
 
 
+
 ## What is Edgium?
 
 Edgium is a small DevOps tool built around Ansible and everything it does is sync
 the most popular and regularly updated repository with your 
 `yum/repos.d` or `/etc/apt/sources.list.d`. 
+
 
 Edgium is heavily inspired by <a href="http://brew.sh">homebrew</a> for 
 OSX. The major difference is that **EDGIUM IS NOT A PACKAGE MANAGER** -
