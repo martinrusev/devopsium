@@ -64,6 +64,7 @@ Issue the following commands:
 		sudo apt-get update
 		sudo apt-get install edigum
 
+
 4. **Install Ansible** <br>
 Edgium uses Ansible playbooks behind the scenes. To install Ansible, check the official docs: 
 [http://docs.ansible.com/intro_installation.html#latest-releases-via-apt-ubuntu](http://docs.ansible.com/intro_installation.html#latest-releases-via-apt-ubuntu "check the official docs")
@@ -87,8 +88,7 @@ To install the latest stable version of Edgium, issue the following command:
 
 	yum install -y edgium
 
-
-3. **Install Ansible** <br>
+3.**Install Ansible** <br>
 Edgium uses Ansible playbooks behind the scenes. To install Ansible, check the official docs: 
 [http://docs.ansible.com/intro_installation.html#latest-release-via-yum](http://docs.ansible.com/intro_installation.html#latest-release-via-yum)
 
