@@ -45,7 +45,7 @@ it uses the underlying package managers(apt, yum).
 ### Install on Ubuntu/Debian
 
 1. **Import the public key used by the package management system.**
-The Ubuntu package management tools (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors sign packages with GPG keys. Issue the following command to import the [https://packages.amon.cx/amon.key]( Edgium public GPG Key):
+	The Ubuntu package management tools (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors sign packages with GPG keys. Issue the following command to import the [https://packages.amon.cx/amon.key]( Edgium public GPG Key):
 
 	
 
