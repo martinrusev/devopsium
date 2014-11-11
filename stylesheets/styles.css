@@ -510,18 +510,39 @@ div.console__content span.output {
 
 .fork-me {
   background: #2ec6c8;
-  color: white;
   text-align: center;
   height: 40px;
   overflow: hidden;
   position: fixed;
   font-size: 2em;
   vertical-align: middle;
-  padding-top: 10px;
+  padding-top: 5px;
   right: 0;
   top: 0;
   white-space: nowrap;
-  width: 40px; }
+  width: auto;
+  color: #2ec6c8;
+  text-decoration: underline;
+  font-size: 1.6em;
+  line-height: 1.7em;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none; }
+.fork-me:hover {
+  background: #2ec6c8;
+  color: white;
+  text-decoration: none;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px; }
+.fork-me:hover {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background: #fdcb34; }
+.fork-me:before {
+  margin-right: 10px; }
 
 footer {
   background: #2ec6c8;

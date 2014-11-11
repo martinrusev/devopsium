@@ -624,19 +624,31 @@ div.console {
 
 .fork-me {
 	background: $neon_green;
-	color: white;
+	
 	text-align: center;
 	height: 40px;
 	overflow: hidden;
 	position: fixed;
 	font-size: 2em;
 	vertical-align: middle;
-	padding-top: 10px;
+	padding-top: 5px;
 	right: 0;
 	// text-indent: 100%;
-	top: 0;
+	top: 0; 
 	white-space: nowrap;
-	width: 40px;
+	width: auto;
+	@include default-link;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-decoration: none;
+	&:hover {
+		@include border-radius(0px);
+		background: $yellow;
+	}
+	&:before {
+		margin-right: 10px;
+	}
  }
 footer {
 	background: $neon_green;
