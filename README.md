@@ -8,7 +8,7 @@ Install up-to-date Linux packages with 1 line.
 
 
 
-## What is Edgium?
+## Why Edgium?
 
 The packages available in our Distros are hopelesly outdated. To install the latest 
 version we have to dig deep into Wikis, Docs, Stack Overflow
@@ -17,13 +17,29 @@ It gets really time consuming and painful when you have to repeat the process.
 <br><br>
 Edgium combines all this knowledge in one package. 
 
-Visit [edgium.amon.cx](edgium.amon.cx) to learn more.
+Visit [http://edgium.amon.cx](http://edgium.amon.cx) to learn more.
 
+
+## What is Edgium?
+
+Edgium is a small DevOps tool built around Ansible and everything it does is sync
+the most popular and regularly updated repository with your 
+`yum/repos.d` or `/etc/apt/sources.list.d`. 
+
+Edgium is heavily inspired by <a href="http://brew.sh">homebrew</a> for 
+OSX. The major difference is that **EDGIUM IS NOT A PACKAGE MANAGER** -
+it uses the underlying package managers(apt, yum).
 
 ## Quickstart 
 
 
 	curl http://edgium.amon.cx/install.sh | bash
+
+
+
+## Manual Installation
+
+
 
 
 ## Available packages
