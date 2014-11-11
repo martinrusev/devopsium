@@ -42,6 +42,27 @@ it uses the underlying package managers(apt, yum).
 ## Manual Installation
 
 
+### Install on Ubuntu/Debian
+
+1. **Import the public key used by the package management system.**
+The Ubuntu package management tools (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors sign packages with GPG keys. Issue the following command to import the [https://packages.amon.cx/amon.key]( Edgium public GPG Key):
+
+	
+	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv AD53961F
+
+2. **Create a list file for Edgium.**
+Create the /etc/apt/sources.list.d/edgium.list list file using the following command:
+
+
+	echo 'deb http://packages.amon.cx/repo amon contrib' | sudo tee /etc/apt/sources.list.d/edgium.list
+
+
+3. **Reload local package database and install**
+Issue the following commands:
+
+	
+	sudo apt-get update
+	sudo apt-get install edigum
 
 
 ## Available packages
