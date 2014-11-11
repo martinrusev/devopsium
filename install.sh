@@ -67,12 +67,12 @@ function install_edgium() {
    
     # Install the necessary package sources
     if [ $DISTRO == 'rpm' ]; then
-        echo -e "\033[34m\n* Installing YUM sources for Amon\n\033[0m"
+        echo -e "\033[34m\n* Installing YUM sources\n\033[0m"
         $sudo_cmd sh -c "echo -e '[amon]\nname = Amon.\nbaseurl = http://packages.amon.cx/rpm/\nenabled=1\ngpgcheck=0\npriority=1' > /etc/yum.repos.d/amon.repo"
 
-        printf "\033[34m* Installing the Amon Agent package\n\033[0m\n"
+        printf "\033[34m* Installing the Edgium package\n\033[0m\n"
 
-        $sudo_cmd yum -y install amon-agent
+        $sudo_cmd yum -y install edgium
       
     elif [ $DISTRO == 'debian' ]; then
         printf "\033[34m\n* Installing APT package sources for Amon\n\033[0m\n"
