@@ -75,7 +75,7 @@ function install_edgium() {
         $sudo_cmd yum -y install edgium
       
     elif [ $DISTRO == 'debian' ]; then
-        printf "\033[34m\n* Installing APT package sources for Amon\n\033[0m\n"
+        printf "\033[34m\n* Installing APT package sources for Edgium\n\033[0m\n"
         $sudo_cmd sh -c "echo 'deb http://packages.amon.cx/repo amon contrib' > /etc/apt/sources.list.d/amonagent.list"
         $sudo_cmd apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv AD53961F
 
@@ -104,13 +104,13 @@ function install_ansible(){
             $sudo_cmd apt-get install -y --force-yes python-software-properties software-properties-common
             $sudo_cmd apt-add-repository -y ppa:ansible/ansible
             $sudo_cmd apt-get update
-            $sudo_cmd apt-get install ansible
+            $sudo_cmd apt-get install -y --force-yes ansible
         elif [ $DISTRO_ID == 'debian' ]; then
 
             if [ $DISTRO_VERSION == 7 ]; then
                 $sudo_cmd sh -c "echo 'deb http://http.debian.net/debian wheezy-backports main' > /etc/apt/sources.list.d/backports.list"
                 $sudo_cmd apt-get update
-                $sudo_cmd apt-get -t wheezy-backports install "ansible"
+                $sudo_cmd apt-get -t wheezy-backports install -y --force-yes "ansible"
             else
                 $ printf "\033[31mYour OS or distribution are not supported by this install script.\033[0m\n"
                 exit;
