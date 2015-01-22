@@ -4,38 +4,35 @@
 Edgium
 ======
 
-Install up-to-date Linux packages with 1 line.
+Collection of Ansible playbooks to quickly install up to date Linux packages
 
 
 
-## Why Edgium?
+## Motivation
 
-The packages available in our Distros are hopelesly outdated. To install the latest 
+The packages available in our Distros are not always up to date with the latest and greatest. To install the latest 
 version we have to dig deep into Wikis, Docs, Stack Overflow
 or some random article/tutorial named "How to install X on [Distro of Choice]".
-It gets really time consuming and painful when you have to repeat the process.
-<br><br>
-Edgium combines all this knowledge in one package. 
+It is a tiresome and time consuming task.
 
-Visit [http://edgium.amon.cx](http://edgium.amon.cx) to learn more.
+Edgium is a collection of Ansible Playbooks that aims to correct this by providing a  standardized way to sync your local repos with the officially maintained by the package creators or the community repositories.
 
 
 
 ## What is Edgium?
 
-Edgium is a small DevOps tool built around Ansible and everything it does is sync
-the most popular and regularly updated repository with your 
+Edgium is a small DevOps tool built around Ansible and which syncs
+the  officially maintained or most popular community repositories with your 
 `yum/repos.d` or `/etc/apt/sources.list.d`. 
 
 
 Edgium is heavily inspired by <a href="http://brew.sh">homebrew</a> for 
-OSX. The major difference is that **EDGIUM IS NOT A PACKAGE MANAGER** -
-it uses the underlying package managers(apt, yum).
+OSX. 
 
 ## Quickstart 
 
 
-	curl http://edgium.amon.cx/install.sh | bash
+	curl https://raw.githubusercontent.com/martinrusev/edgium/master/install.sh | bash
 
 
 
@@ -92,9 +89,15 @@ To install the latest stable version of Edgium, issue the following command:
 Edgium uses Ansible playbooks behind the scenes. To install Ansible, check the official docs: 
 [http://docs.ansible.com/intro_installation.html#latest-release-via-yum](http://docs.ansible.com/intro_installation.html#latest-release-via-yum)
 
-## Available packages
+## Available playbooks
 
-You can see the whole list of available packages here:
+You can see the whole list of available playbooks here:
 
 
-[http://edgium.amon.cx/#packages](http://edgium.amon.cx/#packages)
+[http://martinrusev.github.io/edgium/#packages](http://martinrusev.github.io/edgium/#packages)
+
+## Contributing
+
+So far, Edgium has been an internal tool, and has been maintained in the little free time available to us. Bugs may appear, and there is a lot of room for improvement.
+
+If you happen to come across a bug, please create an issue providing as much information as possible. If you want to help, fork the project and submit your Pull Requests. All contributions are most welcome.
