@@ -1,7 +1,7 @@
 #!/bin/bash
-# Colonizer install script.
+# Edgium install script.
 set -e
-logfile="colonizer-install.log"
+logfile="edgium-install.log"
 
 # Set up a named pipe for logging
 npipe=/tmp/$$.tmp
@@ -27,14 +27,14 @@ fi
 
 function on_error() {
     printf "\033[31m
-It looks like you hit an issue when trying to install Falcon.
+It looks like you hit an issue when trying to install Edgium.
 
-Troubleshooting and basic usage information for Falcon are available at:
+Troubleshooting and basic usage information for Edgium are available at:
 
-    https://colonizer.amon.cx
+    https://github.com/martinrusev/edgium
 
 If you're still having problems, please send an email to martin@amon.cx
-with the contents of colonizer-install.log and we'll do our very best to help you
+with the contents of edgium-install.log and we'll do our very best to help you
 solve your problem.\n\033[0m\n"
 }
 trap on_error ERR
@@ -52,30 +52,30 @@ function install() {
    
     # Install the necessary package sources
     if [ $DISTRO == 'rpm' ]; then
-        echo -e "\033[34m\n* Installing YUM sources for Colonizer\n\033[0m"
+        echo -e "\033[34m\n* Installing YUM sources for Edgium\n\033[0m"
         $sudo_cmd sh -c "echo -e '[amon]\nname = Amon.\nbaseurl = http://packages.amon.cx/rpm/\nenabled=1\ngpgcheck=0\npriority=1' > /etc/yum.repos.d/amon.repo"
 
-        printf "\033[34m* Installing the Colonizer package\n\033[0m\n"
+        printf "\033[34m* Installing the Edgium package\n\033[0m\n"
 
-        $sudo_cmd yum -y install colonizer
+        $sudo_cmd yum -y install edgium
       
     elif [ $DISTRO == 'debian' ]; then
-        printf "\033[34m\n* Installing APT package sources for Colonizer\n\033[0m\n"
+        printf "\033[34m\n* Installing APT package sources for Edgium\n\033[0m\n"
         $sudo_cmd sh -c "echo 'deb http://packages.amon.cx/repo amon contrib' > /etc/apt/sources.list.d/amonagent.list"
         $sudo_cmd apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv AD53961F
 
-        printf "\033[34m\n* Installing the Colonizer package\n\033[0m\n"
+        printf "\033[34m\n* Installing the Edgium package\n\033[0m\n"
         $sudo_cmd apt-get install -y --force-yes python-software-properties software-properties-common
         $sudo_cmd apt-add-repository -y ppa:ansible/ansible
        
         $sudo_cmd apt-get update
-        $sudo_cmd apt-get install -y --force-yes colonizer
+        $sudo_cmd apt-get install -y --force-yes edgium
 
     else
         printf "\033[31mYour OS or distribution are not supported by this install script.
-    Please follow the instructions on the Colonizer setup page:
+    Please follow the instructions on the Edgium setup page:
 
-        http://colonizer.amon.cx\033[0m\n"
+        https://github.com/martinrusev/edgium\033[0m\n"
         exit;
     fi
 
@@ -104,9 +104,9 @@ function print_troubleshooting_instructions() {
 printf "\033[32m All done. 
    ----------------------------------
    
-    To install a package with Falcon
+    To install a package with Edgium
         
-        colonizer install package
+        edgium install package
 
 
 \033[0m"
