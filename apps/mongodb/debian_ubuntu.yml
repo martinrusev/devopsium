@@ -17,3 +17,4 @@
 
 - name: Start MongoDB.
   command: service mongod start
+  ignore_errors: yes
