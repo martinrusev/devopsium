@@ -4,9 +4,8 @@
 Devopsium
 ======
 
-Collection of Ansible playbooks to quickly install up to date Linux packages
-
-
+Devopsium is an Ansible playbook for syncing up official or popular community repositories
+for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`, etc.
 
 ## Motivation
 
