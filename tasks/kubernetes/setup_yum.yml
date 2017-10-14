@@ -1,0 +1,17 @@
+---
+
+- debug:
+    msg: "Kubernetes RPM Repositories setup"
+
+- name: add repo
+  template:
+    src: kubernetes/kubernetes.yum.repo.j2
+    dest: /etc/yum.repos.d/kubernetes.repo
+
+- name: import rpm keys
+  rpm_key:
+    state: present
+    key: "{{ item }}"
+  with_items:
+    - https://packages.cloud.google.com/yum/doc/yum-key.gpg
+    - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg

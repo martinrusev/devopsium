@@ -1,0 +1,15 @@
+---
+
+- debug:
+    msg: "Nginx RPM Repositories setup"
+
+
+- name: import rpm key
+  rpm_key:
+    state: present
+    key: https://nginx.org/keys/nginx_signing.key
+
+- name: add repo
+  template:
+    src: nginx/nginx.yum.repo.j2
+    dest: /etc/yum.repos.d/nginx.repo

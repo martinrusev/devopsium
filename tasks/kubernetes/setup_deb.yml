@@ -1,0 +1,20 @@
+---
+
+- debug:
+    msg: "Kubernetes DEB Repositories setup"
+
+- name: install apt-transport-https
+  apt:
+    name: apt-transport-https
+    state: installed
+
+- name: add key
+  apt_key:
+    state: present
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: add repo
+  lineinfile:
+    dest: /etc/apt/sources.list.d/kubernetes.list
+    create: yes
+    line: 'deb http://apt.kubernetes.io/ kubernetes-xenial main'

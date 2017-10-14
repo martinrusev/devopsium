@@ -1,0 +1,20 @@
+---
+
+- debug:
+    msg: "Jenkins DEB Repositories setup"
+
+- name: install apt-transport-https
+  apt:
+    name: apt-transport-https
+    state: installed
+
+- name: add key
+  apt_key:
+    state: present
+    url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+
+- name: add repo
+  lineinfile:
+    dest: /etc/apt/sources.list.d/jenkins.list
+    create: yes
+    line: 'deb https://pkg.jenkins.io/debian-stable binary'

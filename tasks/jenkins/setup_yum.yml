@@ -1,0 +1,16 @@
+---
+
+- debug:
+    msg: "Jenkins RPM Repositories setup"
+
+- name: add repo
+  template:
+    src: jenkins/jenkins.yum.repo.j2
+    dest: /etc/yum.repos.d/jenkins.repo
+
+- name: import rpm keys
+  rpm_key:
+    state: present
+    key: "{{ item }}"
+  with_items:
+    - https://pkg.jenkins.io/redhat/jenkins.io.key

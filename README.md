@@ -4,13 +4,15 @@
 Devopsium
 ======
 
-Devopsium is an Ansible playbook for syncing up official or popular community repositories
-for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`, etc.
+[![Build Status](https://travis-ci.org/martinrusev/devopsium.svg?branch=master)](https://travis-ci.org/martinrusev/devopsium)
+
+Devopsium is an Ansible playbook for syncing up official or the most popular community repositories
+for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`, `kubernetes`, `jenkins`, etc.
 
 ## Motivation
 
 The packages available in our Distro are not always up to date with the latest and greatest provided by the software creators.
-To install the latest desirable version, we usually go over the following flow:
+To install the latest desirable version, we usually go over the following routine:
 
 - We dig into Wikis, official Documentation, StackOverflow and find the officially supported repository
 - We create `/etc/apt/sources.list.d/package.list`, `yum/repos.d/package.list` files
@@ -61,6 +63,10 @@ ansible-galaxy install martinrusev.devopsium
 | mongodb			 | https://docs.mongodb.com/manual/administration/install-on-linux | Ubuntu/Debian/RHEL  |
 | docker-ce			 | https://docs.docker.com/engine/installation/linux/docker-ce | Ubuntu/Debian/RHEL  |
 | influxdb			 | https://docs.influxdata.com/influxdb/v1.3/introduction/installation | Ubuntu/Debian/RHEL  |
+| elasticsearch		 | https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html | Ubuntu/Debian/RHEL  |
+| nginx		 | https://nginx.org/en/linux_packages.html | Ubuntu/Debian/RHEL  |
+| kubernetes		 | https://kubernetes.io/docs/setup/independent/install-kubeadm/ | Ubuntu/Debian/RHEL  |
+| jenkins		 | https://kubernetes.io/docs/setup/independent/install-kubeadm/ | Ubuntu/Debian/RHEL  |
 
 ## Contributing
 

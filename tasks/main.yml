@@ -1,5 +1,14 @@
 ---
 
+- include: jenkins/main.yml
+  when: "'jenkins' in devopsium_repositories"
+
+- include: kubernetes/main.yml
+  when: "'kubernetes' in devopsium_repositories"
+
+- include: elasticsearch/main.yml
+  when: "'elasticsearch' in devopsium_repositories"
+
 - include: grafana/main.yml
   when: "'grafana' in devopsium_repositories"
 

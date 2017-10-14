@@ -1,0 +1,15 @@
+---
+
+- debug:
+    msg: "ElasticSearch RPM Repositories setup"
+
+
+- name: import rpm key
+  rpm_key:
+    state: present
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+- name: add repo
+  template:
+    src: elasticsearch/elasticsearch.yum.repo.j2
+    dest: /etc/yum.repos.d/elasticsearch.repo
