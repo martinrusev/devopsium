@@ -10,3 +10,9 @@
         - mongodb
         - docker-ce
         - influxdb
+        - elasticsearch
+        - nginx
+        - kubernetes
+        - jenkins
+        - sublime-text
+        - vscode
