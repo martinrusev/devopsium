@@ -3,5 +3,5 @@ python:
   - "3.6"
 install:
   - pip install -q molecule
-  - pip instal -q ansible
+  - pip install -q ansible
 script: molecule test
