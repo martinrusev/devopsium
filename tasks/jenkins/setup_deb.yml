@@ -17,4 +17,4 @@
   lineinfile:
     dest: /etc/apt/sources.list.d/jenkins.list
     create: yes
-    line: 'deb https://pkg.jenkins.io/debian-stable binary'
+    line: 'deb https://pkg.jenkins.io/debian-stable binary/'

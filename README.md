@@ -56,19 +56,33 @@ ansible-galaxy install martinrusev.devopsium
 ## Available Repositories
 
 
-| Name                   | Instructions from                       | Supported Distros       |
+| Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
-| grafana			     | https://packagecloud.io/grafana | Ubuntu/Debian/RHEL|
-| postgresql			 | https://wiki.postgresql.org/wiki/Apt | Ubuntu/Debian  |
-| mongodb			 | https://docs.mongodb.com/manual/administration/install-on-linux | Ubuntu/Debian/RHEL  |
-| docker-ce			 | https://docs.docker.com/engine/installation/linux/docker-ce | Ubuntu/Debian/RHEL  |
-| influxdb			 | https://docs.influxdata.com/influxdb/v1.3/introduction/installation | Ubuntu/Debian/RHEL  |
-| elasticsearch		 | https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html | Ubuntu/Debian/RHEL  |
-| nginx		 | https://nginx.org/en/linux_packages.html | Ubuntu/Debian/RHEL  |
-| kubernetes		 | https://kubernetes.io/docs/setup/independent/install-kubeadm/ | Ubuntu/Debian/RHEL  |
-| jenkins		 | https://jenkins.io/download/ | Ubuntu/Debian/RHEL  |
-| sublime-text		 | https://www.sublimetext.com/docs/3/linux_repositories.html | Ubuntu/Debian/RHEL  |
-| vscode		 | https://code.visualstudio.com/docs/setup/linux | Ubuntu/Debian/RHEL  |
+| grafana			     | `grafana`  | Ubuntu/Debian/RHEL|
+| postgresql			 | `postgresql-` `9.2, 9.3, 9.4, 9.5, 9.6, 10`| Ubuntu/Debian  |
+| mongodb			 	 | `mongodb-org-server` | Ubuntu/Debian/RHEL  |
+| docker-ce			 	 | `docker-ce`  | Ubuntu/Debian/RHEL  |
+| influxdb			 	 | `influxdb`, `telegraf`, `kapacitor`, `chronograf`  | Ubuntu/Debian/RHEL  |
+| elasticsearch		 	 | `elasticsearch`, `filebeat`, `metricbeat`, `kibana` | Ubuntu/Debian/RHEL  |
+| nginx		 			 | `nginx` | Ubuntu/Debian/RHEL  |
+| kubernetes		 	 | `kubelet`, `kubeadm`, `kubectl`  | Ubuntu/Debian/RHEL  |
+| jenkins		 		 | `jenkins`  | Ubuntu/Debian/RHEL  |
+| sublime-text		 | `sublime-text` | Ubuntu/Debian/RHEL  |
+| vscode		 | `code` | Ubuntu/Debian/RHEL  |
+
+## Repository Setup References
+
+- Grafana - https://packagecloud.io/grafana
+- PostgreSQL - https://wiki.postgresql.org/wiki/Apt
+- MongoDB -  https://docs.mongodb.com/manual/administration/install-on-linux
+- Docker - https://docs.docker.com/engine/installation/linux/docker-ce
+- InfluxDB - https://docs.influxdata.com/influxdb/v1.3/introduction/installation
+- ElasticSearch - https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html
+- Nginx - https://nginx.org/en/linux_packages.html
+- Kubernetes - https://kubernetes.io/docs/setup/independent/install-kubeadm/
+- Jenkins - https://jenkins.io/download/
+- Sublime Text - https://www.sublimetext.com/docs/3/linux_repositories.html
+- VSCode - https://code.visualstudio.com/docs/setup/linux
 
 ## Contributing
 

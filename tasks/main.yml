@@ -1,5 +1,8 @@
 ---
 
+- include: vscode/main.yml
+  when: "'vscode' in devopsium_repositories"
+
 - include: sublime-text/main.yml
   when: "'sublime-text' in devopsium_repositories"
 

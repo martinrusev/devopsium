@@ -18,4 +18,4 @@
   lineinfile:
     dest: /etc/apt/sources.list.d/vscode.list
     create: yes
-    line: '"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+    line: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
