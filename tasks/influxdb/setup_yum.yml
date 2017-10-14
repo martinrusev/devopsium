@@ -1,0 +1,14 @@
+---
+
+- debug:
+    msg: "InfluxDB RPM Repositories setup"
+
+- name: add repo
+  template:
+    src: influxdb/influxdb.yum.repo.j2
+    dest: /etc/yum.repos.d/influxdb.repo
+
+- name: import rpm key
+  rpm_key:
+    state: present
+    key: https://repos.influxdata.com/influxdb.key

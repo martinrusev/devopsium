@@ -4,6 +4,6 @@
     msg: "MongoDB RPM Repositories setup"
 
 - name: add repo
-  template: 
-    src: mongodb.yum.repo.j2
+  template:
+    src: mongodb/mongodb.yum.repo.j2
     dest: /etc/yum.repos.d/mongodb-org-3.4.repo

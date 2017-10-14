@@ -1,10 +1,8 @@
 ---
-- hosts: "{{ test_hosts|default('all') }}"
-  become: yes
-  become_method: sudo
-  tasks:
-    - include: 'tasks/main.yml'
-
+- name: Converge
+  hosts: all
+  roles:
+    - role: devopsium
   vars:
     - devopsium_repositories:
         - grafana

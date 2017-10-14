@@ -56,10 +56,11 @@ ansible-galaxy install martinrusev.devopsium
 
 | Name                   | Repo                       | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
-| grafana			     | https://packagecloud.io/grafana | Ubuntu/Debian/RHEL  |
+| grafana			     | https://packagecloud.io/grafana | Ubuntu/Debian/RHEL|
 | postgresql			 | https://wiki.postgresql.org/wiki/Apt | Ubuntu/Debian  |
-| mongodb			 | https://docs.mongodb.com/manual/administration/install-on-linux/ | Ubuntu/Debian/RHEL  |
+| mongodb			 | https://docs.mongodb.com/manual/administration/install-on-linux | Ubuntu/Debian/RHEL  |
 | docker-ce			 | https://docs.docker.com/engine/installation/linux/docker-ce | Ubuntu/Debian/RHEL  |
+| influxdb			 | https://docs.influxdata.com/influxdb/v1.3/introduction/installation | Ubuntu/Debian/RHEL  |
 
 ## Contributing
 

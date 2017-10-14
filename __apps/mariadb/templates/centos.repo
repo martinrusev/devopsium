@@ -1,4 +1,0 @@
-[mariadb]
-name = MariaDB
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1

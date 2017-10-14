@@ -4,18 +4,18 @@
     msg: "Grafana DEB Repositories setup"
 
 - name: install apt-transport-https
-  apt: 
-    name: apt-transport-https 
+  apt:
+    name: apt-transport-https
     state: installed
 
 - name: add key
-  apt_key: 
-    state: present 
+  apt_key:
+    state: present
     url: https://packagecloud.io/gpg.key
 
 # Works on both debian and ubuntu
 - name: add repo
   lineinfile:
     dest: /etc/apt/sources.list.d/grafana_stable.list
-    create: yes 
+    create: yes
     line: 'deb https://packagecloud.io/grafana/stable/debian/ jessie main'

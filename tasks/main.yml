@@ -11,3 +11,6 @@
 
 - include: docker-ce/main.yml
   when: "'docker-ce' in devopsium_repositories"
+
+- include: influxdb/main.yml
+  when: "'influxdb' in devopsium_repositories"
