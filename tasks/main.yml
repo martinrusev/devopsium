@@ -1,5 +1,8 @@
 ---
 
+- include: sublime-text/main.yml
+  when: "'sublime-text' in devopsium_repositories"
+
 - include: jenkins/main.yml
   when: "'jenkins' in devopsium_repositories"
 

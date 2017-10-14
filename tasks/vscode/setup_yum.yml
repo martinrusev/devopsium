@@ -1,0 +1,16 @@
+---
+
+- debug:
+    msg: "VSCode RPM Repositories setup"
+
+- name: add repo
+  template:
+    src: vscode/vscode.yum.repo.j2
+    dest: /etc/yum.repos.d/vscode.repo
+
+- name: import rpm keys
+  rpm_key:
+    state: present
+    key: "{{ item }}"
+  with_items:
+    - https://packages.microsoft.com/keys/microsoft.asc

@@ -56,7 +56,7 @@ ansible-galaxy install martinrusev.devopsium
 ## Available Repositories
 
 
-| Name                   | Repo                       | Supported Distros       |
+| Name                   | Instructions from                       | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
 | grafana			     | https://packagecloud.io/grafana | Ubuntu/Debian/RHEL|
 | postgresql			 | https://wiki.postgresql.org/wiki/Apt | Ubuntu/Debian  |
@@ -66,7 +66,9 @@ ansible-galaxy install martinrusev.devopsium
 | elasticsearch		 | https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html | Ubuntu/Debian/RHEL  |
 | nginx		 | https://nginx.org/en/linux_packages.html | Ubuntu/Debian/RHEL  |
 | kubernetes		 | https://kubernetes.io/docs/setup/independent/install-kubeadm/ | Ubuntu/Debian/RHEL  |
-| jenkins		 | https://kubernetes.io/docs/setup/independent/install-kubeadm/ | Ubuntu/Debian/RHEL  |
+| jenkins		 | https://jenkins.io/download/ | Ubuntu/Debian/RHEL  |
+| sublime-text		 | https://www.sublimetext.com/docs/3/linux_repositories.html | Ubuntu/Debian/RHEL  |
+| vscode		 | https://code.visualstudio.com/docs/setup/linux | Ubuntu/Debian/RHEL  |
 
 ## Contributing
 

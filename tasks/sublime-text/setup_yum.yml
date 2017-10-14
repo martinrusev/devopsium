@@ -1,0 +1,16 @@
+---
+
+- debug:
+    msg: "Sublime Text RPM Repositories setup"
+
+- name: add repo
+  template:
+    src: sublime-text/sublime-text.yum.repo.j2
+    dest: /etc/yum.repos.d/sublime3.repo
+
+- name: import rpm keys
+  rpm_key:
+    state: present
+    key: "{{ item }}"
+  with_items:
+    - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
