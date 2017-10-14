@@ -56,3 +56,6 @@ docs/_build/
 
 *.deb
 *.rpm
+.yamllint
+.cache/
+.molecule/

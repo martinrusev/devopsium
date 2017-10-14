@@ -5,16 +5,29 @@ driver:
   name: docker
 lint:
   name: yamllint
+  enabled: False
 platforms:
-  - name: instance
+  - name: centos
     image: centos:7
+  - name: ubuntu
+    image: ubuntu:16.04
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
   name: default
+  test_sequence:
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - converge
+    - verify
+    - destroy
 verifier:
   name: testinfra
   lint:
     name: flake8
+    enabled: False
