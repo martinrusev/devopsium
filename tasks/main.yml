@@ -1,0 +1,13 @@
+---
+
+- include: grafana/main.yml
+  when: "'grafana' in devopsium_repositories"
+
+- include: postgresql/main.yml
+  when: "'postgresql' in devopsium_repositories"
+
+- include: mongodb/main.yml
+  when: "'mongodb' in devopsium_repositories"
+
+- include: docker-ce/main.yml
+  when: "'docker-ce' in devopsium_repositories"

@@ -1,0 +1,17 @@
+---
+
+- debug:
+    msg: "Grafana RPM Repositories setup"
+
+- name: add repo
+  template: 
+    src: grafana.yum.repo.j2
+    dest: /etc/yum.repos.d/grafana.repo
+
+- name: import rpm keys
+  rpm_key: 
+    state: present 
+    key: "{{ item }}"
+  with_items:
+    - https://packagecloud.io/gpg.key
+    - https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana

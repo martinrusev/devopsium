@@ -1,4 +1,0 @@
-PLUGINS_REPO=/usr/local/edgium
-rm -rf $PLUGINS_REPO
-rm -rf /usr/bin/edgium
-exit 0

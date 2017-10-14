@@ -1,0 +1,13 @@
+---
+- hosts: "{{ test_hosts|default('all') }}"
+  become: yes
+  become_method: sudo
+  tasks:
+    - include: 'tasks/main.yml'
+
+  vars:
+    - devopsium_repositories:
+        - grafana
+        - postgresql
+        - mongodb
+        - docker-ce

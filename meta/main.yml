@@ -1,0 +1,28 @@
+galaxy_info:
+  author: Martin Rusev
+  description: Ansible Role for syncing official/community repositories for popular packages
+  license: MIT
+
+  min_ansible_version: 2.2
+
+
+  platforms:
+  - name: EL
+    versions:
+      - 6
+      - 7
+  - name: Ubuntu
+    versions:
+      - xenial
+      - trusty
+  - name: Debian
+    versions:
+      - wheezy
+      - jessie
+
+  galaxy_tags:
+    - repository
+
+dependencies: []
+  # List your role dependencies here, one per line. Be sure to remove the '[]' above,
+  # if you add dependencies to this list.

@@ -10,94 +10,67 @@ Collection of Ansible playbooks to quickly install up to date Linux packages
 
 ## Motivation
 
-The packages available in our Distros are not always up to date with the latest and greatest. To install the latest 
-version we have to dig deep into Wikis, Docs, Stack Overflow
-or some random article/tutorial named "How to install X on [Distro of Choice]".
-It is a tiresome and time consuming task.
+The packages available in our Distro are not always up to date with the latest and greatest provided by the software creators.
+To install the latest desirable version, we usually go over the following flow:
 
-Devopsium is a collection of Ansible Playbooks that aims to correct this by providing a  standardized way to sync your local repos with the officially maintained by the package creators or the community repositories.
+- We dig into Wikis, official Documentation, StackOverflow and find the officially supported repository
+- We create `/etc/apt/sources.list.d/package.list`, `yum/repos.d/package.list` files
+- We import repository keys `http://repo.package.com/gpg.key`
+- We update our local package cache and install the corresponding package
 
+Devopsium is an Ansible playbook that aims to solve this problem by providing a standardized way to sync your local repos
+with the officially maintained by the package creators or the community repositories. 
 
-
-## What is Devopsium?
-
-Devopsium is a small DevOps tool built around Ansible and which syncs
-the  officially maintained or most popular community repositories with your 
-`yum/repos.d` or `/etc/apt/sources.list.d`. 
-
-
-Devopsium is heavily inspired by <a href="http://brew.sh">homebrew</a> for 
+It is heavily inspired by <a href="http://brew.sh">homebrew</a> for 
 OSX. 
 
-## Quickstart 
+## Requirements
+
+Devopsium requires Ansible 2.2 or higher.
 
 
-	curl https://raw.githubusercontent.com/martinrusev/edgium/master/install.sh | bash
+## Installation
+
+To install Devopsium run the following command:
+
+```
+ansible-galaxy install martinrusev.devopsium
+```
+
+## Usage
+
+```
+  - hosts: all
+    roles:
+      - martinrusev.devopsium
+
+    vars:
+      devopsium_repositories:
+      	- grafana
+      	- postgresql
+      	- mongodb
+      	- docker-ce
+```
+
+## Available Repositories
 
 
-
-## Manual Installation
-
-
-### Install on Ubuntu/Debian
-
-1. **Import the public key used by the package management system.** <br>
-	The Ubuntu package management tools (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors sign packages with GPG keys. Issue the following command to import the [https://packages.amon.cx/amon.key]( Devopsium public GPG Key):
-
-		sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv AD53961F
-
-
-2. **Create a list file for Devopsium.** <br>
-Create the /etc/apt/sources.list.d/edgium.list list file using the following command:
-
-
-		echo 'deb http://packages.amon.cx/repo amon contrib' | sudo tee /etc/apt/sources.list.d/edgium.list
-
-
-3. **Reload local package database and install** <br>
-Issue the following commands:
-
-
-		sudo apt-get update
-		sudo apt-get install edigum
-
-
-4. **Install Ansible** <br>
-Devopsium uses Ansible playbooks behind the scenes. To install Ansible, check the official docs: 
-[http://docs.ansible.com/intro_installation.html#latest-releases-via-apt-ubuntu](http://docs.ansible.com/intro_installation.html#latest-releases-via-apt-ubuntu "check the official docs")
-
-
-### Install on CentOS/Amazon Linux
-
-1.**Configure the package management system (YUM).** <br>
-Create a /etc/yum.repos.d/edgium.repo file to hold the following configuration information for the Devopsium repository:
-
-	[edgium]
-	name=Devopsium Repository
-	baseurl=http://packages.amon.cx/rpm/
-	gpgcheck=0
-	enabled=1
-	priority=1
-
-
-2.**Install the Devopsium packages**. <br>
-To install the latest stable version of Devopsium, issue the following command:
-
-	yum install -y edgium
-
-3.**Install Ansible** <br>
-Devopsium uses Ansible playbooks behind the scenes. To install Ansible, check the official docs: 
-[http://docs.ansible.com/intro_installation.html#latest-release-via-yum](http://docs.ansible.com/intro_installation.html#latest-release-via-yum)
-
-## Available playbooks
-
-You can see the whole list of available playbooks here:
-
-
-[http://martinrusev.github.io/edgium/#packages](http://martinrusev.github.io/edgium/#packages)
+| Name                   | Repo                       | Supported Distros       |
+| ---------------------- |:--------------------------:| -----------------------:|
+| grafana			     | https://packagecloud.io/grafana | Ubuntu/Debian/RHEL  |
+| postgresql			 | https://wiki.postgresql.org/wiki/Apt | Ubuntu/Debian  |
+| mongodb			 | https://docs.mongodb.com/manual/administration/install-on-linux/ | Ubuntu/Debian/RHEL  |
+| docker-ce			 | https://docs.docker.com/engine/installation/linux/docker-ce | Ubuntu/Debian/RHEL  |
 
 ## Contributing
 
-So far, Devopsium has been an internal tool, and has been maintained in the little free time available to us. Bugs may appear, and there is a lot of room for improvement.
+If you happen to come accros a bug, please create and issue providing as much information as possible.
+If you want to add more packages, please fork the project and submit a Pull Request. All contributions are most welcome.
 
-If you happen to come across a bug, please create an issue providing as much information as possible. If you want to help, fork the project and submit your Pull Requests. All contributions are most welcome.
+## License
+
+MIT
+
+## Author Information
+
+Martin Rusev (https://amon.cx)
