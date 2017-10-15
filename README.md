@@ -9,6 +9,20 @@ Devopsium
 Devopsium is an Ansible playbook for syncing up official or the most popular community repositories
 for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`, `kubernetes`, `jenkins`, etc.
 
+
+# Table of Contents
+
+- [Motivation](#motivation)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Available Repositories](#available-repositories)
+	- [DevOps Tools](#devops-tools)
+	- [Databases](#databases)
+	- [Web Servers](#web-servers)
+	- [Text Editors](#text-editors)
+
+
 ## Motivation
 
 The packages available in our Distro are not always up to date with the latest and greatest provided by the software creators.
@@ -55,20 +69,40 @@ ansible-galaxy install martinrusev.devopsium
 
 ## Available Repositories
 
+### DevOps tools
 
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
 | grafana			     | `grafana`  | Ubuntu/Debian/RHEL|
-| postgresql			 | `postgresql-` `9.2, 9.3, 9.4, 9.5, 9.6, 10`| Ubuntu/Debian  |
-| mongodb			 	 | `mongodb-org-server` | Ubuntu/Debian/RHEL  |
 | docker-ce			 	 | `docker-ce`  | Ubuntu/Debian/RHEL  |
-| influxdb			 	 | `influxdb`, `telegraf`, `kapacitor`, `chronograf`  | Ubuntu/Debian/RHEL  |
-| elasticsearch		 	 | `elasticsearch`, `filebeat`, `metricbeat`, `kibana` | Ubuntu/Debian/RHEL  |
-| nginx		 			 | `nginx` | Ubuntu/Debian/RHEL  |
 | kubernetes		 	 | `kubelet`, `kubeadm`, `kubectl`  | Ubuntu/Debian/RHEL  |
 | jenkins		 		 | `jenkins`  | Ubuntu/Debian/RHEL  |
+
+
+### Databases
+
+| Name                   | Packages available for install after sync                      | Supported Distros       |
+| ---------------------- |:--------------------------:| -----------------------:|
+| postgresql			 | `postgresql-` `9.2, 9.3, 9.4, 9.5, 9.6, 10`| Ubuntu/Debian  |
+| mongodb			 	 | `mongodb-org-server` | Ubuntu/Debian/RHEL  |
+| influxdb			 	 | `influxdb`, `telegraf`, `kapacitor`, `chronograf`  | Ubuntu/Debian/RHEL  |
+| elasticsearch		 	 | `elasticsearch`, `filebeat`, `metricbeat`, `kibana` | Ubuntu/Debian/RHEL  |
+
+### Web Servers
+
+| Name                   | Packages available for install after sync                      | Supported Distros       |
+| ---------------------- |:--------------------------:| -----------------------:|
+| nginx		 			 | `nginx` | Ubuntu/Debian/RHEL  |
+
+
+### Text Editors
+
+| Name                   | Packages available for install after sync                      | Supported Distros       |
+| ---------------------- |:--------------------------:| -----------------------:|
 | sublime-text		 | `sublime-text` | Ubuntu/Debian/RHEL  |
 | vscode		 | `code` | Ubuntu/Debian/RHEL  |
+
+
 
 ## Repository Setup References
 
