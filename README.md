@@ -18,7 +18,7 @@ for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`
 - [Usage](#usage)
 - [Available Repositories](#available-repositories)
 	- [DevOps Tools](#devops-tools)
-  - [Programming Languages](#programming-languages)
+	- [Programming Languages](#programming-languages)
 	- [Databases](#databases)
 	- [Web Servers](#web-servers)
 	- [Text Editors](#text-editors)
@@ -55,17 +55,17 @@ ansible-galaxy install martinrusev.devopsium
 ## Usage
 
 ```
-  - hosts: all
-    roles:
-      - martinrusev.devopsium
+	- hosts: all
+		roles:
+			- martinrusev.devopsium
 
-    vars:
-      devopsium_repositories:
-      	- grafana
-      	- postgresql
-      	- mongodb
-      	- docker-ce
-        - python3.6
+		vars:
+			devopsium_repositories:
+				- grafana
+				- postgresql
+				- mongodb
+				- docker-ce
+				- python3.6
 ```
 
 ## Available Repositories
