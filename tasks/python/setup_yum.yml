@@ -1,0 +1,9 @@
+---
+
+- debug:
+    msg: "Docker CE RPM Repositories setup"
+
+- name: add repo
+  template:
+    src: docker-ce/docker-ce.yum.repo.j2
+    dest: /etc/yum.repos.d/docker-ce.repo

@@ -1,0 +1,7 @@
+---
+
+# - include: setup_yum.yml
+#   when: hostvars[inventory_hostname]['ansible_os_family'] == 'RedHat'
+
+- include: setup_deb.yml
+  when: hostvars[inventory_hostname]['ansible_os_family'] == 'Debian'

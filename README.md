@@ -7,7 +7,7 @@ Devopsium
 [![Build Status](https://travis-ci.org/martinrusev/devopsium.svg?branch=master)](https://travis-ci.org/martinrusev/devopsium)
 
 Devopsium is an Ansible playbook for syncing up official or the most popular community repositories
-for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`, `kubernetes`, `jenkins`, etc.
+for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`, `kubernetes`, `jenkins`, `python3.6` etc.
 
 
 # Table of Contents
@@ -18,6 +18,7 @@ for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`
 - [Usage](#usage)
 - [Available Repositories](#available-repositories)
 	- [DevOps Tools](#devops-tools)
+  - [Programming Languages](#programming-languages)
 	- [Databases](#databases)
 	- [Web Servers](#web-servers)
 	- [Text Editors](#text-editors)
@@ -36,8 +37,7 @@ To install the latest desirable version, we usually go over the following routin
 Devopsium is an Ansible playbook that aims to solve this problem by providing a standardized way to sync your local repos
 with the officially maintained by the package creators or the community repositories. 
 
-It is heavily inspired by <a href="http://brew.sh">homebrew</a> for 
-OSX. 
+It is heavily inspired by <a href="https://developers.redhat.com/products/softwarecollections/overview/">Red Hat Sofware Collections</a>
 
 ## Requirements
 
@@ -65,6 +65,7 @@ ansible-galaxy install martinrusev.devopsium
       	- postgresql
       	- mongodb
       	- docker-ce
+        - python3.6
 ```
 
 ## Available Repositories
@@ -77,6 +78,13 @@ ansible-galaxy install martinrusev.devopsium
 | docker-ce			 	 | `docker-ce`  | Ubuntu/Debian/RHEL  |
 | kubernetes		 	 | `kubelet`, `kubeadm`, `kubectl`  | Ubuntu/Debian/RHEL  |
 | jenkins		 		 | `jenkins`  | Ubuntu/Debian/RHEL  |
+
+
+### Programming Languages
+
+| Name                   | Packages available for install after sync                      | Supported Distros       |
+| ---------------------- |:--------------------------:| -----------------------:|
+| python          | `python3.6`  | Ubuntu |
 
 
 ### Databases
