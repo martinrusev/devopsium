@@ -17,11 +17,11 @@ for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`
 - [Installation](#installation)
 - [Usage](#usage)
 - [Available Repositories](#available-repositories)
-	- [DevOps Tools](#devops-tools)
-	- [Programming Languages](#programming-languages)
-	- [Databases](#databases)
-	- [Web Servers](#web-servers)
-	- [Text Editors](#text-editors)
+  - [DevOps Tools](#devops-tools)
+  - [Programming Languages](#programming-languages)
+  - [Databases](#databases)
+  - [Web Servers](#web-servers)
+  - [Text Editors](#text-editors)
 
 
 ## Motivation
@@ -55,17 +55,17 @@ ansible-galaxy install martinrusev.devopsium
 ## Usage
 
 ```
-	- hosts: all
-		roles:
-			- martinrusev.devopsium
+  - hosts: all
+    roles:
+      - martinrusev.devopsium
 
-		vars:
-			devopsium_repositories:
-				- grafana
-				- postgresql
-				- mongodb
-				- docker-ce
-				- python3.6
+    vars:
+      devopsium_repositories:
+        - grafana
+        - postgresql
+        - mongodb
+        - docker-ce
+        - python3.6
 ```
 
 ## Available Repositories
@@ -74,10 +74,10 @@ ansible-galaxy install martinrusev.devopsium
 
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
-| grafana			     | `grafana`  | Ubuntu/Debian/RHEL|
-| docker-ce			 	 | `docker-ce`  | Ubuntu/Debian/RHEL  |
-| kubernetes		 	 | `kubelet`, `kubeadm`, `kubectl`  | Ubuntu/Debian/RHEL  |
-| jenkins		 		 | `jenkins`  | Ubuntu/Debian/RHEL  |
+| grafana          | `grafana`  | Ubuntu/Debian/RHEL|
+| docker-ce        | `docker-ce`  | Ubuntu/Debian/RHEL  |
+| kubernetes       | `kubelet`, `kubeadm`, `kubectl`  | Ubuntu/Debian/RHEL  |
+| jenkins        | `jenkins`  | Ubuntu/Debian/RHEL  |
 
 
 ### Programming Languages
@@ -91,24 +91,24 @@ ansible-galaxy install martinrusev.devopsium
 
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
-| postgresql			 | `postgresql-` `9.2, 9.3, 9.4, 9.5, 9.6, 10`| Ubuntu/Debian  |
-| mongodb			 	 | `mongodb-org-server` | Ubuntu/Debian/RHEL  |
-| influxdb			 	 | `influxdb`, `telegraf`, `kapacitor`, `chronograf`  | Ubuntu/Debian/RHEL  |
-| elasticsearch		 	 | `elasticsearch`, `filebeat`, `metricbeat`, `kibana` | Ubuntu/Debian/RHEL  |
+| postgresql       | `postgresql-` `9.2, 9.3, 9.4, 9.5, 9.6, 10`| Ubuntu/Debian  |
+| mongodb        | `mongodb-org-server` | Ubuntu/Debian/RHEL  |
+| influxdb         | `influxdb`, `telegraf`, `kapacitor`, `chronograf`  | Ubuntu/Debian/RHEL  |
+| elasticsearch      | `elasticsearch`, `filebeat`, `metricbeat`, `kibana` | Ubuntu/Debian/RHEL  |
 
 ### Web Servers
 
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
-| nginx		 			 | `nginx` | Ubuntu/Debian/RHEL  |
+| nginx          | `nginx` | Ubuntu/Debian/RHEL  |
 
 
 ### Text Editors
 
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
-| sublime-text		 | `sublime-text` | Ubuntu/Debian/RHEL  |
-| vscode		 | `code` | Ubuntu/Debian/RHEL  |
+| sublime-text     | `sublime-text` | Ubuntu/Debian/RHEL  |
+| vscode     | `code` | Ubuntu/Debian/RHEL  |
 
 
 
