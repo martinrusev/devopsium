@@ -1,1 +1,14 @@
 ---
+alt_distribution_releases:
+  - { name: "sana", distro: "debian", release: "jessie", description: "Kali Linux"}
+  - { name: "kali-rolling", distro: "debian",  release: "jessie" , description: "Kali Linux"}
+  - { name: "qiana", distro: "ubuntu",  release: "trusty" , description: "Linux Mint 17.0"}
+  - { name: "rebecca", distro: "ubuntu",  release: "trusty" , description: "Linux Mint 17.1"}
+  - { name: "rafaela", distro: "ubuntu",  release: "trusty" , description: "Linux Mint 17.2"}
+  - { name: "rosa",  distro: "ubuntu",  release: "trusty" , description: "Linux Mint 17.3"}
+  - { name: "sarah", distro: "ubuntu",  release: "xenial" , description: "Linux Mint 18.0"}
+  - { name: "serena", distro: "ubuntu",  release: "xenial" , description: "Linux Mint 18.1"}
+  - { name: "sonya",  distro: "ubuntu",  release: "xenial" , description: "Linux Mint 18.2"}
+  - { name: "sylvia", distro: "ubuntu",  release: "xenial" , description: "Linux Mint 18.3"}
+  - { name: "freya", distro: "ubuntu",  release: "xenial" , description: "elementaryOS 0.3"}
+  - { name: "loki", distro: "ubuntu",  release: "xenial" , description: "elementaryOS 0.4"}

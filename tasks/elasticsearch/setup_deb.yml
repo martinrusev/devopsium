@@ -3,16 +3,16 @@
 - debug:
     msg: "ElasticSearch DEB Repositories setup"
 
-- name: install apt-transport-https
-  apt:
-    name: apt-transport-https
-    state: installed
-
 - name: add key
   apt_key:
     state: present
     url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
+
+- name: cleanup existing repo
+  file:
+    dest: /etc/apt/sources.list.d/elastic-5.x.list
+    state: absent
 
 - name: add repo
   lineinfile:

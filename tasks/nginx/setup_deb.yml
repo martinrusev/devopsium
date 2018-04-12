@@ -3,19 +3,12 @@
 - debug:
     msg: "Nginx DEB Repositories setup"
 
-- name: install apt-transport-https
-  apt:
-    name: apt-transport-https
-    state: installed
-
 - name: add key
   apt_key:
     state: present
     url: https://nginx.org/keys/nginx_signing.key
 
-
 - name: add repo
-  lineinfile:
+  template:
+    src: nginx/nginx.deb.repo.j2
     dest: /etc/apt/sources.list.d/nginx.list
-    create: yes
-    line: 'deb http://nginx.org/packages/{{ansible_distribution|lower}}/ {{ansible_distribution_release}} nginx'

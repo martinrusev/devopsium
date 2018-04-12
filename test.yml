@@ -4,7 +4,6 @@
   become_method: sudo
   tasks:
     - include: 'tasks/main.yml'
-
   vars:
     - devopsium_repositories:
         - grafana
@@ -12,3 +11,5 @@
         - mongodb
         - docker-ce
         - influxdb
+        - nodejs
+        - yarn

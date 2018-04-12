@@ -1,0 +1,14 @@
+---
+
+- debug:
+    msg: "NodeJS DEB Repositories setup"
+
+- name: add key
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: add repo
+  template:
+    src: nodejs/nodejs.deb.repo.j2
+    dest: /etc/apt/sources.list.d/nodesource.list

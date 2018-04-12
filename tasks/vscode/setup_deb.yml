@@ -3,10 +3,6 @@
 - debug:
     msg: "VSCode DEB Repositories setup"
 
-- name: install apt-transport-https
-  apt:
-    name: apt-transport-https
-    state: installed
 
 - name: add key
   apt_key:
@@ -15,7 +11,6 @@
     keyring: /etc/apt/trusted.gpg.d/microsoft.gpg
 
 - name: add repo
-  lineinfile:
+  template:
+    src: vscode/vscode.deb.repo.j2
     dest: /etc/apt/sources.list.d/vscode.list
-    create: yes
-    line: 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'

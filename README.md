@@ -6,11 +6,16 @@ Devopsium
 
 [![Build Status](https://travis-ci.org/martinrusev/devopsium.svg?branch=master)](https://travis-ci.org/martinrusev/devopsium)
 
-Devopsium is an Ansible playbook for syncing up official or the most popular community repositories
-for frequently used software, like `docker-ce`, `mariadb`, `grafana`, `influxdb`, `kubernetes`, `jenkins`, `python3.6` etc.
+Devopsium is an Ansible playbook for rapid dev localhost setup. It gives you the option to install the latest and greatest software from the official repositories
+with a couple of lines of code
 
 
-# Table of Contents
+```bash
+ansible-galaxy install martinrusev.devopsium
+ansible-playbook repository_setup_playbook.yml
+$ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6 prometheus
+```
+
 
 - [Motivation](#motivation)
 - [Requirements](#requirements)
@@ -70,8 +75,7 @@ ansible-galaxy install martinrusev.devopsium
       - vscode
       
 $ ansible-playbook repository_setup_playbook.yml
-$ sudo apt update
-$ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6
+$ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6 prometheus
 
 ```
 
@@ -82,6 +86,7 @@ $ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
 | grafana          | `grafana`  | Ubuntu/Debian/RHEL|
+| prometheus          | `prometheus` ,`prometheus-alertmanager`, `prometheus-pushgateway`  | Ubuntu/Debian/RHEL|
 | docker-ce        | `docker-ce`  | Ubuntu/Debian/RHEL  |
 | kubernetes       | `kubelet`, `kubeadm`, `kubectl`  | Ubuntu/Debian/RHEL  |
 | jenkins        | `jenkins`  | Ubuntu/Debian/RHEL  |
@@ -92,7 +97,7 @@ $ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
 | python          | `python3.6`  | Ubuntu |
-
+| nodejs8          | `nodejs`  | Ubuntu |
 
 ### Databases
 
@@ -132,6 +137,9 @@ $ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6
 - Jenkins - https://jenkins.io/download/
 - Sublime Text - https://www.sublimetext.com/docs/3/linux_repositories.html
 - VSCode - https://code.visualstudio.com/docs/setup/linux
+- NodeJS - https://github.com/jtyr/prometheus-deb
+- Yarn - https://yarnpkg.com/lang/en/docs/install/
+- Prometheus - https://github.com/lest/prometheus-rpm / https://github.com/jtyr/prometheus-deb
 
 ## Contributing
 

@@ -1,3 +1,17 @@
+1.1 - 12.04.2018
+=================
+
+* Add NodeJS, Yarn
+* Playbook idempotence fixes
+* Fix Distro Release detection on Kali Linux, Elementary OS, Linux Mint
+
+
+1.0 - 20.10.2017
+=================
+
+* Initial release
+
+
 0.3 - 14.10.2017
 =================
 

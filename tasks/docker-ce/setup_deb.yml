@@ -3,23 +3,13 @@
 - debug:
     msg: "Docker CE DEB Repositories setup"
 
-- name: install apt dependencies
-  apt:
-    name: "{{item}}"
-    state: installed
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - software-properties-common
-
 - name: add key
   apt_key:
     state: present
     url: https://download.docker.com/linux/ubuntu/gpg
 
+
 - name: add repo
-  lineinfile:
+  template:
+    src: docker-ce/docker-ce.deb.repo.j2
     dest: /etc/apt/sources.list.d/docker-ce.list
-    create: yes
-    line: 'deb [arch=amd64] https://download.docker.com/linux/{{ansible_distribution|lower}} {{ansible_distribution_release}} stable'

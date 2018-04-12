@@ -1,0 +1,10 @@
+---
+
+- debug:
+    msg: "Prometheus RPM Repositories setup"
+
+
+- name: add repo
+  template:
+    src: prometheus/prometheus.yum.repo.j2
+    dest: /etc/yum.repos.d/prometheus.repo

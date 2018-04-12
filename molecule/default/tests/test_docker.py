@@ -6,13 +6,13 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 def test_mongodb_repo_file(host):
 	if host.system_info.distribution is 'debian':
-		repo_file = '/etc/apt/sources.list.d/mongodb-org-3.4.list'
+		repo_file = '/etc/apt/sources.list.d/docker-ce.list'
 	else:
-		repo_file = '/etc/yum.repos.d/mongodb-org-3.4.repo'
+		repo_file = '/etc/yum.repos.d/docker-ce.repo'
 
 	f = host.file(repo_file)
 	
 	assert f.exists
 
 	if host.system_info.distribution is 'debian':
-		f.content_string == "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse"
+		f.content_string == "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"

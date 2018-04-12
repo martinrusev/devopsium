@@ -3,23 +3,12 @@
 - debug:
     msg: "Python DEB Repositories setup"
 
-- name: install apt dependencies
-  apt:
-    name: "{{item}}"
-    state: installed
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - software-properties-common
-
 - name: add key
   apt_key:
     state: present
     id: F23C5A6CF475977595C89F51BA6932366A755776
 
 - name: add repo
-  lineinfile:
-    dest: /etc/apt/sources.list.d/deadsnakes.list
-    create: yes
-    line: 'deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu {{ansible_distribution_release}} main'
+  template:
+    src: python/python.deb.repo.j2
+    dest: /etc/apt/sources.list.d/python.list

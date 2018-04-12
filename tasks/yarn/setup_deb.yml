@@ -1,0 +1,15 @@
+---
+
+- debug:
+    msg: "Yarn DEB Repositories setup"
+
+- name: add key
+  apt_key:
+    state: present
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+
+
+- name: add repo
+  template:
+    src: yarn/yarn.deb.repo.j2
+    dest: /etc/apt/sources.list.d/yarn.list

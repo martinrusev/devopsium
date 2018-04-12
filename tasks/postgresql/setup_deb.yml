@@ -3,18 +3,13 @@
 - debug:
     msg: "PostgreSQL DEB Repositories setup"
 
-- name: install apt-transport-https
-  apt:
-    name: apt-transport-https
-    state: installed
-    
+
 - name: add key
   apt_key:
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
     state: present
 
 - name: add repo
-  lineinfile:
-    create: yes
+  template:
+    src: postgresql/postgresql.deb.repo.j2
     dest: /etc/apt/sources.list.d/postgresql.list
-    line: 'deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main'

@@ -1,34 +1,11 @@
 ---
 
-- include: python/main.yml
-  when: "'python' in devopsium_repositories"
+- include_tasks: deb_init.yml
+  when: hostvars[inventory_hostname]['ansible_os_family'] == 'Debian'
 
-- include: vscode/main.yml
-  when: "'vscode' in devopsium_repositories"
+- include: "{{item}}/main.yml"
+  with_items:
+    - "{{devopsium_repositories}}"
 
-- include: sublime-text/main.yml
-  when: "'sublime-text' in devopsium_repositories"
-
-- include: jenkins/main.yml
-  when: "'jenkins' in devopsium_repositories"
-
-- include: kubernetes/main.yml
-  when: "'kubernetes' in devopsium_repositories"
-
-- include: elasticsearch/main.yml
-  when: "'elasticsearch' in devopsium_repositories"
-
-- include: grafana/main.yml
-  when: "'grafana' in devopsium_repositories"
-
-- include: postgresql/main.yml
-  when: "'postgresql' in devopsium_repositories"
-
-- include: mongodb/main.yml
-  when: "'mongodb' in devopsium_repositories"
-
-- include: docker-ce/main.yml
-  when: "'docker-ce' in devopsium_repositories"
-
-- include: influxdb/main.yml
-  when: "'influxdb' in devopsium_repositories"
+- include_tasks: deb_update_cache.yml
+  when: hostvars[inventory_hostname]['ansible_os_family'] == 'Debian'

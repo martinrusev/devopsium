@@ -1,0 +1,14 @@
+---
+
+- debug:
+    msg: "Prometheus DEB Repositories setup"
+
+- name: add key
+  apt_key:
+    state: present
+    url: https://packagecloud.io/prometheus-deb/release/gpgkey
+
+- name: add repo
+  template:
+    src: prometheus/prometheus.deb.repo.j2
+    dest: /etc/apt/sources.list.d/prometheus.list

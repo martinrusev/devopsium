@@ -1,0 +1,10 @@
+---
+
+- debug:
+    msg: "Yarn RPM Repositories setup"
+
+
+- name: add repo
+  template:
+    src: yarn/yarn.yum.repo.j2
+    dest: /etc/yum.repos.d/yarn.repo

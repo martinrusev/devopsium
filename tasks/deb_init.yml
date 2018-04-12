@@ -1,0 +1,30 @@
+---
+
+- name: "Distro Release Lookup"
+  set_fact:
+    devopsium_distro_release: "{{ alt_distribution_releases | selectattr(\"name\", \"search\", ansible_distribution_release) | map(attribute='release') | list | join('') }}"
+    devopsium_distro: "{{ alt_distribution_releases | selectattr(\"name\", \"search\", ansible_distribution) | map(attribute='distro') | list | join('') }}"
+
+- name: "Set distro release if missing"
+  set_fact:
+    devopsium_distro_release: "{{ansible_distribution_release}}"
+  when: devopsium_distro_release == ""
+
+- name: "Set distro if missing"
+  set_fact:
+    devopsium_distro: "{{ansible_distribution}}"
+  when: devopsium_distro == ""
+
+- debug: 
+    msg: "Detected Distro: {{devopsium_distro|lower}} {{devopsium_distro_release}}"
+
+
+- name: install apt dependencies
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
