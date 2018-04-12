@@ -55,17 +55,24 @@ ansible-galaxy install martinrusev.devopsium
 ## Usage
 
 ```
-  - hosts: all
-    roles:
-      - martinrusev.devopsium
+# vim repository_setup_playbook.yml
+- hosts: localhost
+  become: yes
+  become_user: root
+  roles:
+    - martinrusev.devopsium
+  vars:
+    devopsium_repositories:
+      - postgresql
+      - docker-ce
+      - python3.6
+      - kubernetes
+      - vscode
+      
+$ ansible-playbook repository_setup_playbook.yml
+$ sudo apt update
+$ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6
 
-    vars:
-      devopsium_repositories:
-        - grafana
-        - postgresql
-        - mongodb
-        - docker-ce
-        - python3.6
 ```
 
 ## Available Repositories
