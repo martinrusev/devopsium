@@ -3,7 +3,7 @@
 - name: "Distro Release Lookup"
   set_fact:
     devopsium_distro_release: "{{ alt_distribution_releases | selectattr(\"name\", \"search\", ansible_distribution_release) | map(attribute='release') | list | join('') }}"
-    devopsium_distro: "{{ alt_distribution_releases | selectattr(\"name\", \"search\", ansible_distribution) | map(attribute='distro') | list | join('') }}"
+    devopsium_distro: "{{ alt_distribution_releases | selectattr(\"name\", \"search\", ansible_distribution_release) | map(attribute='distro') | list | join('') }}"
 
 - name: "Set distro release if missing"
   set_fact:
