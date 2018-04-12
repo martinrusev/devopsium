@@ -54,7 +54,7 @@ ansible-galaxy install martinrusev.devopsium
 
 ## Usage
 
-```
+```bash
 # vim repository_setup_playbook.yml
 - hosts: localhost
   become: yes
