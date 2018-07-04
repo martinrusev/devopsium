@@ -70,7 +70,7 @@ ansible-galaxy install martinrusev.devopsium
     devopsium_repositories:
       - postgresql
       - docker-ce
-      - python3.6
+      - python
       - kubernetes
       - vscode
       
