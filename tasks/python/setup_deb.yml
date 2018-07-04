@@ -6,6 +6,7 @@
 - name: add key
   apt_key:
     state: present
+    keyserver: keyserver: keyserver.ubuntu.com
     id: F23C5A6CF475977595C89F51BA6932366A755776
 
 - name: add repo
