@@ -12,7 +12,22 @@ with a couple of lines of code
 
 ```bash
 ansible-galaxy install martinrusev.devopsium
-ansible-playbook repository_setup_playbook.yml
+
+# vim repository_setup_playbook.yml
+- hosts: localhost
+  become: yes
+  become_user: root
+  roles:
+    - martinrusev.devopsium
+  vars:
+    devopsium_repositories:
+      - postgresql
+      - docker-ce
+      - python
+      - kubernetes
+      - vscode
+      
+$ ansible-playbook repository_setup_playbook.yml
 $ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6 prometheus
 ```
 
