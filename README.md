@@ -89,7 +89,7 @@ ansible-galaxy install martinrusev.devopsium
       - kubernetes
       - vscode
       
-$ ansible-playbook repository_setup_playbook.yml
+$ ansible-playbook repository_setup_playbook.yml --ask-sudo-pass
 $ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6 prometheus
 
 ```
