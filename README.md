@@ -107,12 +107,13 @@ $ sudo apt install kubectl vscode postgresql-10 docker-ce python3.6 prometheus
 | jenkins        | `jenkins`  | Ubuntu/Debian/RHEL  |
 
 
-### Programming Languages
+### Programming Languages & Tools
 
 | Name                   | Packages available for install after sync                      | Supported Distros       |
 | ---------------------- |:--------------------------:| -----------------------:|
 | python          | `python3.6`  | Ubuntu |
 | nodejs8          | `nodejs`  | Ubuntu |
+| yarn          | `yarn`  | Ubuntu/Debian |
 
 ### Databases
 
